@@ -1,0 +1,2 @@
+[functions.quiz-ranking]
+verify_jwt = false

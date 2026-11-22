@@ -8,9 +8,9 @@
     dialogTitle: $('#dialog-title'), dialogMessage: $('#dialog-message'),
   };
   let bank = [], topicById = new Map(), session = null, reviewFilter = false;
-  const accounts = { NguyenVanKhanh: '25120357', NgoAnhNguyen: '25120112', HuynhTanDuc: '25120478' };
-  const AUTH_KEY = 'networkQuizUser';
+  const AUTH_KEY = 'networkQuizSession';
   let currentUser = null;
+  let authToken = null;
   let soundEnabled = localStorage.getItem('networkQuizSound') !== 'off';
 
   function normalizeBank(data) {
@@ -79,6 +79,75 @@
     }
   }
 
+  const RANKS = ['Đồng', 'Bạc', 'Vàng', 'Bạch Kim', 'Kim Cương', 'Tinh Anh', 'Cao Thủ', 'Chiến Tướng', 'Chiến Thần'];
+  function rankFor(points) {
+    const level = Math.min(Math.floor(points / 150), RANKS.length - 1);
+    return { name: RANKS[level], level, remaining: level === RANKS.length - 1 ? 0 : 150 - (points % 150) };
+  }
+  function makeRankEmblem(level, small = false) {
+    const emblem = document.createElement('span');
+    emblem.className = `rank-emblem rank-tier-${level}${small ? ' small' : ''}`;
+    emblem.setAttribute('aria-label', RANKS[level]);
+    const gem = document.createElement('span'); gem.textContent = level >= 6 ? '✦' : level >= 3 ? '◆' : '✧';
+    emblem.append(gem); return emblem;
+  }
+  async function callRankingApi(payload) {
+    if (!window.QUIZ_API_URL || !window.QUIZ_SUPABASE_PUBLISHABLE_KEY) throw new Error('Chưa cấu hình kết nối bảng xếp hạng.');
+    const response = await fetch(window.QUIZ_API_URL, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', apikey: window.QUIZ_SUPABASE_PUBLISHABLE_KEY, ...(authToken ? { Authorization: `Bearer ${authToken}` } : {}) },
+      body: JSON.stringify(payload),
+    });
+    const result = await response.json();
+    if (!response.ok) {
+      if (response.status === 401) signOut();
+      throw new Error(result.error || 'Không thể kết nối bảng xếp hạng.');
+    }
+    return result;
+  }
+  function renderRanking(players) {
+    const mine = players.find(player => player.username === currentUser) || { username: currentUser, total_points: 0 };
+    const points = Number(mine.total_points) || 0;
+    const rank = rankFor(points);
+    const rankCard = $('#my-rank-card'); rankCard.replaceChildren();
+    rankCard.append(makeRankEmblem(rank.level));
+    const detail = document.createElement('div'); detail.className = 'my-rank-detail';
+    const label = document.createElement('span'); label.className = 'my-rank-caption'; label.textContent = 'HẠNG CỦA BẠN';
+    const name = document.createElement('strong'); name.textContent = rank.name;
+    const score = document.createElement('span'); score.className = 'my-rank-score'; score.textContent = `${points} điểm tích lũy`;
+    const progressTrack = document.createElement('span'); progressTrack.className = 'rank-progress-track';
+    const progressFill = document.createElement('span'); progressFill.className = 'rank-progress-fill';
+    progressFill.style.width = rank.level === RANKS.length - 1 ? '100%' : `${(points % 150) / 150 * 100}%`;
+    progressTrack.append(progressFill);
+    detail.append(label, name, score, progressTrack); rankCard.append(detail);
+    const next = document.createElement('span'); next.className = 'rank-next';
+    next.textContent = rank.remaining ? `Còn ${rank.remaining} điểm lên hạng` : 'Đã đạt bậc cao nhất'; rankCard.append(next);
+
+    const list = $('#ranking-content'); list.replaceChildren();
+    if (!players.length) { list.textContent = 'Chưa có tài khoản nào trên bảng xếp hạng.'; return; }
+    players.forEach((player, index) => {
+      const playerRank = rankFor(Number(player.total_points) || 0);
+      const row = document.createElement('div'); row.className = `ranking-row${player.username === currentUser ? ' is-me' : ''}`;
+      const place = document.createElement('span'); place.className = `ranking-place place-${index + 1}`; place.textContent = String(index + 1).padStart(2, '0');
+      const badge = makeRankEmblem(playerRank.level, true);
+      const identity = document.createElement('span'); identity.className = 'ranking-identity';
+      const username = document.createElement('b'); username.textContent = player.username;
+      const tier = document.createElement('small'); tier.textContent = playerRank.name;
+      identity.append(username, tier);
+      const total = document.createElement('strong'); total.className = 'ranking-points'; total.textContent = `${Number(player.total_points) || 0} điểm`;
+      row.append(place, badge, identity, total); list.append(row);
+    });
+  }
+  async function loadRanking() {
+    const list = $('#ranking-content');
+    list.textContent = 'Đang tải bảng xếp hạng…';
+    try {
+      const result = await callRankingApi({ action: 'leaderboard' });
+      renderRanking(Array.isArray(result.players) ? result.players : []);
+    } catch (error) { list.textContent = error.message; }
+  }
+  $('#refresh-ranking').addEventListener('click', loadRanking);
+
   function setSignedIn(username) {
     currentUser = username;
     els.login.hidden = true;
@@ -86,37 +155,55 @@
     $('#user-greeting').textContent = `Xin chào, ${username}`;
     $('#user-greeting').hidden = false;
     $('#logout').hidden = false;
+    const isGuest = username === 'Khách';
+    $('#ranking-panel').hidden = isGuest;
+    $('#guest-rank-note').hidden = !isGuest;
+    if (!isGuest) loadRanking();
   }
   function signOut() {
     localStorage.removeItem(AUTH_KEY);
     currentUser = null;
+    authToken = null;
     els.login.hidden = false; els.home.hidden = true; els.quiz.hidden = true; els.results.hidden = true;
     $('#user-greeting').hidden = true; $('#logout').hidden = true;
     els.loginForm.reset(); els.loginError.hidden = true;
   }
-  els.loginForm.addEventListener('submit', event => {
+  els.loginForm.addEventListener('submit', async event => {
     event.preventDefault();
     const username = $('#username').value;
     const password = $('#password').value;
-    if (Object.hasOwn(accounts, username) && accounts[username] === password) {
-      localStorage.setItem(AUTH_KEY, username);
-      els.loginError.hidden = true;
-      setSignedIn(username);
-    } else {
-      els.loginError.textContent = 'Tên đăng nhập hoặc mật khẩu không chính xác. Vui lòng kiểm tra lại.';
-      els.loginError.hidden = false;
+    const apiUrl = window.QUIZ_API_URL;
+    if (!apiUrl || !window.QUIZ_SUPABASE_PUBLISHABLE_KEY) {
+      els.loginError.textContent = 'Chưa cấu hình dịch vụ bảng xếp hạng. Bạn vẫn có thể tham gia với tư cách khách.';
+      els.loginError.hidden = false; return;
     }
+    const submit = $('.login-button', els.loginForm); submit.disabled = true; submit.textContent = 'Đang đăng nhập…';
+    try {
+      const response = await fetch(apiUrl, { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ action: 'login', username, password }) });
+      const result = await response.json();
+      if (!response.ok) throw new Error(result.error || 'Đăng nhập không thành công.');
+      authToken = result.token;
+      localStorage.setItem(AUTH_KEY, JSON.stringify({ username: result.username, token: authToken }));
+      els.loginError.hidden = true; setSignedIn(result.username);
+    } catch (error) {
+      els.loginError.textContent = error.message || 'Không thể kết nối dịch vụ đăng nhập. Hãy thử lại.';
+      els.loginError.hidden = false;
+    } finally { submit.disabled = false; submit.innerHTML = 'Đăng nhập <span>→</span>'; }
   });
   $('#guest-login').addEventListener('click', () => {
-    localStorage.setItem(AUTH_KEY, 'guest');
+    authToken = null;
+    localStorage.setItem(AUTH_KEY, JSON.stringify({ guest: true }));
     els.loginError.hidden = true;
     setSignedIn('Khách');
   });
   $('#logout').addEventListener('click', signOut);
-  const rememberedUser = localStorage.getItem(AUTH_KEY);
-  if (rememberedUser === 'guest' || (rememberedUser && Object.hasOwn(accounts, rememberedUser))) {
-    setSignedIn(rememberedUser === 'guest' ? 'Khách' : rememberedUser);
-  }
+  try {
+    const remembered = JSON.parse(localStorage.getItem(AUTH_KEY) || 'null');
+    if (remembered?.guest) setSignedIn('Khách');
+    else if (remembered?.username && remembered?.token) {
+      authToken = remembered.token; setSignedIn(remembered.username);
+    }
+  } catch { localStorage.removeItem(AUTH_KEY); }
   function updateSoundButton() {
     const button = $('#sound-toggle');
     button.textContent = soundEnabled ? '♫ Âm thanh bật' : '♫ Âm thanh tắt';
@@ -170,7 +257,8 @@
     if (!bank.length) return;
     if (mode === 'exam' && bank.length < 70) { showError('Đề thi thử cần ít nhất 70 câu hỏi. Hãy nạp một ngân hàng lớn hơn.'); return; }
     const questions = mode === 'exam' ? shuffle(bank).slice(0, 70) : bank.slice();
-    session = { mode, questions, answers: Array(questions.length).fill(null), index: 0, submitted: false };
+    const submissionId = mode === 'exam' ? (crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => { const r = Math.random() * 16 | 0; return (c === 'x' ? r : (r & 3 | 8)).toString(16); })) : null;
+    session = { mode, questions, answers: Array(questions.length).fill(null), index: 0, submitted: false, submissionId };
     els.home.hidden = true; els.results.hidden = true; els.quiz.hidden = false;
     $('#quiz-kind').textContent = mode === 'exam' ? 'THI THỬ NGẪU NHIÊN' : mode === 'instant' ? 'LUYỆN TẬP · PHẢN HỒI NGAY' : 'ÔN TẬP TOÀN BỘ';
     $('#quiz-topic').textContent = mode === 'exam' ? 'Đề thi thử' : mode === 'instant' ? 'Luyện tập có giải thích' : 'Ngân hàng câu hỏi';
@@ -261,10 +349,43 @@
     els.dialog.showModal();
   }
   els.dialog.addEventListener('close', () => { if (els.dialog.returnValue === 'submit') submitQuiz(); });
-  function submitQuiz() {
+  async function submitQuiz() {
     session.submitted = true;
     const correct = session.questions.reduce((sum, q, i) => sum + (session.answers[i] === q.answer ? 1 : 0), 0);
     renderQuestion(); renderResults(correct); els.quiz.hidden = true; els.results.hidden = false; window.scrollTo(0, 0);
+    if (session.mode !== 'exam') return;
+    const status = $('#score-sync-status');
+    if (currentUser === 'Khách' || !authToken) {
+      status.textContent = 'Bạn đang dùng chế độ khách nên điểm đề thi này không được lưu vào bảng xếp hạng.';
+      return;
+    }
+    status.textContent = 'Đang cộng điểm vào tài khoản…';
+    try {
+      const result = await callRankingApi({ action: 'submit-score', submissionId: session.submissionId, points: correct });
+      status.classList.add('saved');
+      status.textContent = result.saved
+        ? `Đã cộng ${correct} điểm vào tài khoản ${currentUser}.`
+        : 'Đề thi này đã được tính điểm trước đó.';
+      await loadRanking();
+    } catch (error) {
+      status.classList.add('sync-error');
+      status.replaceChildren(document.createTextNode(`${error.message} `));
+      const retry = document.createElement('button'); retry.className = 'retry-score'; retry.textContent = 'Thử lưu lại';
+      const submissionId = session.submissionId;
+      retry.addEventListener('click', () => { status.classList.remove('sync-error'); status.replaceChildren(); submitScoreAgain(correct, submissionId, status); });
+      status.append(retry);
+    }
+  }
+  async function submitScoreAgain(points, submissionId, status) {
+    status.textContent = 'Đang thử lưu điểm…';
+    try {
+      const result = await callRankingApi({ action: 'submit-score', submissionId, points });
+      status.classList.add('saved');
+      status.textContent = result.saved ? `Đã cộng ${points} điểm vào tài khoản ${currentUser}.` : 'Đề thi này đã được tính điểm trước đó.';
+      await loadRanking();
+    } catch (error) {
+      status.classList.add('sync-error'); status.textContent = `${error.message} Hãy thử tải lại trang sau khi kiểm tra kết nối.`;
+    }
   }
 
   function renderResults(correct) {
@@ -283,7 +404,11 @@
     filter.setAttribute('aria-pressed', 'false'); filter.addEventListener('click', () => { reviewFilter = !reviewFilter; filter.classList.toggle('active', reviewFilter); filter.setAttribute('aria-pressed', String(reviewFilter)); renderReviewList(list); });
     head.append(filter);
     const list = document.createElement('div'); list.className = 'review-list';
-    els.results.append(hero, actions, head, list);
+    if (session.mode === 'exam') {
+      const sync = document.createElement('div'); sync.id = 'score-sync-status'; sync.className = 'score-sync-status';
+      sync.textContent = 'Điểm xếp hạng được tính bằng số câu trả lời đúng trong đề này.';
+      els.results.append(hero, actions, sync, head, list);
+    } else els.results.append(hero, actions, head, list);
     renderReviewList(list);
   }
   function renderReviewList(list) {

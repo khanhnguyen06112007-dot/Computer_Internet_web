@@ -41,6 +41,13 @@
           <button class="mode-card" id="exam-mode"><span class="mode-icon orange">◷</span><span class="mode-tag">MÔ PHỎNG PHÒNG THI</span><strong>Thi thử ngẫu nhiên</strong><span class="mode-description">Một đề thi mới gồm 70 câu được chọn ngẫu nhiên.</span><span class="mode-bottom"><b>70 câu hỏi</b><span class="arrow">→</span></span></button>
           <button class="mode-card" id="instant-mode"><span class="mode-icon green">✓</span><span class="mode-tag">PHẢN HỒI NGAY LẬP TỨC</span><strong>Luyện tập 250 câu</strong><span class="mode-description">Xem đáp án và lời giải ngay sau khi chọn. Mỗi câu chỉ trả lời một lần.</span><span class="mode-bottom"><b><span id="instant-count">250</span> câu · có giải thích</b><span class="arrow">→</span></span></button>
         </div>
+        <section id="ranking-panel" class="ranking-panel" hidden>
+          <div class="ranking-heading"><div><span class="eyebrow">ĐƯỜNG ĐUA KIẾN THỨC</span><h2>Bảng xếp hạng</h2><p>Tích lũy điểm qua mỗi đề thi thử 70 câu.</p></div><button id="refresh-ranking" class="refresh-ranking" type="button" aria-label="Tải lại bảng xếp hạng">↻</button></div>
+          <div id="my-rank-card" class="my-rank-card"></div>
+          <div id="ranking-content" class="ranking-content" aria-live="polite"></div>
+          <div class="ranking-footnote">Mỗi câu đúng trong đề thi thử = 1 điểm · Mỗi 150 điểm lên một bậc</div>
+        </section>
+        <div id="guest-rank-note" class="guest-rank-note" hidden><span class="guest-rank-icon">♙</span><span><b>Đang tham gia với tư cách khách</b><small>Điểm và thứ hạng chỉ được lưu cho tài khoản đã đăng nhập.</small></span></div>
         <div id="load-area" class="load-area"><div class="load-message"><span class="load-icon">↥</span><div><b>Đổi ngân hàng câu hỏi (không bắt buộc)</b><p>questions.json được nạp tự động. Bạn cũng có thể chọn bộ câu hỏi khác từ thiết bị.</p></div></div><label class="file-button" for="json-file">Chọn tệp JSON</label><input id="json-file" type="file" accept=".json,application/json" hidden></div>
         <div class="privacy-note"><span>🔒</span> Không cần tài khoản · Dữ liệu của bạn không được tải lên mạng</div>
       </div>
@@ -57,6 +64,7 @@
   </main>
   <dialog id="confirm-dialog"><form method="dialog"><span class="dialog-icon">?</span><h2 id="dialog-title">Nộp bài?</h2><p id="dialog-message"></p><div class="dialog-actions"><button class="dialog-cancel" value="cancel">Tiếp tục làm</button><button class="submit-button" value="submit">Nộp bài <span>→</span></button></div></form></dialog>
   <script src="bank-data.js"></script>
+  <script src="supabase-config.js"></script>
   <script src="app.js"></script>
 </body>
 </html>
