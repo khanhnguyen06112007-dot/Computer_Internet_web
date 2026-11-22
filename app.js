@@ -11,6 +11,7 @@
   const accounts = { NguyenVanKhanh: '25120357', NgoAnhNguyen: '25120112', HuynhTanDuc: '25120478' };
   const AUTH_KEY = 'networkQuizUser';
   let currentUser = null;
+  let soundEnabled = localStorage.getItem('networkQuizSound') !== 'off';
 
   function normalizeBank(data) {
     if (!data || !Array.isArray(data.topics)) throw new Error('Không tìm thấy danh sách “topics” trong JSON. Hãy chọn tệp ngân hàng câu hỏi đúng định dạng.');
@@ -106,9 +107,49 @@
       els.loginError.hidden = false;
     }
   });
+  $('#guest-login').addEventListener('click', () => {
+    localStorage.setItem(AUTH_KEY, 'guest');
+    els.loginError.hidden = true;
+    setSignedIn('Khách');
+  });
   $('#logout').addEventListener('click', signOut);
   const rememberedUser = localStorage.getItem(AUTH_KEY);
-  if (rememberedUser && Object.hasOwn(accounts, rememberedUser)) setSignedIn(rememberedUser);
+  if (rememberedUser === 'guest' || (rememberedUser && Object.hasOwn(accounts, rememberedUser))) {
+    setSignedIn(rememberedUser === 'guest' ? 'Khách' : rememberedUser);
+  }
+  function updateSoundButton() {
+    const button = $('#sound-toggle');
+    button.textContent = soundEnabled ? '♫ Âm thanh bật' : '♫ Âm thanh tắt';
+    button.setAttribute('aria-pressed', String(soundEnabled));
+    button.classList.toggle('muted', !soundEnabled);
+  }
+  function playCorrectSound() {
+    if (!soundEnabled) return;
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContextClass) return;
+    try {
+      const context = new AudioContextClass();
+      [660, 880].forEach((frequency, index) => {
+        const oscillator = context.createOscillator();
+        const gain = context.createGain();
+        const start = context.currentTime + index * 0.13;
+        oscillator.type = 'sine';
+        oscillator.frequency.setValueAtTime(frequency, start);
+        gain.gain.setValueAtTime(0.0001, start);
+        gain.gain.exponentialRampToValueAtTime(0.12, start + 0.012);
+        gain.gain.exponentialRampToValueAtTime(0.0001, start + 0.085);
+        oscillator.connect(gain); gain.connect(context.destination);
+        oscillator.start(start); oscillator.stop(start + 0.09);
+      });
+      window.setTimeout(() => context.close(), 450);
+    } catch (_) { /* Âm thanh không khả dụng trên một số trình duyệt hoặc thiết bị. */ }
+  }
+  $('#sound-toggle').addEventListener('click', () => {
+    soundEnabled = !soundEnabled;
+    localStorage.setItem('networkQuizSound', soundEnabled ? 'on' : 'off');
+    updateSoundButton();
+  });
+  updateSoundButton();
 
   els.file.addEventListener('change', async event => {
     const file = event.target.files?.[0]; if (!file) return;
@@ -165,7 +206,13 @@
       const mark = document.createElement('span'); mark.className = 'option-letter'; mark.textContent = key;
       const text = document.createElement('span'); text.textContent = value;
       button.append(mark, text);
-      button.addEventListener('click', () => { if (!session.submitted && !(session.mode === 'instant' && session.answers[index] !== null)) { session.answers[index] = key; renderQuestion(); } });
+      button.addEventListener('click', () => {
+        if (!session.submitted && !(session.mode === 'instant' && session.answers[index] !== null)) {
+          session.answers[index] = key;
+          if (session.mode === 'instant' && key === q.answer) playCorrectSound();
+          renderQuestion();
+        }
+      });
       options.append(button);
     });
     const explanation = $('#explanation');

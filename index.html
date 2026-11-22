@@ -21,6 +21,8 @@
         <label for="password">Mật khẩu</label><input id="password" name="password" type="password" autocomplete="current-password" required>
         <div id="login-error" class="login-error" role="alert" hidden></div>
         <button class="login-button" type="submit">Đăng nhập <span>→</span></button>
+        <div class="login-divider"><span>HOẶC</span></div>
+        <button id="guest-login" class="guest-button" type="button"><span class="guest-avatar">☺</span><span><b>Tham gia với tư cách khách</b><small>Vào luyện tập ngay, không cần tài khoản</small></span><span class="guest-arrow">→</span></button>
       </form>
     </section>
     <section id="home" class="home-view" hidden>
@@ -45,7 +47,7 @@
       <footer>HỌC TẬP TẬP TRUNG <span>·</span> TIẾN BỘ MỖI NGÀY</footer>
     </section>
     <section id="quiz" class="quiz-view" hidden>
-      <div class="quiz-head"><button class="text-button" id="back-home">← <span>Trang chủ</span></button><div class="quiz-title"><span class="eyebrow" id="quiz-kind">ÔN TẬP</span><h1 id="quiz-topic">Ngân hàng câu hỏi</h1></div><button id="submit-top" class="submit-button">Nộp bài <span>→</span></button></div>
+      <div class="quiz-head"><button class="text-button" id="back-home">← <span>Trang chủ</span></button><div class="quiz-title"><span class="eyebrow" id="quiz-kind">ÔN TẬP</span><h1 id="quiz-topic">Ngân hàng câu hỏi</h1></div><div class="quiz-actions"><button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="true">♫ Âm thanh bật</button><button id="submit-top" class="submit-button">Nộp bài <span>→</span></button></div></div>
       <div class="progress-row"><div><b id="question-position">Câu 1</b><span id="answered-count">Đã làm 0/250 câu</span></div><div class="progress-track"><div id="progress-fill"></div></div></div>
       <div class="quiz-layout"><section class="question-panel"><div class="question-meta"><span id="topic-label" class="topic-pill">Chủ đề 1</span><span id="question-counter">01 / 250</span></div><h2 id="question-text"></h2><div id="options" class="options"></div><div id="explanation" class="explanation" hidden></div><div class="question-controls"><button id="prev-question" class="nav-button">← <span>Câu trước</span></button><span id="question-jump-label">1 trên 250</span><button id="next-question" class="nav-button">Câu tiếp <span>→</span></button></div></section>
         <aside class="navigator"><div class="navigator-header"><div><h3>Danh sách câu</h3><p id="navigator-summary">0 đã làm</p></div><button id="navigator-toggle" aria-label="Thu gọn danh sách">−</button></div><div id="navigator-grid" class="navigator-grid"></div><div class="legend"><span><i class="legend-current"></i> Đang xem</span><span><i class="legend-answered"></i> Đã chọn</span><span><i class="legend-empty"></i> Chưa làm</span></div></aside>
