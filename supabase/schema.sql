@@ -1,6 +1,6 @@
 -- Run this once in Supabase Dashboard > SQL Editor.
 create table if not exists public.quiz_players (
-  username text primary key check (username in ('NguyenVanKhanh', 'NgoAnhNguyen', 'HuynhTanDuc')),
+  username text primary key check (username in ('NguyenVanKhanh', 'NgoAnhNguyen', 'HuynhTanDuc', 'Danh')),
   total_points integer not null default 0 check (total_points >= 0),
   created_at timestamptz not null default now(),
   updated_at timestamptz not null default now()
@@ -31,7 +31,7 @@ security definer
 set search_path = ''
 as $$
 begin
-  if p_username not in ('NguyenVanKhanh', 'NgoAnhNguyen', 'HuynhTanDuc')
+  if p_username not in ('NguyenVanKhanh', 'NgoAnhNguyen', 'HuynhTanDuc', 'Danh')
      or p_points < 0 or p_points > 70 then
     raise exception 'Invalid score submission';
   end if;
@@ -57,5 +57,5 @@ revoke all on function public.add_quiz_score(text, uuid, integer) from public, a
 grant execute on function public.add_quiz_score(text, uuid, integer) to service_role;
 
 insert into public.quiz_players(username) values
-  ('NguyenVanKhanh'), ('NgoAnhNguyen'), ('HuynhTanDuc')
+  ('NguyenVanKhanh'), ('NgoAnhNguyen'), ('HuynhTanDuc'), ('Danh')
 on conflict (username) do nothing;

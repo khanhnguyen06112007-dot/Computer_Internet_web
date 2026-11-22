@@ -23,7 +23,7 @@ Lấy `YOUR_PROJECT_REF` trong **Project Settings → General**.
 Tạo `QUIZ_TOKEN_SECRET` ngẫu nhiên, dài tối thiểu 32 ký tự. Đặt mật khẩu mới (không dùng mật khẩu đã từng nằm trong mã web công khai) rồi triển khai hàm:
 
 ```text
-supabase secrets set QUIZ_TOKEN_SECRET="PASTE_A_LONG_RANDOM_SECRET" QUIZ_ACCOUNTS_JSON='{"NguyenVanKhanh":"SET_NEW_PASSWORD_1","NgoAnhNguyen":"SET_NEW_PASSWORD_2","HuynhTanDuc":"SET_NEW_PASSWORD_3"}'
+supabase secrets set QUIZ_TOKEN_SECRET="PASTE_A_LONG_RANDOM_SECRET" QUIZ_ACCOUNTS_JSON='{"NguyenVanKhanh":"SET_NEW_PASSWORD_1","NgoAnhNguyen":"SET_NEW_PASSWORD_2","HuynhTanDuc":"SET_NEW_PASSWORD_3","Danh":"SET_NEW_PASSWORD_4"}'
 supabase functions deploy quiz-ranking
 ```
 
