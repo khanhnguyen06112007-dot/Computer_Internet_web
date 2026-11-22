@@ -80,9 +80,10 @@
   }
 
   const RANKS = ['Đồng', 'Bạc', 'Vàng', 'Bạch Kim', 'Kim Cương', 'Tinh Anh', 'Cao Thủ', 'Chiến Tướng', 'Chiến Thần'];
+  const RANK_POINTS = 50;
   function rankFor(points) {
-    const level = Math.min(Math.floor(points / 150), RANKS.length - 1);
-    return { name: RANKS[level], level, remaining: level === RANKS.length - 1 ? 0 : 150 - (points % 150) };
+    const level = Math.min(Math.floor(points / RANK_POINTS), RANKS.length - 1);
+    return { name: RANKS[level], level, remaining: level === RANKS.length - 1 ? 0 : RANK_POINTS - (points % RANK_POINTS) };
   }
   function makeRankEmblem(level, small = false) {
     const emblem = document.createElement('span');
@@ -117,7 +118,7 @@
     const score = document.createElement('span'); score.className = 'my-rank-score'; score.textContent = `${points} điểm tích lũy`;
     const progressTrack = document.createElement('span'); progressTrack.className = 'rank-progress-track';
     const progressFill = document.createElement('span'); progressFill.className = 'rank-progress-fill';
-    progressFill.style.width = rank.level === RANKS.length - 1 ? '100%' : `${(points % 150) / 150 * 100}%`;
+    progressFill.style.width = rank.level === RANKS.length - 1 ? '100%' : `${(points % RANK_POINTS) / RANK_POINTS * 100}%`;
     progressTrack.append(progressFill);
     detail.append(label, name, score, progressTrack); rankCard.append(detail);
     const next = document.createElement('span'); next.className = 'rank-next';

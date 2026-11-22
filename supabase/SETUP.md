@@ -40,7 +40,7 @@ window.QUIZ_SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_...';
 
 Chỉ dùng publishable key ở trang web; không đưa secret/service-role key vào `supabase-config.js`.
 
-Commit/push toàn bộ tệp dự án lên GitHub; Vercel sẽ triển khai phiên bản mới. Có thể vào ứng dụng bằng tài khoản để xem bảng xếp hạng; khách vẫn luyện tập được nhưng điểm không được lưu. Mỗi câu đúng trong đề thi thử 70 câu cộng 1 điểm; cứ 150 điểm lên một bậc.
+Commit/push toàn bộ tệp dự án lên GitHub; Vercel sẽ triển khai phiên bản mới. Có thể vào ứng dụng bằng tài khoản để xem bảng xếp hạng; khách vẫn luyện tập được nhưng điểm không được lưu. Mỗi câu đúng trong đề thi thử 70 câu cộng 1 điểm; cứ 50 điểm lên một bậc.
 
 ## Ghi chú về độ tin cậy điểm
 
