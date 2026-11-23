@@ -211,7 +211,7 @@
     button.setAttribute('aria-pressed', String(soundEnabled));
     button.classList.toggle('muted', !soundEnabled);
   }
-  function playCorrectSound() {
+  function playChoiceSound() {
     if (!soundEnabled) return;
     const AudioContextClass = window.AudioContext || window.webkitAudioContext;
     if (!AudioContextClass) return;
@@ -298,7 +298,7 @@
       button.addEventListener('click', () => {
         if (!session.submitted && !(session.mode === 'instant' && session.answers[index] !== null)) {
           session.answers[index] = key;
-          if (session.mode === 'instant' && key === q.answer) playCorrectSound();
+          playChoiceSound();
           renderQuestion();
         }
       });

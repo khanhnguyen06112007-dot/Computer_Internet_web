@@ -1,6 +1,5 @@
 window.QUIZ_DATA = {
-  "project_title": "Ngân hàng 250 Câu hỏi Trắc nghiệm Mạng Máy Tính - Ôn thi Giữa kỳ",
-  "total_topics": 5,
+  "title": "Ngân hàng 250 câu trắc nghiệm Mạng máy tính (Ôn thi giữa kỳ)",
   "total_questions": 250,
   "topics": [
     {
@@ -12,36 +11,36 @@ window.QUIZ_DATA = {
           "id": 1,
           "question": "Khái niệm nào sau đây mô tả chính xác nhất về bản chất của mạng máy tính?",
           "options": {
-            "A": "Tập hợp các máy tính độc lập được kết nối với nhau thông qua các đường truyền vật lý để truyền tải dữ liệu và chia sẻ tài nguyên.",
+            "A": "Phần mềm chuyên dụng cho phép nhiều người dùng cùng truy cập vào một cơ sở dữ liệu trên ổ đĩa mềm.",
             "B": "Hệ thống bao gồm một máy chủ lớn (Mainframe) điều khiển toàn bộ các máy trạm đầu cuối câm (dumb terminals).",
-            "C": "Phần mềm chuyên dụng cho phép nhiều người dùng cùng truy cập vào một cơ sở dữ liệu trên ổ đĩa mềm.",
+            "C": "Tập hợp các máy tính độc lập được kết nối với nhau thông qua các đường truyền vật lý để truyền tải dữ liệu và chia sẻ tài nguyên.",
             "D": "Tập hợp các vi điều khiển được liên kết thông qua cổng nối tiếp để nâng cao xung nhịp xử lý đồ họa."
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Mạng máy tính là tập hợp các máy tính tự trị (độc lập) được liên kết với nhau bằng các đường truyền vật lý hoặc sóng vô tuyến theo kiến trúc nhất định nhằm trao đổi dữ liệu, tự phát hiện/sửa lỗi và chia sẻ tài nguyên (tập tin, máy in, phần cứng)."
         },
         {
           "id": 2,
           "question": "Theo tài liệu tổng quan mạng, mạng máy tính có khả năng tự phát hiện và xử lý các sự cố nào sau đây trong quá trình truyền dữ liệu?",
           "options": {
-            "A": "Hư dữ liệu, mất dữ liệu, dữ liệu truyền bị trùng lặp và dữ liệu đến đích không đúng thứ tự.",
-            "B": "Cháy nổ card mạng, đứt cáp viễn thông đáy biển và xung đột nguồn điện máy chủ.",
-            "C": "Tự động sửa lỗi phần cứng CPU và nâng cấp bộ nhớ RAM của các trạm làm việc khi bị nghẽn.",
-            "D": "Tự động chuyển đổi tài liệu văn bản tiếng Anh sang tiếng Việt khi qua cổng truyền thông."
+            "A": "Tự động chuyển đổi tài liệu văn bản tiếng Anh sang tiếng Việt khi qua cổng truyền thông.",
+            "B": "Hư dữ liệu, mất dữ liệu, dữ liệu truyền bị trùng lặp và dữ liệu đến đích không đúng thứ tự.",
+            "C": "Cháy nổ card mạng, đứt cáp viễn thông đáy biển và xung đột nguồn điện máy chủ.",
+            "D": "Tự động sửa lỗi phần cứng CPU và nâng cấp bộ nhớ RAM của các trạm làm việc khi bị nghẽn."
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Tài liệu môn học chỉ rõ mạng máy tính có cơ chế kiểm soát liên lạc tin cậy: tự phát hiện và sửa các lỗi bao gồm: hư dữ liệu (data corruption), mất dữ liệu (data loss), dữ liệu truyền bị trùng (duplicate data) và dữ liệu đến đích không đúng thứ tự (out-of-order)."
         },
         {
           "id": 3,
           "question": "Ý tưởng mầm mống đầu tiên khởi nguồn cho sự ra đời của mạng máy tính gắn liền với nhà khoa học nào?",
           "options": {
-            "A": "J.C.R. Licklider (MIT)",
-            "B": "Tim Berners-Lee (CERN)",
+            "A": "Tim Berners-Lee (CERN)",
+            "B": "J.C.R. Licklider (MIT)",
             "C": "Alan Turing (Đại học Cambridge)",
             "D": "Vint Cerf và Bob Kahn"
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Theo dòng lịch sử phát triển mạng máy tính trong bài giảng, ý tưởng mầm mống đầu tiên về một mạng kết nối toàn cầu là của J.C.R. Licklider thuộc viện công nghệ MIT (được ông đề xuất vào đầu thập niên 1960)."
         },
         {
@@ -61,9 +60,9 @@ window.QUIZ_DATA = {
           "question": "Đặc điểm cơ bản của mạng cục bộ (LAN - Local Area Network) là gì?",
           "options": {
             "A": "Phạm vi địa lý nhỏ (phòng máy, tòa nhà), thuộc quyền quản lý của một tổ chức, tốc độ truyền cao, tỷ lệ lỗi thấp và chi phí lắp đặt thấp.",
-            "B": "Phạm vi trải dài toàn cầu, tốc độ truyền dẫn rất cao, chi phí thấp và do Liên Hợp Quốc điều hành.",
-            "C": "Kết nối các thiết bị trong phạm vi toàn thành phố, thuộc sở hữu của nhiều quốc gia và không sử dụng đường truyền vật lý.",
-            "D": "Hệ thống mạng có tỷ lệ lỗi rất cao, tốc độ truyền chậm hơn mạng diện rộng WAN nhưng chi phí duy trì đắt đỏ. TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ"
+            "B": "Kết nối các thiết bị trong phạm vi toàn thành phố, thuộc sở hữu của nhiều quốc gia và không sử dụng đường truyền vật lý.",
+            "C": "Phạm vi trải dài toàn cầu, tốc độ truyền dẫn rất cao, chi phí thấp và do Liên Hợp Quốc điều hành.",
+            "D": "Hệ thống mạng có tỷ lệ lỗi rất cao, tốc độ truyền chậm hơn mạng diện rộng WAN nhưng chi phí duy trì đắt đỏ."
           },
           "answer": "A",
           "explanation": "LAN có kích thước nhỏ (tòa nhà, phòng máy, văn phòng công ty), do một đơn vị/tổ chức quản lý, đường truyền ngắn nên tốc độ cao, ít lỗi và chi phí đầu tư thấp."
@@ -72,24 +71,24 @@ window.QUIZ_DATA = {
           "id": 6,
           "question": "Mạng đô thị (MAN - Metropolitan Area Network) có phạm vi hoạt động và cấu trúc như thế nào?",
           "options": {
-            "A": "Kết hợp nhiều mạng LAN lại với nhau trong phạm vi một quận, huyện hoặc thành phố, thuộc một đơn vị/tổ chức.",
+            "A": "Kết nối các trạm quan sát không gian vũ trụ xuyên lục địa không giới hạn khoảng cách.",
             "B": "Kết nối các thiết bị thông minh cá nhân trong phạm vi dưới 10 mét xung quanh một người dùng.",
-            "C": "Kết nối các trạm quan sát không gian vũ trụ xuyên lục địa không giới hạn khoảng cách.",
-            "D": "Mạng chỉ dành riêng cho các ngân hàng trung ương kết nối trực tiếp không qua đường cáp viễn thông."
+            "C": "Mạng chỉ dành riêng cho các ngân hàng trung ương kết nối trực tiếp không qua đường cáp viễn thông.",
+            "D": "Kết hợp nhiều mạng LAN lại với nhau trong phạm vi một quận, huyện hoặc thành phố, thuộc một đơn vị/tổ chức."
           },
-          "answer": "A",
+          "answer": "D",
           "explanation": "Tài liệu chỉ rõ: Mạng MAN là sự kết hợp của nhiều mạng LAN, có phạm vi hoạt động trong một quận, huyện, thành phố, thuộc quản lý của một đơn vị/tổ chức; tốc độ truyền và chi phí nằm giữa LAN và WAN."
         },
         {
           "id": 7,
           "question": "Mạng diện rộng (WAN - Wide Area Network) có đặc trưng nào sau đây?",
           "options": {
-            "A": "Kết hợp nhiều mạng LAN và MAN, phạm vi quốc gia hoặc quốc tế, thuộc quyền sở hữu của nhiều đơn vị/tổ chức, tốc độ tương đối chậm và tỷ lệ lỗi cao hơn LAN.",
-            "B": "Kích thước chỉ giới hạn trong một khuôn viên trường đại học và chỉ dùng sóng radio cự ly ngắn.",
-            "C": "Luôn đạt tốc độ truyền tức thời không có độ trễ do được kết nối bằng đường cáp quang chuyên biệt của một doanh nghiệp duy nhất.",
-            "D": "Là mạng nội bộ không có kết nối ra bên ngoài và hoàn toàn miễn phí cước viễn thông."
+            "A": "Luôn đạt tốc độ truyền tức thời không có độ trễ do được kết nối bằng đường cáp quang chuyên biệt của một doanh nghiệp duy nhất.",
+            "B": "Là mạng nội bộ không có kết nối ra bên ngoài và hoàn toàn miễn phí cước viễn thông.",
+            "C": "Kết hợp nhiều mạng LAN và MAN, phạm vi quốc gia hoặc quốc tế, thuộc quyền sở hữu của nhiều đơn vị/tổ chức, tốc độ tương đối chậm và tỷ lệ lỗi cao hơn LAN.",
+            "D": "Kích thước chỉ giới hạn trong một khuôn viên trường đại học và chỉ dùng sóng radio cự ly ngắn."
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "WAN kết nối nhiều mạng LAN, MAN trên phạm vi rộng lớn (quốc gia, châu lục, toàn cầu), thuộc nhiều tổ chức quản lý, do cự ly dài và hạ tầng phức tạp nên tốc độ thường chậm hơn, tỷ lệ lỗi cao hơn và chi phí viễn thông lớn hơn."
         },
         {
@@ -97,9 +96,9 @@ window.QUIZ_DATA = {
           "question": "Xét theo phạm vi hoạt động và chính sách truy cập, mạng Extranet được định nghĩa là:",
           "options": {
             "A": "Mạng nội bộ mở rộng, cho phép người dùng hoặc đối tác bên ngoài truy cập vào một phần tài nguyên thông qua cơ chế chứng thực bảo mật.",
-            "B": "Mạng máy tính toàn cầu công cộng mở hoàn toàn cho tất cả mọi người mà không cần tài khoản hay mật khẩu.",
-            "C": "Mạng hoàn toàn cô lập, tuyệt đối không có bất kỳ cổng giao tiếp hay liên kết nào ra thế giới bên ngoài.",
-            "D": "Mạng chỉ sử dụng cho các thiết bị di động kết nối mạng không dây 5G mà không cần giao thức TCP/IP."
+            "B": "Mạng chỉ sử dụng cho các thiết bị di động kết nối mạng không dây 5G mà không cần giao thức TCP/IP.",
+            "C": "Mạng máy tính toàn cầu công cộng mở hoàn toàn cho tất cả mọi người mà không cần tài khoản hay mật khẩu.",
+            "D": "Mạng hoàn toàn cô lập, tuyệt đối không có bất kỳ cổng giao tiếp hay liên kết nào ra thế giới bên ngoài."
           },
           "answer": "A",
           "explanation": "Tài liệu phân loại mạng theo phạm vi: Intranet (nội bộ trong một đơn vị), Extranet (intranet cho phép bên ngoài truy cập thông qua chứng thực/xác thực), Internet (cho phép công chúng bên ngoài truy cập)."
@@ -108,58 +107,58 @@ window.QUIZ_DATA = {
           "id": 9,
           "question": "Mạng Intranet khác mạng Internet ở điểm mấu chốt nào sau đây?",
           "options": {
-            "A": "Intranet chỉ phục vụ nội bộ trong một cơ quan/đơn vị và bị giới hạn quyền truy cập từ công chúng bên ngoài.",
-            "B": "Intranet sử dụng bộ giao thức OSI 7 tầng còn Internet chỉ dùng bộ giao thức độc quyền của Microsoft.",
-            "C": "Intranet không dùng địa chỉ IP mà chỉ sử dụng tên người dùng để định tuyến dữ liệu.",
-            "D": "Intranet chỉ hoạt động khi không có điện thoại di động và máy in trong mạng."
+            "A": "Intranet không dùng địa chỉ IP mà chỉ sử dụng tên người dùng để định tuyến dữ liệu.",
+            "B": "Intranet chỉ hoạt động khi không có điện thoại di động và máy in trong mạng.",
+            "C": "Intranet chỉ phục vụ nội bộ trong một cơ quan/đơn vị và bị giới hạn quyền truy cập từ công chúng bên ngoài.",
+            "D": "Intranet sử dụng bộ giao thức OSI 7 tầng còn Internet chỉ dùng bộ giao thức độc quyền của Microsoft."
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Intranet là mạng nội bộ phục vụ việc liên lạc và chia sẻ tài nguyên trong phạm vi một tổ chức/đơn vị, người dùng bên ngoài Internet thông thường không thể tự do truy cập vào nếu không được cấp quyền."
         },
         {
           "id": 10,
           "question": "Trong phân loại mạng không dây (Wireless LAN), chế độ mạng Ad-hoc có đặc điểm gì?",
           "options": {
-            "A": "Các thiết bị tự kết nối ngang hàng trực tiếp với nhau mà không cần thông qua điểm truy cập trung tâm (Access Point).",
-            "B": "Bắt buộc phải có thiết bị định tuyến Router và Access Point tập trung để quản lý lưu lượng.",
-            "C": "Tốc độ truyền tải luôn gấp đôi mạng cáp quang tốc độ cao 10 Gbps.",
-            "D": "Khoảng cách truyền sóng phủ sóng trên phạm vi toàn bộ một châu lục."
+            "A": "Bắt buộc phải có thiết bị định tuyến Router và Access Point tập trung để quản lý lưu lượng.",
+            "B": "Các thiết bị tự kết nối ngang hàng trực tiếp với nhau mà không cần thông qua điểm truy cập trung tâm (Access Point).",
+            "C": "Khoảng cách truyền sóng phủ sóng trên phạm vi toàn bộ một châu lục.",
+            "D": "Tốc độ truyền tải luôn gấp đôi mạng cáp quang tốc độ cao 10 Gbps."
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Mạng không dây gồm 2 chế độ: Chế độ có hạ tầng (Infrastructure - qua Access Point trung tâm) và Chế độ Ad-hoc (các thiết bị không dây tự kết nối ngang hàng trực tiếp với nhau theo nhu cầu tạm thời mà không cần AP)."
         },
         {
           "id": 11,
           "question": "Đồ hình mạng (Network Topology) được định nghĩa là gì trong tài liệu môn học?",
           "options": {
-            "A": "Cách thức bố trí đường truyền và cấu hình hình học để nối kết các nút (node) trong mạng.",
-            "B": "Thuật toán mã hóa khóa công khai RSA dùng để bảo mật các tệp tin trong ổ cứng.",
-            "C": "Danh sách các địa chỉ IP của tất cả các máy tính đang online trong một trang web.",
-            "D": "Tốc độ quay của đĩa từ bên trong thiết bị lưu trữ dữ liệu tập trung SAN."
+            "A": "Thuật toán mã hóa khóa công khai RSA dùng để bảo mật các tệp tin trong ổ cứng.",
+            "B": "Tốc độ quay của đĩa từ bên trong thiết bị lưu trữ dữ liệu tập trung SAN.",
+            "C": "Cách thức bố trí đường truyền và cấu hình hình học để nối kết các nút (node) trong mạng.",
+            "D": "Danh sách các địa chỉ IP của tất cả các máy tính đang online trong một trang web."
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Topology (đồ hình mạng) là cấu trúc hình học hay sơ đồ mô tả cách thức bố trí, sắp đặt đường truyền vật lý hoặc logic để liên kết các nút mạng với nhau."
         },
         {
           "id": 12,
           "question": "Sự khác biệt căn bản giữa Đồ hình vật lý (Physical Topology) và Đồ hình logic (Logical Topology) là gì?",
           "options": {
-            "A": "Đồ hình vật lý mô tả cách bố trí đường dây cáp thực tế; đồ hình logic mô tả con đường mà dữ liệu thực sự di chuyển giữa các nút.",
-            "B": "Đồ hình vật lý sử dụng sóng vô tuyến; đồ hình logic chỉ sử dụng cáp đồng trục.",
+            "A": "Đồ hình vật lý áp dụng cho mạng WAN; đồ hình logic chỉ dùng cho mạng mạng gia đình Home Network.",
+            "B": "Đồ hình vật lý mô tả cách bố trí đường dây cáp thực tế; đồ hình logic mô tả con đường mà dữ liệu thực sự di chuyển giữa các nút.",
             "C": "Đồ hình vật lý thay đổi liên tục theo giây; đồ hình logic là cố định vĩnh viễn không thể thay đổi.",
-            "D": "Đồ hình vật lý áp dụng cho mạng WAN; đồ hình logic chỉ dùng cho mạng mạng gia đình Home Network. TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ"
+            "D": "Đồ hình vật lý sử dụng sóng vô tuyến; đồ hình logic chỉ sử dụng cáp đồng trục."
           },
-          "answer": "A",
-          "explanation": "Bài giảng nêu rõ: Đồ hình vật lý mô tả cách bố trí đường truyền thật sự (vị trí lắp đặt dây cáp, cổng cắm), trong khi đồ hình logic mô tả con đường và cách thức mà tín hiệu/dữ liệu thật sự di chuyển giữa các thiết bị. TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ"
+          "answer": "B",
+          "explanation": "Bài giảng nêu rõ: Đồ hình vật lý mô tả cách bố trí đường truyền thật sự (vị trí lắp đặt dây cáp, cổng cắm), trong khi đồ hình logic mô tả con đường và cách thức mà tín hiệu/dữ liệu thật sự di chuyển giữa các thiết bị."
         },
         {
           "id": 13,
           "question": "Trong đồ hình mạng dạng đường trục (Bus Topology), thiết bị nào bắt buộc phải có ở hai đầu dây cáp chính?",
           "options": {
             "A": "Terminator (Điện trở đầu cuối)",
-            "B": "Repeater khuếch đại quang học",
-            "C": "Router chuyển mạch gói",
-            "D": "Firewall tường lửa phần cứng"
+            "B": "Firewall tường lửa phần cứng",
+            "C": "Repeater khuếch đại quang học",
+            "D": "Router chuyển mạch gói"
           },
           "answer": "A",
           "explanation": "Mạng Bus sử dụng một đường truyền chính chia sẻ chung. Ở hai đầu tuyến cáp chính bắt buộc phải gắn thiết bị kết thúc (Terminator) để hấp thụ tín hiệu, ngăn hiện tượng dội ngược tín hiệu (signal bounce) gây nhiễu và xung đột mạng."
@@ -180,24 +179,24 @@ window.QUIZ_DATA = {
           "id": 15,
           "question": "Cấu trúc mạng hình sao (Star Topology) có cơ chế kết nối như thế nào?",
           "options": {
-            "A": "Tất cả các nút mạng kết nối trực tiếp vào một thiết bị trung tâm (Hub, Switch hoặc Host).",
+            "A": "Mỗi nút mạng phải nối dây trực tiếp đến tất cả các nút mạng còn lại trong hệ thống.",
             "B": "Các máy tính nối tiếp nhau thành một chuỗi vòng tròn khép kín từ máy đầu tới máy cuối.",
-            "C": "Mỗi nút mạng phải nối dây trực tiếp đến tất cả các nút mạng còn lại trong hệ thống.",
-            "D": "Các nút mạng giao tiếp với nhau chỉ qua trạm vệ tinh địa tĩnh không cần dây dẫn."
+            "C": "Các nút mạng giao tiếp với nhau chỉ qua trạm vệ tinh địa tĩnh không cần dây dẫn.",
+            "D": "Tất cả các nút mạng kết nối trực tiếp vào một thiết bị trung tâm (Hub, Switch hoặc Host)."
           },
-          "answer": "A",
+          "answer": "D",
           "explanation": "Đồ hình hình sao (Star Topology) có các nút liên kết trực tiếp với nhau thông qua một nút trung tâm (như Hub hoặc Switch). Dữ liệu từ nút nguồn đi qua nút trung tâm trước khi đến đích."
         },
         {
           "id": 16,
           "question": "Ưu điểm vượt trội của mạng hình sao (Star Topology) so với mạng Bus là gì?",
           "options": {
-            "A": "Khi một máy tính hoặc sợi cáp nhánh bị hỏng, các máy tính khác trong mạng vẫn hoạt động bình thường.",
+            "A": "Tốc độ truyền luôn đạt tới vô hạn mà không bị ảnh hưởng bởi năng lực của thiết bị trung tâm.",
             "B": "Hoàn toàn không tốn dây cáp và không cần dùng nguồn điện xoay chiều.",
-            "C": "Tốc độ truyền luôn đạt tới vô hạn mà không bị ảnh hưởng bởi năng lực của thiết bị trung tâm.",
-            "D": "Khi thiết bị trung tâm hỏng, mạng tự động nhân bản thành mạng vòng Ring."
+            "C": "Khi thiết bị trung tâm hỏng, mạng tự động nhân bản thành mạng vòng Ring.",
+            "D": "Khi một máy tính hoặc sợi cáp nhánh bị hỏng, các máy tính khác trong mạng vẫn hoạt động bình thường."
           },
-          "answer": "A",
+          "answer": "D",
           "explanation": "Ưu điểm mạng Star: Dễ dàng thêm bớt máy tính, quản lý giám sát tập trung; khi một máy trạm hoặc một nhánh cáp nối đến máy đó bị lỗi, mạng của các máy còn lại không bị ảnh hưởng."
         },
         {
@@ -205,8 +204,8 @@ window.QUIZ_DATA = {
           "question": "Điểm nghẽn nghiêm trọng (Single Point of Failure) của cấu trúc mạng hình sao (Star) nằm ở đâu?",
           "options": {
             "A": "Thiết bị trung tâm (Hub/Switch) — nếu thiết bị trung tâm hỏng, toàn bộ mạng sẽ ngừng hoạt động.",
-            "B": "Bất kỳ một máy in nào trong mạng bị kẹt giấy.",
-            "C": "Trình duyệt web của một máy trạm bị treo khi tải video.",
+            "B": "Trình duyệt web của một máy trạm bị treo khi tải video.",
+            "C": "Bất kỳ một máy in nào trong mạng bị kẹt giấy.",
             "D": "Cáp nguồn của máy khách ở rìa mạng bị rút ra."
           },
           "answer": "A",
@@ -216,24 +215,24 @@ window.QUIZ_DATA = {
           "id": 18,
           "question": "Đặc điểm vận hành của đồ hình mạng hình vòng (Ring Topology) là gì?",
           "options": {
-            "A": "Các nút mạng kết nối liên tiếp tạo thành một vòng khép kín, tín hiệu truyền theo một chiều xác định từ nút này sang nút khác.",
-            "B": "Các nút mạng phát tín hiệu quảng bá ngẫu nhiên theo mọi hướng cùng một thời điểm.",
+            "A": "Luôn yêu cầu bộ định tuyến Router đặt tại mỗi điểm nút trung gian của vòng tròn.",
+            "B": "Các nút mạng kết nối liên tiếp tạo thành một vòng khép kín, tín hiệu truyền theo một chiều xác định từ nút này sang nút khác.",
             "C": "Mỗi nút mạng có ít nhất 10 kết nối cáp vật lý dự phòng tới trung tâm dữ liệu.",
-            "D": "Luôn yêu cầu bộ định tuyến Router đặt tại mỗi điểm nút trung gian của vòng tròn."
+            "D": "Các nút mạng phát tín hiệu quảng bá ngẫu nhiên theo mọi hướng cùng một thời điểm."
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Ring Topology: Các nút nối với nhau tạo thành vòng khép kín. Dữ liệu truyền tuần tự theo một chiều qua từng máy; máy tính có cơ hội truy cập mạng công bằng như nhau."
         },
         {
           "id": 19,
           "question": "Trong đồ hình mạng lưới toàn phần (Full Mesh Topology) gồm n máy tính, tổng số kết nối đường truyền vật lý trực tiếp giữa các cặp máy là bao nhiêu?",
           "options": {
-            "A": "n(n - 1) / 2",
-            "B": "n * (n + 1)",
-            "C": "2 * n - 1",
-            "D": "n^2"
+            "A": "n * (n + 1)",
+            "B": "n^2",
+            "C": "n(n - 1) / 2",
+            "D": "2 * n - 1"
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Trong mạng lưới toàn phần (Full Mesh), mỗi nút đều có đường nối thẳng tới tất cả n - 1 nút còn lại. Do mỗi kết nối nối giữa 2 nút nên tổng số đường liên kết vật lý là C(n, 2) = n(n - 1)/2."
         },
         {
@@ -241,9 +240,9 @@ window.QUIZ_DATA = {
           "question": "Ưu điểm lớn nhất của cấu trúc mạng dạng lưới (Mesh Topology) là gì?",
           "options": {
             "A": "Cung cấp độ dư thừa và độ tin cậy cực cao, dễ dàng cô lập và xử lý sự cố khi đường truyền đứt.",
-            "B": "Chi phí vật tư dây dẫn và cổng kết nối rẻ nhất trong các loại đồ hình mạng.",
-            "C": "Dễ dàng thi công lắp đặt và cấu hình nhất đối với các kỹ thuật viên sơ cấp.",
-            "D": "Không cần sử dụng bất kỳ giao thức mạng hay card mạng nào. TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ"
+            "B": "Dễ dàng thi công lắp đặt và cấu hình nhất đối với các kỹ thuật viên sơ cấp.",
+            "C": "Chi phí vật tư dây dẫn và cổng kết nối rẻ nhất trong các loại đồ hình mạng.",
+            "D": "Không cần sử dụng bất kỳ giao thức mạng hay card mạng nào."
           },
           "answer": "A",
           "explanation": "Mạng Mesh có tính sẵn sàng và độ tin cậy rất cao nhờ có nhiều đường đi dự phòng; đứt một kết nối thì dữ liệu vẫn đi qua các đường vòng khác. Nhược điểm là chi phí lắp đặt rất tốn kém do lượng cáp lớn."
@@ -252,213 +251,213 @@ window.QUIZ_DATA = {
           "id": 21,
           "question": "Theo giáo trình Kurose & Ross, mạng Internet được cấu thành từ hai phần kiến trúc cốt lõi nào?",
           "options": {
-            "A": "Vùng biên mạng (Network Edge) và Vùng lõi mạng (Network Core).",
-            "B": "Tầng ứng dụng (Application Layer) và Cáp ngầm quang học xuyên đại dương.",
-            "C": "Máy in văn phòng và Thiết bị lưu trữ đám mây của Microsoft.",
-            "D": "Hệ điều hành Windows và Phần mềm máy ảo Linux."
+            "A": "Tầng ứng dụng (Application Layer) và Cáp ngầm quang học xuyên đại dương.",
+            "B": "Máy in văn phòng và Thiết bị lưu trữ đám mây của Microsoft.",
+            "C": "Hệ điều hành Windows và Phần mềm máy ảo Linux.",
+            "D": "Vùng biên mạng (Network Edge) và Vùng lõi mạng (Network Core)."
           },
-          "answer": "A",
+          "answer": "D",
           "explanation": "Kiến trúc tổng quan Internet được phân chia thành: Vùng biên mạng (Network Edge - gồm các host, ứng dụng, mạng truy cập) và Vùng lõi mạng (Network Core - gồm các thiết bị chuyển mạch gói routers, switches liên kết với nhau)."
         },
         {
           "id": 22,
           "question": "Các thiết bị thuộc Vùng biên mạng (Network Edge) bao gồm những đối tượng nào?",
           "options": {
-            "A": "Các hệ thống đầu cuối (End Systems / Hosts) như máy tính cá nhân, máy chủ, điện thoại thông minh, thiết bị IoT.",
-            "B": "Chỉ duy nhất các thiết bị Router chuyển mạch đường trục quốc tế Tier-1.",
-            "C": "Các tuyến cáp quang biển và vệ tinh viễn thông địa tĩnh.",
-            "D": "Các trạm biến áp điện lực và cột ăng-ten phát sóng AM/FM."
+            "A": "Các tuyến cáp quang biển và vệ tinh viễn thông địa tĩnh.",
+            "B": "Các hệ thống đầu cuối (End Systems / Hosts) như máy tính cá nhân, máy chủ, điện thoại thông minh, thiết bị IoT.",
+            "C": "Các trạm biến áp điện lực và cột ăng-ten phát sóng AM/FM.",
+            "D": "Chỉ duy nhất các thiết bị Router chuyển mạch đường trục quốc tế Tier-1."
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Vùng biên mạng (Network Edge) chứa các End Systems (còn gọi là Hosts): máy tính, smartphone, laptop, server, các ứng dụng mạng chạy trên thiết bị người dùng."
         },
         {
           "id": 23,
           "question": "Vùng lõi mạng (Network Core) thực hiện chức năng cơ bản nào sau đây?",
           "options": {
-            "A": "Chuyển tiếp các gói tin (Forwarding packets) giữa các thiết bị chuyển mạch gói (Routers và Switches) qua mạng lưới liên kết viễn thông.",
-            "B": "Chạy trực tiếp các ứng dụng của người dùng như gửi email, chơi game trực tuyến và duyệt web.",
-            "C": "Cung cấp nguồn điện ổn định và làm mát cho các thiết bị di động của người dùng cuối.",
-            "D": "Tự động biên dịch mã nguồn phần mềm C++ sang ngôn ngữ máy."
+            "A": "Tự động biên dịch mã nguồn phần mềm C++ sang ngôn ngữ máy.",
+            "B": "Cung cấp nguồn điện ổn định và làm mát cho các thiết bị di động của người dùng cuối.",
+            "C": "Chuyển tiếp các gói tin (Forwarding packets) giữa các thiết bị chuyển mạch gói (Routers và Switches) qua mạng lưới liên kết viễn thông.",
+            "D": "Chạy trực tiếp các ứng dụng của người dùng như gửi email, chơi game trực tuyến và duyệt web."
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Network Core là mạng lưới gồm các bộ chuyển mạch gói (routers/switches) có nhiệm vụ di chuyển, định tuyến và chuyển tiếp các khối dữ liệu (packets) từ mạng nguồn qua các chặng trung gian đến mạng đích."
         },
         {
           "id": 24,
           "question": "Nguyên lý truyền dữ liệu trong mạng chuyển mạch gói (Packet Switching) dựa trên cơ chế nào?",
           "options": {
-            "A": "Lưu trữ và chuyển tiếp (Store-and-forward) — router phải nhận trọn vẹn toàn bộ gói tin trước khi bắt đầu truyền gói tin đó lên liên kết kế tiếp.",
-            "B": "Dành riêng hoàn toàn một kênh truyền vật lý cố định cho một phiên liên lạc suốt từ đầu đến cuối.",
+            "A": "Dành riêng hoàn toàn một kênh truyền vật lý cố định cho một phiên liên lạc suốt từ đầu đến cuối.",
+            "B": "Không cần chia nhỏ dữ liệu mà gửi trực tiếp cả một tệp tin dung lượng 100 GB trong một xung điện duy nhất.",
             "C": "Biến đổi dữ liệu thành tín hiệu âm thanh tần số thấp phát qua loa phóng thanh công cộng.",
-            "D": "Không cần chia nhỏ dữ liệu mà gửi trực tiếp cả một tệp tin dung lượng 100 GB trong một xung điện duy nhất."
+            "D": "Lưu trữ và chuyển tiếp (Store-and-forward) — router phải nhận trọn vẹn toàn bộ gói tin trước khi bắt đầu truyền gói tin đó lên liên kết kế tiếp."
           },
-          "answer": "A",
+          "answer": "D",
           "explanation": "Mạng lõi Internet sử dụng cơ chế Chuyển mạch gói (Packet Switching) với nguyên lý Store-and-forward: router phải nhận đầy đủ tất cả các bit của gói tin rồi mới kiểm tra lỗi và truyền tiếp lên đường truyền ra."
         },
         {
           "id": 25,
           "question": "So với chuyển mạch kênh (Circuit Switching), ưu điểm lớn nhất của chuyển mạch gói (Packet Switching) là gì?",
           "options": {
-            "A": "Cho phép dồn kênh thống kê (Statistical Multiplexing), tận dụng tối đa băng thông đường truyền và phục vụ được nhiều người dùng hơn khi lưu lượng có tính đột biến (bursty).",
-            "B": "Tuyệt đối không bao giờ xảy ra hiện tượng mất gói (packet loss) hay trễ hàng đợi trong bất kỳ hoàn cảnh nào.",
-            "C": "Luôn bảo đảm băng thông cố định và độ trễ bằng 0 giống như mạng điện thoại truyền thống.",
-            "D": "Đơn giản hơn về mặt phần mềm và không đòi hỏi các thuật toán tìm đường trên router."
+            "A": "Luôn bảo đảm băng thông cố định và độ trễ bằng 0 giống như mạng điện thoại truyền thống.",
+            "B": "Đơn giản hơn về mặt phần mềm và không đòi hỏi các thuật toán tìm đường trên router.",
+            "C": "Tuyệt đối không bao giờ xảy ra hiện tượng mất gói (packet loss) hay trễ hàng đợi trong bất kỳ hoàn cảnh nào.",
+            "D": "Cho phép dồn kênh thống kê (Statistical Multiplexing), tận dụng tối đa băng thông đường truyền và phục vụ được nhiều người dùng hơn khi lưu lượng có tính đột biến (bursty)."
           },
-          "answer": "A",
-          "explanation": "Packet Switching cho phép nhiều người dùng cùng chia sẻ tài nguyên một cách linh hoạt (statistical multiplexing), không lãng phí băng thông khi người dùng rảnh rỗi, do đó chịu tải tốt hơn đối với lưu lượng Internet có tính chất bùng phát. TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ"
+          "answer": "D",
+          "explanation": "Packet Switching cho phép nhiều người dùng cùng chia sẻ tài nguyên một cách linh hoạt (statistical multiplexing), không lãng phí băng thông khi người dùng rảnh rỗi, do đó chịu tải tốt hơn đối với lưu lượng Internet có tính chất bùng phát."
         },
         {
           "id": 26,
           "question": "Hiện tượng mất gói tin (Packet Loss) trong mạng chuyển mạch gói thường xảy ra do nguyên nhân nào?",
           "options": {
-            "A": "Bộ đệm hàng đợi (Queue/Buffer) của router bị tràn do tốc độ gói tin đến vượt quá tốc độ xử lý và truyền đi của cổng ra liên kết.",
-            "B": "Các gói tin bị hết hạn bản quyền phần mềm khi truyền qua ranh giới giữa hai quốc gia.",
-            "C": "Người nhận tắt màn hình máy tính trong khi tệp tin đang được gửi qua mạng LAN.",
+            "A": "Các gói tin bị hết hạn bản quyền phần mềm khi truyền qua ranh giới giữa hai quốc gia.",
+            "B": "Người nhận tắt màn hình máy tính trong khi tệp tin đang được gửi qua mạng LAN.",
+            "C": "Bộ đệm hàng đợi (Queue/Buffer) của router bị tràn do tốc độ gói tin đến vượt quá tốc độ xử lý và truyền đi của cổng ra liên kết.",
             "D": "Địa chỉ MAC của máy gửi bị đổi tên bởi quản trị viên hệ thống Windows."
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Khi tốc độ các gói tin đến một liên kết vượt quá dung lượng truyền tải của liên kết đó, các gói tin phải chờ trong hàng đợi. Nếu dung lượng bộ nhớ đệm (buffer) của router bị đầy (tràn bộ đệm), các gói tin đến sau sẽ bị loại bỏ (dropped/lost)."
         },
         {
           "id": 27,
           "question": "Khái niệm Băng thông (Bandwidth) trong tài liệu mạng được định nghĩa như thế nào?",
           "options": {
-            "A": "Lượng thông tin tối đa có thể truyền đi trên một kết nối mạng trong một đơn vị thời gian dưới điều kiện lý tưởng.",
-            "B": "Lượng dữ liệu thực tế đo đạc được khi có sự tranh chấp đường truyền giữa hàng ngàn người dùng.",
-            "C": "Khoảng thời gian từ khi máy tính phát tín hiệu cho đến khi nhận được phản hồi đầu tiên.",
-            "D": "Số lượng card mạng tối đa có thể cắm vào một khe cắm PCI trên bo mạch chủ máy tính. TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ"
+            "A": "Số lượng card mạng tối đa có thể cắm vào một khe cắm PCI trên bo mạch chủ máy tính.",
+            "B": "Khoảng thời gian từ khi máy tính phát tín hiệu cho đến khi nhận được phản hồi đầu tiên.",
+            "C": "Lượng thông tin tối đa có thể truyền đi trên một kết nối mạng trong một đơn vị thời gian dưới điều kiện lý tưởng.",
+            "D": "Lượng dữ liệu thực tế đo đạc được khi có sự tranh chấp đường truyền giữa hàng ngàn người dùng."
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Băng thông (Bandwidth) là lượng thông tin có thể truyền đi trên một kết nối mạng trong một khoảng thời gian xác định ở điều kiện lý tưởng (đơn vị: bps, Mbps, Gbps)."
         },
         {
           "id": 28,
           "question": "Thông lượng (Throughput) khác với Băng thông (Bandwidth) ở điểm mấu chốt nào?",
           "options": {
-            "A": "Thông lượng là tốc độ truyền dữ liệu thực tế đo được tại một thời điểm, thường nhỏ hơn nhiều so với băng thông lý thuyết.",
-            "B": "Thông lượng luôn có giá trị lớn hơn băng thông lý thuyết nhờ thuật toán nén phần cứng.",
-            "C": "Thông lượng được tính bằng đơn vị Byte, còn băng thông luôn tính bằng đơn vị Hertz.",
-            "D": "Thông lượng chỉ xuất hiện trên các mạng không dây 4G/5G, không tồn tại trên mạng dây."
+            "A": "Thông lượng luôn có giá trị lớn hơn băng thông lý thuyết nhờ thuật toán nén phần cứng.",
+            "B": "Thông lượng là tốc độ truyền dữ liệu thực tế đo được tại một thời điểm, thường nhỏ hơn nhiều so với băng thông lý thuyết.",
+            "C": "Thông lượng chỉ xuất hiện trên các mạng không dây 4G/5G, không tồn tại trên mạng dây.",
+            "D": "Thông lượng được tính bằng đơn vị Byte, còn băng thông luôn tính bằng đơn vị Hertz."
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Thông lượng (Throughput) là băng thông thực tế (actual rate), thường thấp hơn băng thông lý thuyết do chịu ảnh hưởng bởi nghẽn mạng, thiết bị trung gian, topology, số lượng người dùng chia sẻ và năng lực phần cứng máy tính."
         },
         {
           "id": 29,
           "question": "Các yếu tố nào sau đây trực tiếp ảnh hưởng làm giảm thông lượng (Throughput) của một kết nối mạng?",
           "options": {
-            "A": "Năng lực xử lý của thiết bị liên mạng (Router, Switch), cấu trúc topology mạng, số lượng người dùng đồng thời và cấu hình máy khách/máy chủ.",
-            "B": "Màu sắc của lớp vỏ nhựa bảo vệ bên ngoài sợi cáp mạng UTP.",
+            "A": "Phiên bản hệ điều hành trên máy in không có kết nối mạng.",
+            "B": "Năng lực xử lý của thiết bị liên mạng (Router, Switch), cấu trúc topology mạng, số lượng người dùng đồng thời và cấu hình máy khách/máy chủ.",
             "C": "Độ phân giải màn hình hiển thị của máy tính người dùng cuối.",
-            "D": "Phiên bản hệ điều hành trên máy in không có kết nối mạng."
+            "D": "Màu sắc của lớp vỏ nhựa bảo vệ bên ngoài sợi cáp mạng UTP."
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Slide bài giảng nêu rõ các yếu tố ảnh hưởng tới thông lượng: Thiết bị liên mạng, Topology mạng, Số lượng user trên mạng, Năng lực máy tính của user và server..."
         },
         {
           "id": 30,
           "question": "Tổng độ trễ từ nút này sang nút khác (Nodal Delay) trong mạng chuyển mạch gói bao gồm 4 thành phần nào?",
           "options": {
-            "A": "Trễ xử lý tại nút (Processing delay), Trễ hàng đợi (Queuing delay), Trễ truyền dẫn (Transmission delay) và Trễ lan truyền (Propagation delay).",
-            "B": "Trễ khởi động máy, Trễ mở ứng dụng, Trễ hiển thị màn hình và Trễ gõ bàn phím.",
-            "C": "Trễ tải trang web, Trễ đăng nhập tài khoản, Trễ quét virus và Trễ lưu file vào đĩa cứng.",
-            "D": "Trễ giải mã video, Trễ nén file zip, Trễ cắm nguồn điện và Trễ mã hóa tín hiệu âm thanh."
+            "A": "Trễ tải trang web, Trễ đăng nhập tài khoản, Trễ quét virus và Trễ lưu file vào đĩa cứng.",
+            "B": "Trễ giải mã video, Trễ nén file zip, Trễ cắm nguồn điện và Trễ mã hóa tín hiệu âm thanh.",
+            "C": "Trễ khởi động máy, Trễ mở ứng dụng, Trễ hiển thị màn hình và Trễ gõ bàn phím.",
+            "D": "Trễ xử lý tại nút (Processing delay), Trễ hàng đợi (Queuing delay), Trễ truyền dẫn (Transmission delay) và Trễ lan truyền (Propagation delay)."
           },
-          "answer": "A",
+          "answer": "D",
           "explanation": "Theo giáo trình mạng máy tính: d_nodal = d_proc + d_queue + d_trans + d_prop (Gồm: Trễ xử lý nút, Trễ xếp hàng đợi, Trễ phát/truyền dẫn gói tin lên đường truyền và Trễ truyền sóng vật lý trong môi trường)."
         },
         {
           "id": 31,
           "question": "Độ trễ truyền dẫn (Transmission Delay - d_trans) để đẩy một gói tin có chiều dài L (bits) lên đường truyền có tốc độ R (bps) được tính bằng công thức nào?",
           "options": {
-            "A": "d_trans = L / R",
-            "B": "d_trans = R / L",
-            "C": "d_trans = d / s (với d là khoảng cách, s là vận tốc ánh sáng)",
-            "D": "d_trans = L * R"
+            "A": "d_trans = R / L",
+            "B": "d_trans = d / s (với d là khoảng cách, s là vận tốc ánh sáng)",
+            "C": "d_trans = L * R",
+            "D": "d_trans = L / R"
           },
-          "answer": "A",
+          "answer": "D",
           "explanation": "Trễ truyền dẫn (Transmission delay) là thời gian cần thiết để đẩy toàn bộ L bits của gói tin lên đường truyền: d_trans = L / R (thời gian đẩy bit ra khỏi card mạng/cổng router)."
         },
         {
           "id": 32,
           "question": "Độ trễ lan truyền (Propagation Delay - d_prop) của một bit tín hiệu di chuyển trên đường truyền vật lý phụ thuộc vào yếu tố nào?",
           "options": {
-            "A": "Chiều dài đường truyền vật lý (d) và vận tốc truyền sóng trong môi trường đó (s), tính bằng công thức d / s.",
-            "B": "Kích thước gói tin L chia cho băng thông đường truyền R.",
-            "C": "Số lượng tiến trình ứng dụng đang chạy đồng thời trên hệ điều hành nguồn.",
+            "A": "Kích thước gói tin L chia cho băng thông đường truyền R.",
+            "B": "Số lượng tiến trình ứng dụng đang chạy đồng thời trên hệ điều hành nguồn.",
+            "C": "Chiều dài đường truyền vật lý (d) và vận tốc truyền sóng trong môi trường đó (s), tính bằng công thức d / s.",
             "D": "Dung lượng bộ nhớ RAM còn trống của thiết bị Switch trung gian."
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Trễ lan truyền (Propagation delay) là thời gian một bit di chuyển từ đầu này đến đầu kia của liên kết vật lý: d_prop = d / s (trong đó d là chiều dài đoạn cáp, s là tốc độ lan truyền tín hiệu trong môi trường, xấp xỉ 2*10^8 m/s trong cáp đồng/quang)."
         },
         {
           "id": 33,
           "question": "Thành phần trễ nào sau đây có tính chất biến thiên động mạnh nhất và phụ thuộc trực tiếp vào mức độ nghẽn mạng tại router?",
           "options": {
-            "A": "Trễ hàng đợi (Queuing delay)",
-            "B": "Trễ lan truyền (Propagation delay)",
-            "C": "Trễ truyền dẫn (Transmission delay) đối với gói tin có độ dài cố định",
+            "A": "Trễ lan truyền (Propagation delay)",
+            "B": "Trễ truyền dẫn (Transmission delay) đối với gói tin có độ dài cố định",
+            "C": "Trễ hàng đợi (Queuing delay)",
             "D": "Trễ tính toán vi mạch logic học cơ bản"
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Trễ hàng đợi (Queuing delay) phụ thuộc vào số lượng gói tin đang chờ sẵn trong bộ đệm của router tại thời điểm gói tin đến. Nếu đường truyền rảnh thì trễ hàng đợi bằng 0, nếu mạng nghẽn nặng thì trễ hàng đợi rất lớn hoặc gây mất gói."
         },
         {
           "id": 34,
           "question": "Trong cấu trúc phân cấp mạng Internet toàn cầu, các nhà cung cấp dịch vụ Internet cấp 1 (Tier-1 ISPs) có đặc điểm gì?",
           "options": {
-            "A": "Có phạm vi phủ sóng quốc gia và quốc tế, sở hữu mạng đường trục lớn kết nối trực tiếp với nhau (peering) mà không phải trả phí trung chuyển cho bất kỳ ai.",
+            "A": "Hoàn toàn phụ thuộc vào việc mua lại lưu lượng Internet từ các nhà mạng cấp 3 địa phương.",
             "B": "Là các công ty bán lẻ mạng gia đình quy mô nhỏ phục vụ cho từng hộ dân cư tại một xã, phường.",
             "C": "Chỉ được phép truyền tín hiệu nội bộ giữa các phòng ban trong một trường trung học.",
-            "D": "Hoàn toàn phụ thuộc vào việc mua lại lưu lượng Internet từ các nhà mạng cấp 3 địa phương. TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ"
+            "D": "Có phạm vi phủ sóng quốc gia và quốc tế, sở hữu mạng đường trục lớn kết nối trực tiếp với nhau (peering) mà không phải trả phí trung chuyển cho bất kỳ ai."
           },
-          "answer": "A",
+          "answer": "D",
           "explanation": "Tier-1 ISPs (như AT&T;, Sprint, Level 3, NTT) ở trung tâm của cấu trúc Internet: có hạ tầng đường trục quốc tế khổng lồ, kết nối ngang hàng trực tiếp (peer) với nhau và không phải trả cước trung chuyển quá cảnh (transit fee) cho mạng nào khác."
         },
         {
           "id": 35,
           "question": "Các nhà cung cấp dịch vụ Internet cấp vùng (Tier-2 ISPs / Regional ISPs) duy trì kết nối mạng như thế nào?",
           "options": {
-            "A": "Thường kết nối lên các Tier-1 ISP (và trả phí cho Tier-1), đồng thời có thể kết nối ngang hàng (peering) với các Tier-2 khác để tối ưu chi phí.",
-            "B": "Tự phát sóng vô tuyến phủ kín toàn bộ bề mặt Trái Đất mà không cần đường truyền vật lý.",
+            "A": "Không được phép kết nối với các Access ISP địa phương.",
+            "B": "Thường kết nối lên các Tier-1 ISP (và trả phí cho Tier-1), đồng thời có thể kết nối ngang hàng (peering) với các Tier-2 khác để tối ưu chi phí.",
             "C": "Chỉ được hoạt động trong vòng 24 giờ sau đó phải tự hủy cấu hình định tuyến.",
-            "D": "Không được phép kết nối với các Access ISP địa phương."
+            "D": "Tự phát sóng vô tuyến phủ kín toàn bộ bề mặt Trái Đất mà không cần đường truyền vật lý."
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Tier-2 ISPs có quy mô cấp vùng (regional), là khách hàng của các Tier-1 ISPs (mua băng thông quá cảnh từ Tier-1) và bán lại dịch vụ cho các Local/Access ISPs, đồng thời liên kết ngang hàng với nhau tại các điểm IXP."
         },
         {
           "id": 36,
           "question": "Trạm trung chuyển Internet (IXP - Internet Exchange Point) đóng vai trò gì trong cấu trúc mạng Internet?",
           "options": {
-            "A": "Là điểm kết nối vật lý độc lập cho phép nhiều ISP và mạng phân phối nội dung trao đổi trực tiếp lưu lượng mạng với nhau mà không cần đi vòng qua mạng cấp trên.",
-            "B": "Là tổng đài tự động phát cảnh báo khi máy tính của người dùng bị nhiễm virus trojan.",
-            "C": "Là nơi lưu trữ bản quyền của tất cả các tên miền Internet trên toàn thế giới.",
-            "D": "Là thiết bị sạc điện không dây cho các trạm viễn thông trên núi cao."
+            "A": "Là nơi lưu trữ bản quyền của tất cả các tên miền Internet trên toàn thế giới.",
+            "B": "Là thiết bị sạc điện không dây cho các trạm viễn thông trên núi cao.",
+            "C": "Là tổng đài tự động phát cảnh báo khi máy tính của người dùng bị nhiễm virus trojan.",
+            "D": "Là điểm kết nối vật lý độc lập cho phép nhiều ISP và mạng phân phối nội dung trao đổi trực tiếp lưu lượng mạng với nhau mà không cần đi vòng qua mạng cấp trên."
           },
-          "answer": "A",
+          "answer": "D",
           "explanation": "IXP (Internet Exchange Point) là hạ tầng mạng trung lập cho phép các ISP (như Tier-2, Content Providers) kết nối trực tiếp với nhau để trao đổi lưu lượng nội vùng/nội địa, giảm chi phí trả cho các nhà mạng đường trục và giảm độ trễ."
         },
         {
           "id": 37,
           "question": "Các mạng cung cấp nội dung lớn như Google, Facebook (Content Provider Networks) tham gia vào kiến trúc Internet bằng cách nào?",
           "options": {
-            "A": "Xây dựng mạng riêng (private network) nối các trung tâm dữ liệu khổng lồ với nhau, kết nối thẳng tới các IXP và mạng truy cập để đi tắt, giảm phụ thuộc vào Tier-1 ISP.",
-            "B": "Thuê toàn bộ máy chủ và đường truyền từ các bưu điện nhà nước tại từng xã.",
-            "C": "Cấm người dùng truy cập trực tiếp từ máy tính cá nhân vào máy chủ của họ.",
-            "D": "Chỉ gửi dữ liệu thông qua hệ thống truyền hình vệ tinh một chiều analog."
+            "A": "Cấm người dùng truy cập trực tiếp từ máy tính cá nhân vào máy chủ của họ.",
+            "B": "Chỉ gửi dữ liệu thông qua hệ thống truyền hình vệ tinh một chiều analog.",
+            "C": "Thuê toàn bộ máy chủ và đường truyền từ các bưu điện nhà nước tại từng xã.",
+            "D": "Xây dựng mạng riêng (private network) nối các trung tâm dữ liệu khổng lồ với nhau, kết nối thẳng tới các IXP và mạng truy cập để đi tắt, giảm phụ thuộc vào Tier-1 ISP."
           },
-          "answer": "A",
-          "explanation": "Các nhà cung cấp nội dung (Content Provider Networks) như Google xây dựng mạng riêng toàn cầu kết nối các data center của mình, kết nối trực tiếp với các ISP cấp thấp hoặc qua IXP để đưa dữ liệu gần người dùng nhất và bỏ qua các nhà mạng Tier-1. TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ"
+          "answer": "D",
+          "explanation": "Các nhà cung cấp nội dung (Content Provider Networks) như Google xây dựng mạng riêng toàn cầu kết nối các data center của mình, kết nối trực tiếp với các ISP cấp thấp hoặc qua IXP để đưa dữ liệu gần người dùng nhất và bỏ qua các nhà mạng Tier-1."
         },
         {
           "id": 38,
           "question": "Tại Việt Nam, VNIX là tên viết tắt của tổ chức/hạ tầng nào sau đây?",
           "options": {
             "A": "Trạm trung chuyển Internet quốc gia Việt Nam (Vietnam National Internet eXchange).",
-            "B": "Trung tâm quản lý phần mềm mã nguồn mở của Bộ Khoa học và Công nghệ.",
-            "C": "Hệ điều hành Unix phiên bản phát triển riêng cho quân đội Việt Nam.",
+            "B": "Hệ điều hành Unix phiên bản phát triển riêng cho quân đội Việt Nam.",
+            "C": "Trung tâm quản lý phần mềm mã nguồn mở của Bộ Khoa học và Công nghệ.",
             "D": "Tên nhà mạng cung cấp dịch vụ viễn thông di động ảo đầu tiên tại Hà Nội."
           },
           "answer": "A",
@@ -468,24 +467,24 @@ window.QUIZ_DATA = {
           "id": 39,
           "question": "Hạ tầng trạm trung chuyển VNIX tại Việt Nam được đặt tại hai thành phố trọng điểm nào?",
           "options": {
-            "A": "Hà Nội và TP. Hồ Chí Minh",
-            "B": "Đà Nẵng và Cần Thơ",
-            "C": "Hải Phòng và Nha Trang",
+            "A": "Đà Nẵng và Cần Thơ",
+            "B": "Hải Phòng và Nha Trang",
+            "C": "Hà Nội và TP. Hồ Chí Minh",
             "D": "Huế và Vũng Tàu"
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Sơ đồ mạng trong tài liệu môn học thể hiện rõ hai cụm trung tâm kết nối VNIX đặt tại HÀ NỘI và TP.HCM, kết nối các đường truyền cáp tốc độ cao 1G, 2G, 10G giữa các nhà mạng lớn của Việt Nam."
         },
         {
           "id": 40,
           "question": "Lợi ích cốt lõi của việc kết nối các ISP trong nước (như Viettel, VNPT/VDC, FPT, CMC, NetNam...) qua trạm trung chuyển VNIX là gì?",
           "options": {
-            "A": "Trao đổi lưu lượng Internet trong nước trực tiếp giữa các ISP mà không cần phải trung chuyển vòng qua các tuyến cáp quang quốc tế, giúp tăng tốc độ và tiết kiệm chi phí.",
+            "A": "Ngăn chặn tuyệt đối mọi hành vi vi phạm pháp luật trên không gian mạng mà không cần can thiệp kỹ thuật.",
             "B": "Cung cấp miễn phí bản quyền phần mềm Microsoft Office cho tất cả người dùng Internet tại Việt Nam.",
-            "C": "Ngăn chặn tuyệt đối mọi hành vi vi phạm pháp luật trên không gian mạng mà không cần can thiệp kỹ thuật.",
+            "C": "Trao đổi lưu lượng Internet trong nước trực tiếp giữa các ISP mà không cần phải trung chuyển vòng qua các tuyến cáp quang quốc tế, giúp tăng tốc độ và tiết kiệm chi phí.",
             "D": "Tự động chuyển đổi toàn bộ địa chỉ IPv4 của các hộ gia đình sang mạng viễn thông vệ tinh."
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "VNIX cho phép các ISP tại Việt Nam kết nối trao đổi lưu lượng trực tiếp với nhau trong nước. Nếu không có VNIX, lưu lượng giữa thuê bao Viettel gửi cho thuê bao FPT có thể phải chạy vòng qua các gateway quốc tế ở Hong Kong, Singapore rồi mới quay lại Việt Nam."
         },
         {
@@ -494,8 +493,8 @@ window.QUIZ_DATA = {
           "options": {
             "A": "Cú pháp (Syntax - định dạng thông điệp), Ngữ nghĩa (Semantics - ý nghĩa từng trường), và Quy tắc đồng bộ (Timing/Rules - trình tự gửi/nhận và hành động phản hồi).",
             "B": "Tên của lập trình viên, hãng sản xuất card mạng và giá bán của thiết bị trên thị trường.",
-            "C": "Ngôn ngữ tự nhiên của quốc gia phát minh ra giao thức đó và phông chữ hiển thị.",
-            "D": "Số lượng bóng bán dẫn được tích hợp bên trong chip xử lý trung tâm CPU. TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ"
+            "C": "Số lượng bóng bán dẫn được tích hợp bên trong chip xử lý trung tâm CPU.",
+            "D": "Ngôn ngữ tự nhiên của quốc gia phát minh ra giao thức đó và phông chữ hiển thị."
           },
           "answer": "A",
           "explanation": "Giao thức mạng là tập hợp các quy tắc định nghĩa cú pháp (định dạng thông điệp), ngữ nghĩa (ý nghĩa thông tin) và quy tắc định thời (thứ tự gửi nhận thông điệp và hành vi phản hồi khi một sự kiện xảy ra)."
@@ -504,12 +503,12 @@ window.QUIZ_DATA = {
           "id": 42,
           "question": "Các tổ chức và hiệp hội quốc tế nào sau đây chịu trách nhiệm chính trong việc xây dựng và chuẩn hóa các chuẩn mạng máy tính?",
           "options": {
-            "A": "IEEE, IETF, ISO, ITU-T, ANSI, TIA/EIA.",
-            "B": "FIFA, UEFA, IOC và WTO.",
-            "C": "NASA, Không lực Hoàng gia Anh và Hiệp hội các trường đại học Đông Nam Á.",
+            "A": "FIFA, UEFA, IOC và WTO.",
+            "B": "NASA, Không lực Hoàng gia Anh và Hiệp hội các trường đại học Đông Nam Á.",
+            "C": "IEEE, IETF, ISO, ITU-T, ANSI, TIA/EIA.",
             "D": "Tổ chức Y tế Thế giới (WHO) và Quỹ Tiền tệ Quốc tế (IMF)."
           },
-          "answer": "A",
+          "answer": "C",
           "explanation": "Các chuẩn mạng do các tổ chức kỹ thuật uy tín ban hành: IEEE (viện kỹ sư điện và điện tử), IETF (Internet Engineering Task Force), ISO (tổ chức chuẩn hóa quốc tế), ITU-T (liên minh viễn thông quốc tế), ANSI, TIA/EIA."
         },
         {
@@ -529,8 +528,8 @@ window.QUIZ_DATA = {
           "question": "Loại cáp xoắn đôi nào thường được sử dụng phổ biến nhất trong các mạng LAN văn phòng hiện nay vì chi phí rẻ và dễ thi công?",
           "options": {
             "A": "Cáp UTP (Unshielded Twisted Pair)",
-            "B": "Cáp STP bọc kim chống nhiễu chuyên dụng ngoài trời",
-            "C": "Cáp đồng trục Thicknet 10Base5",
+            "B": "Cáp đồng trục Thicknet 10Base5",
+            "C": "Cáp STP bọc kim chống nhiễu chuyên dụng ngoài trời",
             "D": "Cáp quang đơn mốt (Single-mode optical fiber)"
           },
           "answer": "A",
@@ -540,36 +539,36 @@ window.QUIZ_DATA = {
           "id": 45,
           "question": "Mô hình mạng Client-Server (Khách - Chủ) có đặc điểm nào sau đây?",
           "options": {
-            "A": "Có ít nhất một máy chủ chuyên dụng (Server) cung cấp tài nguyên, dịch vụ và quản lý quyền truy cập của các máy khách (Clients).",
-            "B": "Tất cả các máy tính trong mạng đều có vai trò hoàn toàn bình đẳng và không có bất kỳ máy tính nào chịu trách nhiệm lưu trữ tập trung.",
-            "C": "Mạng ngừng hoạt động ngay lập tức nếu một máy khách (Client) bị tắt nguồn.",
+            "A": "Mạng ngừng hoạt động ngay lập tức nếu một máy khách (Client) bị tắt nguồn.",
+            "B": "Có ít nhất một máy chủ chuyên dụng (Server) cung cấp tài nguyên, dịch vụ và quản lý quyền truy cập của các máy khách (Clients).",
+            "C": "Tất cả các máy tính trong mạng đều có vai trò hoàn toàn bình đẳng và không có bất kỳ máy tính nào chịu trách nhiệm lưu trữ tập trung.",
             "D": "Không thể chia sẻ dữ liệu qua lại giữa các máy tính nếu không cắm ổ cứng di động USB."
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Mô hình Client-Server: Server là máy chủ luôn hoạt động, có IP cố định, phục vụ yêu cầu từ các client; quản lý tài nguyên và an ninh tập trung."
         },
         {
           "id": 46,
           "question": "Mô hình mạng ngang hàng (Peer-to-Peer - P2P) có ưu điểm nào nổi bật?",
           "options": {
-            "A": "Dễ triển khai, chi phí đầu tư ban đầu thấp, không phụ thuộc vào một máy chủ trung tâm duy nhất, khả năng tự mở rộng tốt.",
-            "B": "Khả năng bảo mật thông tin và quản trị tập trung dữ liệu ở mức độ tuyệt đối cao nhất.",
+            "A": "Khả năng bảo mật thông tin và quản trị tập trung dữ liệu ở mức độ tuyệt đối cao nhất.",
+            "B": "Dễ triển khai, chi phí đầu tư ban đầu thấp, không phụ thuộc vào một máy chủ trung tâm duy nhất, khả năng tự mở rộng tốt.",
             "C": "Tốc độ truy cập mạng luôn giữ nguyên 10 Gbps dù số lượng máy tính tham gia tăng lên hàng triệu máy.",
             "D": "Hoàn toàn không cần cài đặt bất kỳ hệ điều hành nào trên các máy tham gia."
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Mạng Peer-to-Peer (P2P): Mỗi máy vừa là client vừa là server; không cần đầu tư máy chủ chuyên dụng đắt tiền, khi số lượng nút tăng lên thì năng lực phục vụ của toàn hệ thống cũng tự mở rộng."
         },
         {
           "id": 47,
           "question": "Trong quá trình truyền dữ liệu từ nguồn đến đích qua nhiều chặng router, hiện tượng Jitter trong mạng máy tính phản ánh điều gì?",
           "options": {
-            "A": "Sự biến thiên hoặc không đồng đều của thời gian trễ giữa các gói tin liên tiếp trong một luồng truyền tải.",
-            "B": "Tỷ lệ suy hao tín hiệu cơ học do nhiệt độ môi trường xung quanh dây cáp quá cao.",
+            "A": "Tỷ lệ suy hao tín hiệu cơ học do nhiệt độ môi trường xung quanh dây cáp quá cao.",
+            "B": "Sự biến thiên hoặc không đồng đều của thời gian trễ giữa các gói tin liên tiếp trong một luồng truyền tải.",
             "C": "Số lượng gói tin bị virus mạng phá hủy trong một chu kỳ xung nhịp của CPU.",
             "D": "Thời gian máy chủ cần để khởi động lại hệ thống sau khi cúp điện."
           },
-          "answer": "A",
+          "answer": "B",
           "explanation": "Jitter là độ biến thiên trễ (delay variation) giữa các gói tin liên tiếp. Jitter ảnh hưởng rất lớn đến các ứng dụng truyền thông thời gian thực như gọi thoại VoIP hay phát trực tiếp video (streaming)."
         },
         {
@@ -577,9 +576,9 @@ window.QUIZ_DATA = {
           "question": "Mạng truy cập (Access Network) dạng gia đình sử dụng cáp truyền hình HFC (Hybrid Fiber-Coaxial) có đặc điểm gì?",
           "options": {
             "A": "Kết hợp cáp quang từ trung tâm cáp (Headend) đến các nút khu vực, sau đó phân phối bằng cáp đồng trục đến từng hộ gia đình và chia sẻ chung băng thông của phân đoạn cáp.",
-            "B": "Dành riêng hoàn toàn một sợi cáp quang không chia sẻ từ tổng đài trực tiếp vào từng máy tính của người dùng.",
+            "B": "Tốc độ truyền tải phụ thuộc vào khoảng cách đường dây điện thoại đồng cố định 2 lõi.",
             "C": "Chỉ sử dụng sóng vệ tinh và không có bất kỳ đoạn cáp vật lý nào được chôn ngầm dưới đất.",
-            "D": "Tốc độ truyền tải phụ thuộc vào khoảng cách đường dây điện thoại đồng cố định 2 lõi. TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ"
+            "D": "Dành riêng hoàn toàn một sợi cáp quang không chia sẻ từ tổng đài trực tiếp vào từng máy tính của người dùng."
           },
           "answer": "A",
           "explanation": "Mạng HFC (Hybrid Fiber-Coaxial) sử dụng kết hợp cáp quang từ đầu cuối (headend) đến các node cáp quang địa phương, sau đó dùng cáp đồng trục đến từng nhà; các hộ trong một khu phố chia sẻ chung môi trường truyền thông (shared broadcast medium)."
@@ -589,9 +588,9 @@ window.QUIZ_DATA = {
           "question": "Công nghệ DSL (Digital Subscriber Line) sử dụng hạ tầng đường truyền sẵn có nào để truyền dữ liệu tốc độ cao?",
           "options": {
             "A": "Đường dây cáp điện thoại đồng 2 lõi hiện hữu của công ty viễn thông.",
-            "B": "Đường dây điện lưới sinh hoạt gia đình 220V xoay chiều.",
-            "C": "Đường ống dẫn khí đốt kim loại ngầm dưới lòng đường phố.",
-            "D": "Hệ thống cáp quang ngầm đáy biển liên lục địa."
+            "B": "Hệ thống cáp quang ngầm đáy biển liên lục địa.",
+            "C": "Đường dây điện lưới sinh hoạt gia đình 220V xoay chiều.",
+            "D": "Đường ống dẫn khí đốt kim loại ngầm dưới lòng đường phố."
           },
           "answer": "A",
           "explanation": "DSL sử dụng đường dây cáp đôi điện thoại truyền thống (telephone wire) kết nối từ nhà khách hàng đến tổng đài CO (Central Office) của nhà mạng, tách tín hiệu thoại và dữ liệu bằng bộ chia tần số Splitter/DSLAM."
@@ -600,12 +599,12 @@ window.QUIZ_DATA = {
           "id": 50,
           "question": "Để đo đạc và kiểm tra khả năng kết nối cơ bản giữa hai nút mạng trên Internet, người ta thường dùng lệnh tiện ích nào dựa trên giao thức ICMP?",
           "options": {
-            "A": "ping",
+            "A": "dir",
             "B": "format",
             "C": "defrag",
-            "D": "dir TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ PHẦN 2: BẢNG ĐÁP ÁN NHANH (50 CÂU) Bảng tổng hợp nhanh đáp án chính xác phục vụ tự chấm điểm và rà soát kiến thức: Câu Đ/Á Câu Đ/Á Câu Đ/Á Câu Đ/Á Câu Đ/Á 1 A 11 A 21 A 31 A 41 A 2 A 12 A 22 A 32 A 42 A 3 A 13 A 23 A 33 A 43 A 4 A 14 A 24 A 34 A 44 A 5 A 15 A 25 A 35 A 45 A 6 A 16 A 26 A 36 A 46 A 7 A 17 A 27 A 37 A 47 A 8 A 18 A 28 A 38 A 48 A 9 A 19 A 29 A 39 A 49 A 10 A 20 A 30 A 40 A 50 A TÀI LIỆU ÔN THI GIỮA KỲ Khoa CNTT - Môn Mạng máy tính Lưu hành nội bộ PHẦN 3: ĐÁP ÁN CHI TIẾT & LỜI GIẢI THÍCH CHUYÊN SÂU Phần phân tích cơ sở lý thuyết, tài liệu tham khảo và giải thích chi tiết vì sao phương án được chọn là chính xác:"
+            "D": "ping"
           },
-          "answer": "A",
+          "answer": "D",
           "explanation": "Lệnh `ping` sử dụng các bản tin ICMP Echo Request và Echo Reply để kiểm tra xem một máy chủ/nút mạng ở xa có phản hồi hay không, đồng thời đo thời gian khứ hồi (Round-Trip Time - RTT) và tỷ lệ mất gói giữa hai điểm."
         }
       ]
@@ -658,7 +657,7 @@ window.QUIZ_DATA = {
             "A": "Giúp loại bỏ hoàn toàn phần thông tin điều khiển (header)",
             "B": "Giảm độ phức tạp khi xử lý, dễ quản lý, dễ bảo trì, mở rộng và phát triển; thay đổi ở một tầng không ảnh hưởng tầng khác",
             "C": "Bắt buộc mọi thiết bị phần cứng phải dùng chung một hệ điều hành",
-            "D": "Làm tăng tốc độ truyền vật lý của cáp quang lên gấp đôi MẠNG MÁY TÍNH"
+            "D": "Làm tăng tốc độ truyền vật lý của cáp quang lên gấp đôi"
           },
           "answer": "B",
           "explanation": "đổi ở một tầng không ảnh hưởng tầng khác Giải thích căn cứ lý thuyết: Kiến trúc phân tầng chia nhỏ bài toán phức tạp thành các module độc lập. Mỗi tầng chỉ tập trung vào chức năng riêng và cung cấp dịch vụ cho tầng trên, việc thay đổi giải thuật ở một tầng hoàn toàn trong suốt với các tầng khác."
@@ -673,7 +672,7 @@ window.QUIZ_DATA = {
             "D": "Lớp vật lý cung cấp dịch vụ trực tiếp cho lớp ứng dụng"
           },
           "answer": "A",
-          "explanation": "Theo nguyên lý phân tầng (Layering): Tầng N sử dụng dịch vụ của tầng N-1 phía dưới nó thông qua interface (SAP) và cung cấp dịch vụ mạng nâng cao hơn cho tầng N+1 phía trên. MẠNG MÁY TÍNH"
+          "explanation": "Theo nguyên lý phân tầng (Layering): Tầng N sử dụng dịch vụ của tầng N-1 phía dưới nó thông qua interface (SAP) và cung cấp dịch vụ mạng nâng cao hơn cho tầng N+1 phía trên."
         },
         {
           "id": 6,
@@ -742,7 +741,7 @@ window.QUIZ_DATA = {
             "A": "Định tuyến đường truyền cho các frame mạng",
             "B": "Thiết lập, duy trì, quản lý và đồng bộ hóa các phiên hội thoại (dialogue) giữa các ứng dụng",
             "C": "Chuyển đổi định dạng ký tự và giải nén tập tin",
-            "D": "Kiểm tra mã kiểm dư vòng CRC cho từng bit dữ liệu MẠNG MÁY TÍNH"
+            "D": "Kiểm tra mã kiểm dư vòng CRC cho từng bit dữ liệu"
           },
           "answer": "B",
           "explanation": "các ứng dụng Giải thích căn cứ lý thuyết: Tầng Session thiết lập, duy trì và đồng bộ hóa phiên làm việc giữa các ứng dụng, quản lý lượt đối thoại (dialog control) và đặt các điểm kiểm tra (checkpoints) giúp phục hồi khi kết nối bị đứt quãng."
@@ -793,7 +792,7 @@ window.QUIZ_DATA = {
             "D": "7 tầng"
           },
           "answer": "B",
-          "explanation": "Mô hình TCP/IP kinh điển gồm 4 tầng: Application, Transport, Internet, Network Interface (Host-to-Network). Trong giáo trình mạng hiện đại thường phân rã tầng Network Interface thành Data Link và Physical (tạo thành mô hình 5 tầng). MẠNG MÁY TÍNH"
+          "explanation": "Mô hình TCP/IP kinh điển gồm 4 tầng: Application, Transport, Internet, Network Interface (Host-to-Network). Trong giáo trình mạng hiện đại thường phân rã tầng Network Interface thành Data Link và Physical (tạo thành mô hình 5 tầng)."
         },
         {
           "id": 16,
@@ -838,7 +837,7 @@ window.QUIZ_DATA = {
             "A": "HTTP và FTP",
             "B": "IP và ICMP",
             "C": "TCP và UDP",
-            "D": "ARP và RARP MẠNG MÁY TÍNH"
+            "D": "ARP và RARP"
           },
           "answer": "C",
           "explanation": "Tầng Transport trong TCP/IP cung cấp hai giao thức dịch vụ vận chuyển chủ đạo: TCP (Transmission Control Protocol - tin cậy, có hướng kết nối) và UDP (User Datagram Protocol - không tin cậy, không hướng kết nối)."
@@ -934,10 +933,10 @@ window.QUIZ_DATA = {
             "A": "Địa chỉ MAC nguồn và đích",
             "B": "Số hiệu cổng nguồn (Source Port) và cổng đích (Destination Port)",
             "C": "Địa chỉ IP mạng con",
-            "D": "Điện áp danh định của card mạng MẠNG MÁY TÍNH"
+            "D": "Điện áp danh định của card mạng"
           },
           "answer": "B",
-          "explanation": "Header của tầng Transport (TCP/UDP) chứa Source Port và Destination Port để định danh chính xác tiến trình gửi và tiến trình nhận dữ liệu trên máy trạm. MẠNG MÁY TÍNH"
+          "explanation": "Header của tầng Transport (TCP/UDP) chứa Source Port và Destination Port để định danh chính xác tiến trình gửi và tiến trình nhận dữ liệu trên máy trạm."
         },
         {
           "id": 28,
@@ -1018,7 +1017,7 @@ window.QUIZ_DATA = {
             "A": "Địa chỉ IP nguồn/đích bị thay đổi, còn địa chỉ MAC được giữ nguyên",
             "B": "Địa chỉ MAC nguồn/đích của từng chặng bị thay đổi, trong khi IP nguồn và IP đích ban đầu được giữ nguyên (trừ trường hợp NAT)",
             "C": "Cả địa chỉ MAC và IP đều giữ nguyên tuyệt đối",
-            "D": "Tất cả dữ liệu người dùng bị đảo ngược thứ tự MẠNG MÁY TÍNH"
+            "D": "Tất cả dữ liệu người dùng bị đảo ngược thứ tự"
           },
           "answer": "B",
           "explanation": "đích ban đầu được giữ nguyên (trừ trường hợp NAT) Giải thích căn cứ lý thuyết: Địa chỉ IP nguồn/đích mang ý nghĩa định tuyến toàn cục xuyên suốt (end-to-end) nên được giữ nguyên. Ngược lại, địa chỉ MAC nguồn/đích chỉ có giá trị cục bộ trên từng liên kết (hop-by-hop) nên router sẽ bóc bỏ header cũ và gắn địa chỉ MAC mới cho chặng tiếp theo."
@@ -1069,7 +1068,7 @@ window.QUIZ_DATA = {
             "D": "Không có trường checksum kiểm lỗi"
           },
           "answer": "B",
-          "explanation": "kiểm soát tắc nghẽn (congestion control) Giải thích căn cứ lý thuyết: TCP cung cấp kênh truyền tin cậy nhờ cơ chế báo nhận (ACK), đánh số thứ tự (Sequence number), phát lại gói tin bị mất (Retransmission), kiểm soát luồng bên nhận (Flow control) và kiểm soát tắc nghẽn mạng (Congestion control). MẠNG MÁY TÍNH"
+          "explanation": "kiểm soát tắc nghẽn (congestion control) Giải thích căn cứ lý thuyết: TCP cung cấp kênh truyền tin cậy nhờ cơ chế báo nhận (ACK), đánh số thứ tự (Sequence number), phát lại gói tin bị mất (Retransmission), kiểm soát luồng bên nhận (Flow control) và kiểm soát tắc nghẽn mạng (Congestion control)."
         },
         {
           "id": 39,
@@ -1102,7 +1101,7 @@ window.QUIZ_DATA = {
             "A": "Địa chỉ MAC và Tên người dùng",
             "B": "Địa chỉ IP và Số hiệu cổng (IP Address + Port Number)",
             "C": "Subnet Mask và Default Gateway",
-            "D": "Mã CRC và Chiều dài cáp MẠNG MÁY TÍNH"
+            "D": "Mã CRC và Chiều dài cáp"
           },
           "answer": "B",
           "explanation": "Theo tài liệu bài giảng, một Socket là một end-point của liên kết mạng, được xác định duy nhất bởi sự kết hợp giữa Địa chỉ IP của máy tính và Số hiệu cổng (Port) của tiến trình: (IP, Port)."
@@ -1186,7 +1185,7 @@ window.QUIZ_DATA = {
             "A": "listen() và accept()",
             "B": "sendto() và recvfrom()",
             "C": "connect() và disconnect()",
-            "D": "push() và pop() MẠNG MÁY TÍNH"
+            "D": "push() và pop()"
           },
           "answer": "B",
           "explanation": "UDP là giao thức không hướng kết nối nên không dùng listen() hay accept(). Thay vào đó, lập trình socket UDP sử dụng hàm sendto() (chỉ rõ địa chỉ đích kèm theo) và recvfrom() (nhận dữ liệu và trích xuất địa chỉ người gửi)."
@@ -1201,7 +1200,7 @@ window.QUIZ_DATA = {
             "D": "Mô hình TCP/IP có tầng Session và tầng Presentation độc lập phức tạp hơn OSI"
           },
           "answer": "A",
-          "explanation": "ARPANET Giải thích căn cứ lý thuyết: TCP/IP được phát triển và áp dụng thực tế trên ARPANET từ thập niên 1970 trước khi tổ chức ISO công bố mô hình OSI (1984). OSI mang tính mô hình lý thuyết tham chiếu chuẩn, trong khi TCP/IP là bộ giao thức thực tế chi phối Internet. MẠNG MÁY TÍNH"
+          "explanation": "ARPANET Giải thích căn cứ lý thuyết: TCP/IP được phát triển và áp dụng thực tế trên ARPANET từ thập niên 1970 trước khi tổ chức ISO công bố mô hình OSI (1984). OSI mang tính mô hình lý thuyết tham chiếu chuẩn, trong khi TCP/IP là bộ giao thức thực tế chi phối Internet."
         },
         {
           "id": 50,
@@ -1210,7 +1209,7 @@ window.QUIZ_DATA = {
             "A": "Data → TCP Header → IP Header → MAC Header → FCS Trailer",
             "B": "[MAC Header] [IP Header] [TCP Header] [Data/Message] [FCS Trailer]",
             "C": "[IP Header] [MAC Header] [TCP Header] [FCS Trailer] [Data]",
-            "D": "[TCP Header] [IP Header] [MAC Header] [FCS Trailer] [Data] MẠNG MÁY TÍNH PHẦN 2: BẢNG ĐÁP ÁN NHANH (ANSWER KEY) Câu Đ/Á Câu Đ/Á Câu Đ/Á Câu Đ/Á Câu Đ/Á 1 B 11 B 21 B 31 A 41 B 2 C 12 B 22 B 32 B 42 B 3 B 13 A 23 B 33 C 43 B 4 B 14 B 24 B 34 B 44 A 5 A 15 B 25 B 35 B 45 B 6 B 16 B 26 B 36 B 46 B 7 A 17 B 27 B 37 B 47 B 8 B 18 B 28 B 38 B 48 B 9 B 19 C 29 B 39 B 49 A 10 A 20 B 30 B 40 B 50 B PHẦN 3: ĐÁP ÁN CHI TIẾT & LỜI GIẢI THÍCH CHUYÊN SÂU"
+            "D": "[TCP Header] [IP Header] [MAC Header] [FCS Trailer] [Data]"
           },
           "answer": "B",
           "explanation": "Theo slide 'Đóng gói dữ liệu - 2 & 3' trong tài liệu '04 - OSI - TCPIP- T5.pdf': Khung dữ liệu truyền trên dây có cấu trúc: [Frame Header (MAC)] bao bên ngoài [Network Header (IP)], bao ngoài [Transport Header (TCP)], bên trong là [Upper Layer Data], và cuối cùng là [Frame Trailer (FCS/CRC)]."
@@ -1289,7 +1288,7 @@ window.QUIZ_DATA = {
             "A": "Cisco",
             "B": "Intel",
             "C": "Realtek",
-            "D": "3Com 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+            "D": "3Com"
           },
           "answer": "A",
           "explanation": "Theo bảng tra cứu OUI trong slide '02 - IP subnetting - T3.pdf', OUI '00-01-42' thuộc về hãng sản xuất Cisco."
@@ -1304,7 +1303,7 @@ window.QUIZ_DATA = {
             "D": "Realtek"
           },
           "answer": "A",
-          "explanation": "D-Link (trong khi 3Com là 00-04-0B, Realtek là 00-E0-4C, Intel là 00-02-B3, Cisco là 00-01-42). 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+          "explanation": "D-Link (trong khi 3Com là 00-04-0B, Realtek là 00-E0-4C, Intel là 00-02-B3, Cisco là 00-01-42)."
         },
         {
           "id": 8,
@@ -1385,7 +1384,7 @@ window.QUIZ_DATA = {
             "A": "Các bit tương ứng với phần NetID có giá trị là 0, các bit HostID có giá trị là 1",
             "B": "Các bit tương ứng với phần NetID có giá trị là 1, các bit HostID có giá trị là 0",
             "C": "Tất cả các bit đều mang giá trị là 1",
-            "D": "Các bit được đánh số xen kẽ 1 và 0 ngẫu nhiên 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+            "D": "Các bit được đánh số xen kẽ 1 và 0 ngẫu nhiên"
           },
           "answer": "B",
           "explanation": "Quy ước chuẩn của Subnet Mask: toàn bộ các bit nằm ở phần NetID có giá trị là 1, và toàn bộ các bit nằm ở phần HostID có giá trị là 0."
@@ -1469,10 +1468,10 @@ window.QUIZ_DATA = {
             "A": "8 bits NetID và 24 bits HostID (Subnet mask mặc định: 255.0.0.0 hay /8)",
             "B": "16 bits NetID và 16 bits HostID (Subnet mask mặc định: 255.255.0.0 hay /16)",
             "C": "24 bits NetID và 8 bits HostID (Subnet mask mặc định: 255.255.255.0 hay /24)",
-            "D": "4 bits NetID và 28 bits HostID 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+            "D": "4 bits NetID và 28 bits HostID"
           },
           "answer": "A",
-          "explanation": "Lớp A quy định 8 bits đầu làm NetID và 24 bits sau làm HostID. Subnet Mask mặc định là 255.0.0.0 (ký hiệu CIDR là /8). 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+          "explanation": "Lớp A quy định 8 bits đầu làm NetID và 24 bits sau làm HostID. Subnet Mask mặc định là 255.0.0.0 (ký hiệu CIDR là /8)."
         },
         {
           "id": 22,
@@ -1553,7 +1552,7 @@ window.QUIZ_DATA = {
             "A": "Địa chỉ quảng bá toàn cầu trên Internet",
             "B": "Địa chỉ kiểm tra vòng lặp nội bộ (Loopback Address / Localhost)",
             "C": "Địa chỉ cấp tự động cho các máy in mạng",
-            "D": "Địa chỉ cổng mặc định của Router 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+            "D": "Địa chỉ cổng mặc định của Router"
           },
           "answer": "B",
           "explanation": "Dải 127.0.0.0/8 (điển hình là 127.0.0.1) là dải địa chỉ Loopback, cho phép máy tính gửi gói tin tự kiểm tra chính nó trên ngăn xếp giao thức TCP/IP cục bộ mà không phát tín hiệu ra ngoài đường truyền."
@@ -1628,7 +1627,7 @@ window.QUIZ_DATA = {
             "D": "Tăng độ dài tổng thể của địa chỉ IPv4 từ 32 bit lên 64 bit"
           },
           "answer": "B",
-          "explanation": "Quy tắc chia subnet chuẩn: Người quản trị phải mượn liên tục các bit đầu tiên (các bit có trọng số cao nhất từ trái sang phải) thuộc phần HostID để ghép vào phần NetID. 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+          "explanation": "Quy tắc chia subnet chuẩn: Người quản trị phải mượn liên tục các bit đầu tiên (các bit có trọng số cao nhất từ trái sang phải) thuộc phần HostID để ghép vào phần NetID."
         },
         {
           "id": 35,
@@ -1637,7 +1636,7 @@ window.QUIZ_DATA = {
             "A": "2^n",
             "B": "2^n - 2",
             "C": "2^(n-1)",
-            "D": "2 * n 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+            "D": "2 * n"
           },
           "answer": "A",
           "explanation": "Khi mượn n bit của phần HostID, số lượng subnet tạo ra theo tiêu chuẩn hiện đại là 2^n (tài liệu giáo trình ghi rõ: Số subnet = 2^n)."
@@ -1721,7 +1720,7 @@ window.QUIZ_DATA = {
             "A": "Net Addr: 192.168.10.0 và Broadcast: 192.168.10.63",
             "B": "Net Addr: 192.168.10.64 và Broadcast: 192.168.10.127",
             "C": "Net Addr: 192.168.10.64 và Broadcast: 192.168.10.191",
-            "D": "Net Addr: 192.168.10.128 và Broadcast: 192.168.10.255 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+            "D": "Net Addr: 192.168.10.128 và Broadcast: 192.168.10.255"
           },
           "answer": "B",
           "explanation": "Các subnet với bước nhảy 64 gồm: .0, .64, .128, .192. Địa chỉ host .65 nằm trong khoảng từ 64 đến 127. Do đó Network Address = 192.168.10.64; Broadcast Address = 192.168.10.127 (dải host: .65 đến .126)."
@@ -1784,7 +1783,7 @@ window.QUIZ_DATA = {
             "D": "172.100.96.1 đến 172.100.96.254"
           },
           "answer": "B",
-          "explanation": "Mạng 172.100.96.0/19 có Net Addr là 172.100.96.0 và Broadcast là 172.100.127.255. Dải IP host hợp lệ bắt đầu từ IP ngay sau Net Addr (172.100.96.1) đến IP ngay trước Broadcast (172.100.127.254). 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+          "explanation": "Mạng 172.100.96.0/19 có Net Addr là 172.100.96.0 và Broadcast là 172.100.127.255. Dải IP host hợp lệ bắt đầu từ IP ngay sau Net Addr (172.100.96.1) đến IP ngay trước Broadcast (172.100.127.254)."
         },
         {
           "id": 48,
@@ -1805,7 +1804,7 @@ window.QUIZ_DATA = {
             "A": "255.255.255.192 (/26)",
             "B": "255.255.255.224 (/27)",
             "C": "255.255.255.240 (/28)",
-            "D": "255.255.255.248 (/29) 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính"
+            "D": "255.255.255.248 (/29)"
           },
           "answer": "B",
           "explanation": "Mạng ban đầu mượn 2 bit (/26 mask 255.255.255.192). Khi chia tiếp một mạng /26 làm đôi để đáp ứng 30 hosts, ta mượn thêm 1 bit nữa thành /27. Mask /27 có dạng nhị phân 1110 0000 ở octet 4 = 255.255.255.224."
@@ -1817,7 +1816,7 @@ window.QUIZ_DATA = {
             "A": "Cùng subnet vì đều thuộc lớp mạng C 192.168.1.0",
             "B": "Không cùng subnet vì 192.168.1.65 thuộc subnet 192.168.1.64/26, còn 192.168.1.130 thuộc subnet 192.168.1.128/26",
             "C": "Cùng subnet vì có cùng Subnet Mask 255.255.255.192",
-            "D": "Có thể liên lạc trực tiếp không cần Router vì có cùng 24 bit mạng ban đầu 50 CÂU TRẮC NGHIỆM + ĐÁP ÁN CHI TIẾT Tài liệu ôn tập thi giữa kỳ môn Mạng máy tính PHẦN 2: BẢNG ĐÁP ÁN NHANH (ANSWER KEY MATRIX) Câu Đ.Án Câu Đ.Án Câu Đ.Án Câu Đ.Án Câu Đ.Án 1 B 11 B 21 A 31 B 41 B 2 C 12 B 22 A 32 A 42 B 3 B 13 B 23 B 33 D 43 C 4 B 14 B 24 C 34 B 44 C 5 C 15 B 25 C 35 A 45 B 6 A 16 A 26 A 36 C 46 A 7 A 17 C 27 B 37 A 47 B 8 B 18 B 28 B 38 A 48 B 9 B 19 B 29 B 39 B 49 B 10 B 20 A 30 A 40 C 50 B PHẦN 3: ĐÁP ÁN CHI TIẾT & LỜI GIẢI THÍCH CHUYÊN SÂU Căn cứ lý thuyết từ bài giảng '02 - IP subnetting - T3.pdf' & các bước tính toán chi tiết"
+            "D": "Có thể liên lạc trực tiếp không cần Router vì có cùng 24 bit mạng ban đầu"
           },
           "answer": "B",
           "explanation": "Mạng /26 có bước nhảy 64. Subnet 1: 192.168.1.64/26 (dải IP .65 - .126); Subnet 2: 192.168.1.128/26 (dải IP .129 - .190). Vì .65 và .130 nằm ở hai dải subnet khác nhau nên chúng không cùng mạng con và không thể nói chuyện trực tiếp ở tầng 2 mà phải qua Router."
@@ -2424,7 +2423,7 @@ window.QUIZ_DATA = {
             "A": "Tăng băng thông đường truyền kết nối giữa 2 chi nhánh",
             "B": "Cho phép phân cấp quyền quản lý subdomain cho máy chủ DNS tại chi nhánh, giúp giải quyết truy vấn cục bộ và giảm độ trễ (delay)",
             "C": "Đổi địa chỉ MAC của các máy trạm tại chi nhánh",
-            "D": "Chuyển đổi toàn bộ tên miền quốc gia thành tên miền quốc tế PHẦN 2: BẢNG MA TRẬN ĐÁP ÁN NHANH (ANSWER KEY) Câu Đ/A Câu Đ/A Câu Đ/A Câu Đ/A Câu Đ/A Câu Đ/A Câu Đ/A Câu Đ/A Câu Đ/A Câu Đ/A 1 A 6 C 11 B 16 B 21 A 26 B 31 B 36 B 41 B 46 B 2 B 7 B 12 C 17 C 22 B 27 B 32 B 37 B 42 A 47 B 3 C 8 A 13 B 18 B 23 A 28 B 33 B 38 C 43 C 48 B 4 A 9 C 14 B 19 A 24 B 29 C 34 B 39 B 44 B 49 A 5 B 10 B 15 B 20 B 25 C 30 B 35 B 40 B 45 B 50 B PHẦN 3: ĐÁP ÁN CHI TIẾT VÀ LỜI GIẢI THÍCH CHUYÊN SÂU"
+            "D": "Chuyển đổi toàn bộ tên miền quốc gia thành tên miền quốc tế"
           },
           "answer": "B",
           "explanation": "Nội dung: Mục đích chính của kỹ thuật ủy thác quyền quản lý tên miền (DNS Delegation) giữa trụ sở chính và chi nhánh là gì? Giải thích chi tiết: DNS Delegation ủy quyền quản trị một miền con (subdomain, ví dụ `hanoi.company.com.vn`) cho Name Server tại chi nhánh đó, giúp phân tán tải và giảm thời gian trễ khi tra cứu cục bộ."
@@ -2513,7 +2512,7 @@ window.QUIZ_DATA = {
           "question": "Giao thức TCP cung cấp dịch vụ nào sau đây cho tầng ứng dụng?",
           "options": {
             "A": "Truyền dữ liệu không đảm bảo, không kiểm soát luồng, tối ưu hóa độ trễ tuyệt đối.",
-            "B": "Truyền dữ liệu tin cậy (reliable), kiểm soát luồng (flow control) và kiểm soát tắc nghẽn (congestion control). Khoa CNTT - Mạng máy tính & Truyền thông",
+            "B": "Truyền dữ liệu tin cậy (reliable), kiểm soát luồng (flow control) và kiểm soát tắc nghẽn (congestion control).",
             "C": "Cam kết bảo đảm băng thông tối thiểu cố định và giới hạn độ trễ thời gian dưới 5ms.",
             "D": "Mã hóa dữ liệu đầu cuối tự động theo chuẩn quân sự mà không cần cài thêm thư viện."
           },
@@ -2530,7 +2529,7 @@ window.QUIZ_DATA = {
             "D": "Vì UDP tự động tăng băng thông của nhà mạng lên gấp đôi."
           },
           "answer": "B",
-          "explanation": "Khoa CNTT - Mạng máy tính & Truyền thông Giải thích chi tiết: UDP không có bắt tay thiết lập kết nối (tiết kiệm thời gian/RTT), header nhỏ (8 bytes so với 20 bytes của TCP), và không bị chặn lại khi mất gói (không có retransmission), rất phù hợp cho ứng dụng thời gian thực chấp nhận mất dữ liệu nhỏ nhưng cần độ trễ thấp."
+          "explanation": "Giải thích chi tiết: UDP không có bắt tay thiết lập kết nối (tiết kiệm thời gian/RTT), header nhỏ (8 bytes so với 20 bytes của TCP), và không bị chặn lại khi mất gói (không có retransmission), rất phù hợp cho ứng dụng thời gian thực chấp nhận mất dữ liệu nhỏ nhưng cần độ trễ thấp."
         },
         {
           "id": 9,
@@ -2599,7 +2598,7 @@ window.QUIZ_DATA = {
             "A": "Chỉ đúng 1 kết nối TCP duy nhất cho toàn bộ quá trình.",
             "B": "Tổng cộng 11 kết nối TCP riêng biệt (1 cho HTML và 10 cho 10 ảnh).",
             "C": "2 kết nối TCP (1 kết nối cho văn bản và 1 kết nối cho đa phương tiện).",
-            "D": "Không cần thiết lập bất kỳ kết nối TCP nào. Khoa CNTT - Mạng máy tính & Truyền thông"
+            "D": "Không cần thiết lập bất kỳ kết nối TCP nào."
           },
           "answer": "B",
           "explanation": "Non-persistent HTTP (HTTP/1.0) chỉ truyền tối đa một đối tượng trên mỗi kết nối TCP rồi đóng kết nối lại. Do đó tải 1 file HTML và 10 ảnh cần mở 1 + 10 = 11 kết nối TCP."
@@ -2686,11 +2685,11 @@ window.QUIZ_DATA = {
             "D": "Không tìm thấy tài nguyên được yêu cầu trên máy chủ web."
           },
           "answer": "B",
-          "explanation": "Khoa CNTT - Mạng máy tính & Truyền thông Giải thích chi tiết: Mã 200: OK; Mã 301: Moved Permanently (tài nguyên đã chuyển sang địa chỉ mới ghi trong header Location); Mã 400: Bad Request; Mã 404: Not Found; Mã 505: HTTP Version Not Supported."
+          "explanation": "Giải thích chi tiết: Mã 200: OK; Mã 301: Moved Permanently (tài nguyên đã chuyển sang địa chỉ mới ghi trong header Location); Mã 400: Bad Request; Mã 404: Not Found; Mã 505: HTTP Version Not Supported."
         },
         {
           "id": 22,
-          "question": "Cơ chế Cookie giúp khắc phục hạn chế phi trạng thái của HTTP bằng cách sử dụng bao nhiêu thành phần cốt lõi? Khoa CNTT - Mạng máy tính & Truyền thông",
+          "question": "Cơ chế Cookie giúp khắc phục hạn chế phi trạng thái của HTTP bằng cách sử dụng bao nhiêu thành phần cốt lõi?",
           "options": {
             "A": "1 thành phần duy nhất là phần mềm diệt virus trên client.",
             "B": "2 thành phần gồm địa chỉ MAC và IP của router biên.",
@@ -2774,7 +2773,7 @@ window.QUIZ_DATA = {
         },
         {
           "id": 29,
-          "question": "Trong một phiên làm việc SMTP bằng dòng lệnh, làm thế nào để Client báo cho Mail Server biết đã nhập xong toàn bộ nội dung thư? Khoa CNTT - Mạng máy tính & Truyền thông",
+          "question": "Trong một phiên làm việc SMTP bằng dòng lệnh, làm thế nào để Client báo cho Mail Server biết đã nhập xong toàn bộ nội dung thư?",
           "options": {
             "A": "Nhập liên tục 5 dấu chấm than '!!!!!'.",
             "B": "Gõ một dòng riêng biệt chỉ chứa duy nhất một dấu chấm '.' (tương đương CRLF.CRLF).",
@@ -2842,7 +2841,7 @@ window.QUIZ_DATA = {
             "D": "Sử dụng giao thức ICMP để ping kiểm tra nội dung thư."
           },
           "answer": "A",
-          "explanation": "Khoa CNTT - Mạng máy tính & Truyền thông Giải thích chi tiết: Với Webmail, User Agent là trình duyệt Web giao tiếp với Web Server qua HTTP. Sau đó, máy chủ Webmail đóng vai trò cầu nối: dùng SMTP để gửi thư sang các Mail Server khác và dùng IMAP/POP3 để truy xuất hộp thư người dùng."
+          "explanation": "Giải thích chi tiết: Với Webmail, User Agent là trình duyệt Web giao tiếp với Web Server qua HTTP. Sau đó, máy chủ Webmail đóng vai trò cầu nối: dùng SMTP để gửi thư sang các Mail Server khác và dùng IMAP/POP3 để truy xuất hộp thư người dùng."
         },
         {
           "id": 35,
@@ -2858,7 +2857,7 @@ window.QUIZ_DATA = {
         },
         {
           "id": 36,
-          "question": "Trong bài toán phân phối một tệp kích thước F cho N máy client, thời gian phân phối tối thiểu của mô hình Client-Server (D_cs) có đặc điểm gì khi N tăng rất lớn? Khoa CNTT - Mạng máy tính & Truyền thông",
+          "question": "Trong bài toán phân phối một tệp kích thước F cho N máy client, thời gian phân phối tối thiểu của mô hình Client-Server (D_cs) có đặc điểm gì khi N tăng rất lớn?",
           "options": {
             "A": "Thời gian phân phối D_cs tăng tuyến tính theo số lượng client N (D_cs >= N*F / u_s).",
             "B": "Thời gian phân phối D_cs giảm dần về 0 nhờ có máy chủ trung tâm.",
@@ -2942,7 +2941,7 @@ window.QUIZ_DATA = {
         },
         {
           "id": 43,
-          "question": "Hai chiến lược đặt máy chủ phổ biến được các mạng phân phối nội dung (CDN) áp dụng là gì? Khoa CNTT - Mạng máy tính & Truyền thông",
+          "question": "Hai chiến lược đặt máy chủ phổ biến được các mạng phân phối nội dung (CDN) áp dụng là gì?",
           "options": {
             "A": "Enter Deep (đặt sâu vào các mạng truy cập ISP) và Bring Home (đặt các cụm lớn tại điểm POP gần mạng truy cập).",
             "B": "Upload Local và Download Global.",
@@ -2986,7 +2985,7 @@ window.QUIZ_DATA = {
             "D": "Vì hệ điều hành yêu cầu lưu lại lịch sử cuộc gọi điện thoại."
           },
           "answer": "A",
-          "explanation": "UDP là giao thức không kết nối (connectionless). Do đó, mỗi gói tin datagram được gửi đi hoàn toàn độc lập và hàm `sendto(data, (dest_ip, dest_port))` bắt buộc phải gắn kèm địa chỉ đích để tầng mạng biết nơi chuyển phát. Khoa CNTT - Mạng máy tính & Truyền thông"
+          "explanation": "UDP là giao thức không kết nối (connectionless). Do đó, mỗi gói tin datagram được gửi đi hoàn toàn độc lập và hàm `sendto(data, (dest_ip, dest_port))` bắt buộc phải gắn kèm địa chỉ đích để tầng mạng biết nơi chuyển phát."
         },
         {
           "id": 47,
@@ -3026,12 +3025,12 @@ window.QUIZ_DATA = {
         },
         {
           "id": 50,
-          "question": "Sau khi kết nối TCP đã được thiết lập thành công giữa Client và Server, hai bên trao đổi dữ liệu với nhau bằng cặp hàm nào? Khoa CNTT - Mạng máy tính & Truyền thông",
+          "question": "Sau khi kết nối TCP đã được thiết lập thành công giữa Client và Server, hai bên trao đổi dữ liệu với nhau bằng cặp hàm nào?",
           "options": {
             "A": "sendto() và recvfrom()",
             "B": "send() và recv() (hoặc read và write)",
             "C": "listen() và accept()",
-            "D": "bind() và connect() Khoa CNTT - Mạng máy tính & Truyền thông PHẦN 2: BẢNG MA TRẬN ĐÁP ÁN NHANH (ANSWER KEY MATRIX) Câu Đ.Án Câu Đ.Án Câu Đ.Án Câu Đ.Án Câu Đ.Án 1 A 11 A 21 B 31 A 41 A 2 B 12 B 22 C 32 A 42 A 3 C 13 B 23 B 33 A 43 A 4 B 14 B 24 A 34 A 44 B 5 A 15 B 25 A 35 A 45 B 6 B 16 C 26 B 36 A 46 A 7 B 17 A 27 B 37 A 47 B 8 B 18 B 28 B 38 B 48 A 9 A 19 B 29 B 39 A 49 C 10 A 20 B 30 A 40 A 50 B PHẦN 3: ĐÁP ÁN CHI TIẾT & GIẢI THÍCH CHUYÊN SÂU"
+            "D": "bind() và connect()"
           },
           "answer": "B",
           "explanation": "Khi kết nối TCP dạng byte-stream đã hình thành, hai đầu mút trao đổi dữ liệu thông qua hàm `send()` và `recv()` (không cần phải chỉ định lại địa chỉ IP/port ở mỗi lần gửi nhận như `sendto`/`recvfrom` của UDP)."
