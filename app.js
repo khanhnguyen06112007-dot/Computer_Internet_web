@@ -12,6 +12,8 @@
   let currentUser = null;
   let authToken = null;
   let soundEnabled = localStorage.getItem('networkQuizSound') !== 'off';
+  let examTimerId = null;
+  let examDeadline = null;
 
   function normalizeBank(data) {
     if (!data || !Array.isArray(data.topics)) throw new Error('Không tìm thấy danh sách “topics” trong JSON. Hãy chọn tệp ngân hàng câu hỏi đúng định dạng.');
@@ -51,6 +53,7 @@
       els.bankCount.textContent = `Đã sẵn sàng · ${bank.length} câu hỏi`;
       $('#full-count').textContent = bank.length;
       $('#instant-count').textContent = bank.length;
+      $('#instant-title').textContent = `Luyện tập ${bank.length} câu`;
       els.modeCards.hidden = false;
       els.loadArea.hidden = false;
       if (bank.length < 70) {
@@ -129,6 +132,12 @@
     players.forEach((player, index) => {
       const playerRank = rankFor(Number(player.total_points) || 0);
       const row = document.createElement('div'); row.className = `ranking-row${player.username === currentUser ? ' is-me' : ''}`;
+      row.setAttribute('role', 'button'); row.tabIndex = 0;
+      row.setAttribute('aria-label', `Xem lịch sử làm bài của ${player.username}`);
+      row.addEventListener('click', () => showHistory(player.username));
+      row.addEventListener('keydown', event => {
+        if (event.key === 'Enter' || event.key === ' ') { event.preventDefault(); showHistory(player.username); }
+      });
       const place = document.createElement('span'); place.className = `ranking-place place-${index + 1}`; place.textContent = String(index + 1).padStart(2, '0');
       const badge = makeRankEmblem(playerRank.level, true);
       const identity = document.createElement('span'); identity.className = 'ranking-identity';
@@ -147,6 +156,54 @@
       renderRanking(Array.isArray(result.players) ? result.players : []);
     } catch (error) { list.textContent = error.message; }
   }
+  async function showHistory(username) {
+    const dialog = $('#history-dialog');
+    $('#history-title').textContent = `Lịch sử · ${username}`;
+    $('#history-subtitle').textContent = 'Các đề thi thử 70 câu đã nộp';
+    $('#history-summary').replaceChildren();
+    $('#history-summary').textContent = 'Đang tải lịch sử…';
+    $('#history-list').replaceChildren();
+    dialog.showModal();
+    try {
+      const result = await callRankingApi({ action: 'history', username });
+      const entries = Array.isArray(result.history) ? result.history : [];
+      const totalPoints = entries.reduce((sum, item) => sum + Number(item.correct_answers || 0), 0);
+      const average = entries.length ? Math.round(totalPoints / entries.length) : 0;
+      const summary = $('#history-summary'); summary.replaceChildren();
+      [
+        ['LƯỢT THI', `${entries.length}`],
+        ['TỔNG ĐIỂM', `${totalPoints}`],
+        ['TRUNG BÌNH', `${average}/70`],
+      ].forEach(([label, value]) => {
+        const card = document.createElement('div'); card.className = 'history-stat';
+        const caption = document.createElement('span'); caption.textContent = label;
+        const number = document.createElement('strong'); number.textContent = value;
+        card.append(caption, number); summary.append(card);
+      });
+      const list = $('#history-list'); list.replaceChildren();
+      if (!entries.length) {
+        const empty = document.createElement('div'); empty.className = 'history-empty';
+        empty.innerHTML = '<span>✦</span><b>Chưa có bài thi nào</b><small>Lịch sử sẽ xuất hiện sau khi nộp một đề thi thử.</small>';
+        list.append(empty); return;
+      }
+      entries.forEach((entry, index) => {
+        const score = Math.max(0, Math.min(70, Number(entry.correct_answers) || 0));
+        const card = document.createElement('article'); card.className = 'history-entry';
+        const number = document.createElement('span'); number.className = 'history-entry-number'; number.textContent = String(index + 1).padStart(2, '0');
+        const detail = document.createElement('div'); detail.className = 'history-entry-detail';
+        const title = document.createElement('b'); title.textContent = 'Thi thử ngẫu nhiên';
+        const date = document.createElement('small');
+        date.textContent = new Intl.DateTimeFormat('vi-VN', { dateStyle: 'medium', timeStyle: 'short' }).format(new Date(entry.submitted_at));
+        detail.append(title, date);
+        const resultMark = document.createElement('strong'); resultMark.className = 'history-entry-score'; resultMark.textContent = `${score}/70`;
+        const bar = document.createElement('span'); bar.className = 'history-entry-bar';
+        const fill = document.createElement('span'); fill.style.width = `${score / 70 * 100}%`; bar.append(fill);
+        const scoreBlock = document.createElement('div'); scoreBlock.className = 'history-score-block'; scoreBlock.append(resultMark, bar);
+        card.append(number, detail, scoreBlock); list.append(card);
+      });
+    } catch (error) { $('#history-summary').textContent = error.message; }
+  }
+  $('#close-history').addEventListener('click', () => $('#history-dialog').close());
   $('#refresh-ranking').addEventListener('click', loadRanking);
 
   function setSignedIn(username) {
@@ -254,9 +311,33 @@
     }
     return out;
   }
+  function stopExamTimer() {
+    if (examTimerId !== null) window.clearInterval(examTimerId);
+    examTimerId = null; examDeadline = null;
+  }
+  function startExamTimer() {
+    stopExamTimer();
+    const timer = $('#exam-timer');
+    const duration = 60 * 60;
+    examDeadline = Date.now() + duration * 1000;
+    timer.hidden = false;
+    const update = () => {
+      const remaining = Math.max(0, Math.ceil((examDeadline - Date.now()) / 1000));
+      const minutes = Math.floor(remaining / 60);
+      const seconds = remaining % 60;
+      timer.textContent = `${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
+      timer.classList.toggle('urgent', remaining <= 5 * 60);
+      if (remaining <= 0) submitQuiz({ timedOut: true });
+    };
+    update();
+    examTimerId = window.setInterval(update, 1000);
+  }
   function startQuiz(mode) {
     if (!bank.length) return;
     if (mode === 'exam' && bank.length < 70) { showError('Đề thi thử cần ít nhất 70 câu hỏi. Hãy nạp một ngân hàng lớn hơn.'); return; }
+    stopExamTimer();
+    $('#exam-timer').hidden = true;
+    $('#exam-timer').classList.remove('urgent');
     const questions = mode === 'exam' ? shuffle(bank).slice(0, 70) : bank.slice();
     const submissionId = mode === 'exam' ? (crypto.randomUUID ? crypto.randomUUID() : 'xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx'.replace(/[xy]/g, c => { const r = Math.random() * 16 | 0; return (c === 'x' ? r : (r & 3 | 8)).toString(16); })) : null;
     session = { mode, questions, answers: Array(questions.length).fill(null), index: 0, submitted: false, submissionId };
@@ -264,7 +345,9 @@
     $('#quiz-kind').textContent = mode === 'exam' ? 'THI THỬ NGẪU NHIÊN' : mode === 'instant' ? 'LUYỆN TẬP · PHẢN HỒI NGAY' : 'ÔN TẬP TOÀN BỘ';
     $('#quiz-topic').textContent = mode === 'exam' ? 'Đề thi thử' : mode === 'instant' ? 'Luyện tập có giải thích' : 'Ngân hàng câu hỏi';
     $('#submit-top').innerHTML = mode === 'instant' ? 'Kết thúc <span>→</span>' : 'Nộp bài <span>→</span>';
-    renderQuestion(); window.scrollTo(0, 0);
+    renderQuestion();
+    if (mode === 'exam') startExamTimer();
+    window.scrollTo(0, 0);
   }
   els.fullMode.addEventListener('click', () => startQuiz('full'));
   els.examMode.addEventListener('click', () => startQuiz('exam'));
@@ -339,7 +422,7 @@
     const nav = $('.navigator'); nav.classList.toggle('collapsed');
     $('#navigator-toggle').textContent = nav.classList.contains('collapsed') ? '+' : '−';
   });
-  $('#back-home').addEventListener('click', () => { els.quiz.hidden = true; els.results.hidden = true; els.home.hidden = false; window.scrollTo(0, 0); });
+  $('#back-home').addEventListener('click', () => { stopExamTimer(); els.quiz.hidden = true; els.results.hidden = true; els.home.hidden = false; window.scrollTo(0, 0); });
   $('#submit-top').addEventListener('click', openSubmitDialog);
 
   function openSubmitDialog() {
@@ -350,27 +433,33 @@
     els.dialog.showModal();
   }
   els.dialog.addEventListener('close', () => { if (els.dialog.returnValue === 'submit') submitQuiz(); });
-  async function submitQuiz() {
+  async function submitQuiz({ timedOut = false } = {}) {
+    if (!session || session.submitted) return;
     session.submitted = true;
+    session.timedOut = timedOut;
+    stopExamTimer();
+    if (timedOut && els.dialog.open) els.dialog.close('timeout');
     const correct = session.questions.reduce((sum, q, i) => sum + (session.answers[i] === q.answer ? 1 : 0), 0);
     renderQuestion(); renderResults(correct); els.quiz.hidden = true; els.results.hidden = false; window.scrollTo(0, 0);
     if (session.mode !== 'exam') return;
     const status = $('#score-sync-status');
     if (currentUser === 'Khách' || !authToken) {
-      status.textContent = 'Bạn đang dùng chế độ khách nên điểm đề thi này không được lưu vào bảng xếp hạng.';
+      status.textContent = timedOut
+        ? 'Hết giờ: bài thi đã được nộp tự động. Bạn đang dùng chế độ khách nên điểm không được lưu vào bảng xếp hạng.'
+        : 'Bạn đang dùng chế độ khách nên điểm đề thi này không được lưu vào bảng xếp hạng.';
       return;
     }
-    status.textContent = 'Đang cộng điểm vào tài khoản…';
+    status.textContent = timedOut ? 'Hết giờ: bài thi đã được nộp tự động. Đang lưu điểm…' : 'Đang cộng điểm vào tài khoản…';
     try {
       const result = await callRankingApi({ action: 'submit-score', submissionId: session.submissionId, points: correct });
       status.classList.add('saved');
       status.textContent = result.saved
-        ? `Đã cộng ${correct} điểm vào tài khoản ${currentUser}.`
+        ? `${timedOut ? 'Hết giờ, bài đã nộp tự động. ' : ''}Đã cộng ${correct} điểm vào tài khoản ${currentUser}.`
         : 'Đề thi này đã được tính điểm trước đó.';
       await loadRanking();
     } catch (error) {
       status.classList.add('sync-error');
-      status.replaceChildren(document.createTextNode(`${error.message} `));
+      status.replaceChildren(document.createTextNode(`${timedOut ? 'Hết giờ, bài đã nộp tự động. ' : ''}${error.message} `));
       const retry = document.createElement('button'); retry.className = 'retry-score'; retry.textContent = 'Thử lưu lại';
       const submissionId = session.submissionId;
       retry.addEventListener('click', () => { status.classList.remove('sync-error'); status.replaceChildren(); submitScoreAgain(correct, submissionId, status); });

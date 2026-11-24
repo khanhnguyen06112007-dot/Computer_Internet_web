@@ -42,6 +42,10 @@ Chỉ dùng publishable key ở trang web; không đưa secret/service-role key 
 
 Commit/push toàn bộ tệp dự án lên GitHub; Vercel sẽ triển khai phiên bản mới. Có thể vào ứng dụng bằng tài khoản để xem bảng xếp hạng; khách vẫn luyện tập được nhưng điểm không được lưu. Mỗi câu đúng trong đề thi thử 70 câu cộng 1 điểm; cứ 50 điểm lên một bậc.
 
+## 5. Lịch sử làm bài
+
+Lịch sử dùng các bản ghi đã lưu trong `quiz_submissions`; không cần chạy SQL bổ sung. Sau khi cập nhật web, hãy triển khai lại Edge Function với phiên bản mới trong `supabase/functions/quiz-ranking/index.ts` để bật API `history`. Nếu quản lý function trực tiếp trên Supabase Dashboard, mở **Edge Functions → quiz-ranking → Code**, thay mã bằng nội dung tệp này rồi chọn **Deploy updates**. Bài thi thử có đồng hồ 60 phút; hết giờ ứng dụng tự nộp bài và lưu số câu đúng như một lần thi bình thường.
+
 ## Ghi chú về độ tin cậy điểm
 
 API kiểm tra phiên đăng nhập, giới hạn mỗi lượt thi tối đa 70 điểm và không cộng trùng cùng một mã lượt thi. Vì câu hỏi và phần chấm điểm nằm trong ứng dụng web tĩnh, đây là bảng xếp hạng phù hợp cho nhóm học nhỏ, chưa phải hệ thống chống gian lận cho giải đấu.

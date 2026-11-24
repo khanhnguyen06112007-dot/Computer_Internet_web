@@ -88,6 +88,22 @@ Deno.serve(async (request) => {
     return json({ players: await response.json() });
   }
 
+  if (body.action === "history") {
+    const targetUsername = String(body.username ?? "");
+    if (!/^[A-Za-z0-9_]{1,32}$/.test(targetUsername)) {
+      return json({ error: "Tên tài khoản không hợp lệ." }, 400);
+    }
+    const params = new URLSearchParams({
+      select: "submission_id,correct_answers,submitted_at",
+      username: `eq.${targetUsername}`,
+      order: "submitted_at.desc",
+      limit: "100",
+    });
+    const response = await fetch(`${projectUrl}/rest/v1/quiz_submissions?${params}`, { headers });
+    if (!response.ok) return json({ error: "Không tải được lịch sử làm bài." }, 502);
+    return json({ username: targetUsername, history: await response.json() });
+  }
+
   if (body.action === "submit-score") {
     const submissionId = String(body.submissionId ?? "");
     const points = Number(body.points);

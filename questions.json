@@ -1,11 +1,11 @@
 {
-  "title": "Ngân hàng 250 câu trắc nghiệm Mạng máy tính (Ôn thi giữa kỳ)",
-  "total_questions": 250,
+  "title": "Ngân Hàng 500 Câu Hỏi Trắc Nghiệm Mạng Máy Tính (Phiên Bản Nâng Cấp v3 - Toàn Diện & Chuẩn Hóa Phương Án Lựa Chọn)",
+  "total_questions": 500,
   "topics": [
     {
       "topic_id": 1,
       "topic_title": "Chuyên đề 1: Tổng quan Mạng máy tính & Cấu trúc Internet",
-      "total_questions": 50,
+      "total_questions": 100,
       "questions": [
         {
           "id": 1,
@@ -606,13 +606,613 @@
           },
           "answer": "D",
           "explanation": "Lệnh `ping` sử dụng các bản tin ICMP Echo Request và Echo Reply để kiểm tra xem một máy chủ/nút mạng ở xa có phản hồi hay không, đồng thời đo thời gian khứ hồi (Round-Trip Time - RTT) và tỷ lệ mất gói giữa hai điểm."
+        },
+        {
+          "id": 51,
+          "question": "Trong mạng chuyển mạch gói (Packet Switching), độ trễ truyền dẫn (Transmission Delay) của một gói tin có kích thước L bit truyền qua đường truyền tốc độ R bps được tính bằng công thức nào và phụ thuộc vào yếu tố nào?",
+          "options": {
+            "A": "R / L, chỉ phụ thuộc vào khoảng cách địa lý và vận tốc lan truyền tín hiệu.",
+            "B": "L / R, chỉ phụ thuộc vào độ dài gói tin và băng thông kênh truyền vật lý.",
+            "C": "d / s, phụ thuộc vào chiều dài cáp truyền dẫn và tốc độ sóng điện từ.",
+            "D": "L * R, phụ thuộc vào dung lượng bộ đệm tại các nút mạng trung gian."
+          },
+          "answer": "B",
+          "explanation": "Độ trễ truyền dẫn (Transmission delay) d_trans = L / R, là thời gian cần thiết để đẩy toàn bộ L bit của gói tin lên đường truyền có tốc độ R bps. Nó không phụ thuộc vào khoảng cách địa lý (khoảng cách quyết định propagation delay d_prop = d / s)."
+        },
+        {
+          "id": 52,
+          "question": "Điểm khác biệt cốt lõi giữa độ trễ truyền dẫn (Transmission Delay) và độ trễ lan truyền (Propagation Delay) là gì?",
+          "options": {
+            "A": "Độ trễ truyền dẫn phụ thuộc khoảng cách; độ trễ lan truyền phụ thuộc kích thước gói tin.",
+            "B": "Độ trễ truyền dẫn sinh ra ở đầu thu; độ trễ lan truyền sinh ra trong hàng đợi bộ đệm.",
+            "C": "Độ trễ truyền dẫn phụ thuộc băng thông; độ trễ lan truyền phụ thuộc môi trường vật lý.",
+            "D": "Độ trễ truyền dẫn mang tính ngẫu nhiên; độ trễ lan truyền luôn là hằng số cố định."
+          },
+          "answer": "C",
+          "explanation": "Độ trễ truyền dẫn d_trans = L/R phụ thuộc vào kích thước gói tin và tốc độ truyền của liên kết (băng thông). Ngược lại, độ trễ lan truyền d_prop = d/s phụ thuộc vào khoảng cách d giữa hai nút và vận tốc truyền sóng s trong môi trường vật lý."
+        },
+        {
+          "id": 53,
+          "question": "Trong mạng hình sao (Star Topology) sử dụng thiết bị trung tâm là Switch, nếu một nút mạng máy trạm bị đứt cáp kết nối thì hiện tượng gì sẽ xảy ra?",
+          "options": {
+            "A": "Chỉ duy nhất máy trạm đó bị mất kết nối, các nút mạng còn lại vẫn trao đổi bình thường.",
+            "B": "Hai máy trạm liền kề với máy bị đứt cáp sẽ tự động tạo vòng khép kín để truyền dữ liệu.",
+            "C": "Toàn bộ mạng ngừng hoạt động do tín hiệu phản xạ không được triệt tiêu tại đầu cuối.",
+            "D": "Switch trung tâm bị khóa toàn bộ các cổng nhằm tránh hiện tượng bão gói tin quảng bá."
+          },
+          "answer": "A",
+          "explanation": "Trong mô hình hình sao (Star), mỗi máy trạm có một đường truyền riêng độc lập tới thiết bị tập trung (Switch). Khi một liên kết nhánh bị đứt, chỉ riêng máy đó mất kết nối, hệ thống mạng chung vẫn vận hành hoàn toàn ổn định."
+        },
+        {
+          "id": 54,
+          "question": "Trong mạng hình vòng (Ring Topology), kỹ thuật sử dụng thẻ bài (Token Passing) nhằm mục đích chính nào sau đây?",
+          "options": {
+            "A": "Đảm bảo quyền truyền dữ liệu duy nhất tại một thời điểm, loại bỏ nguy cơ xung đột.",
+            "B": "Triệt tiêu hiện tượng dội ngược tín hiệu tại hai đầu cáp trục chính như mạng Bus.",
+            "C": "Mã hóa toàn bộ dữ liệu ở tầng vật lý để ngăn chặn việc nghe lén gói tin trên vòng.",
+            "D": "Tự động phân bổ lại địa chỉ IP động khi có một máy trạm mới gia nhập vào vòng mạng."
+          },
+          "answer": "A",
+          "explanation": "Trong mạng Ring dùng thẻ bài (Token Ring), chỉ trạm nào nắm giữ Token mới có quyền phát khung dữ liệu lên vòng. Điều này đảm bảo cơ chế chia sẻ môi trường có kiểm soát, loại trừ hoàn toàn xung đột (collision)."
+        },
+        {
+          "id": 55,
+          "question": "Một mạng có N máy tính kết nối trực tiếp với nhau theo mô hình mạng lưới hoàn toàn (Full-Mesh Topology). Số lượng liên kết vật lý cần thiết là bao nhiêu?",
+          "options": {
+            "A": "2 * N liên kết, phân bổ đồng đều theo hai chiều thu và phát riêng biệt.",
+            "B": "N * (N + 1) / 2 liên kết, bao gồm cả các kết nối vòng tròn dự phòng khép kín.",
+            "C": "N - 1 liên kết, tương đương với số nhánh tối thiểu trong cấu trúc liên kết hình cây.",
+            "D": "N * (N - 1) / 2 liên kết, đảm bảo mọi cặp nút đều có kết nối điểm - điểm chuyên biệt."
+          },
+          "answer": "D",
+          "explanation": "Với mô hình Full-Mesh, mỗi nút kết nối tới N-1 nút khác. Do mỗi liên kết nối 2 nút nên tổng số đường truyền là N*(N-1)/2. Đây là mô hình có độ tin cậy và dự phòng cao nhất nhưng chi phí tốn kém nhất."
+        },
+        {
+          "id": 56,
+          "question": "Tại sao trong mô hình mạng trục (Bus Topology), hai đầu cáp đồng trục bắt buộc phải gắn điện trở đầu cuối (Terminator)?",
+          "options": {
+            "A": "Khuếch đại tín hiệu suy hao khi gói tin đi qua khoảng cách quá giới hạn cho phép.",
+            "B": "Cấp nguồn điện áp một chiều để duy trì trạng thái hoạt động của các card mạng.",
+            "C": "Hấp thụ năng lượng tín hiệu điện, ngăn hiện tượng phản xạ gây nhiễu loạn trên đường cáp.",
+            "D": "Đóng vai trò làm cổng bảo vệ ngăn chặn việc gắn thêm các máy tính lạ vào đường truyền."
+          },
+          "answer": "C",
+          "explanation": "Khi tín hiệu điện lan truyền tới cuối đường cáp của mạng Bus, nếu không có Terminator để hấp thụ năng lượng, tín hiệu sẽ phản xạ ngược trở lại gây méo và xung đột với các tín hiệu đang truyền trên đường truyền chung."
+        },
+        {
+          "id": 57,
+          "question": "Thuật ngữ 'Thông lượng' (Throughput) trong mạng máy tính phản ánh điều gì?",
+          "options": {
+            "A": "Tốc độ lý thuyết tối đa mà nhà sản xuất thiết kế cho một chuẩn đường truyền vật lý.",
+            "B": "Tốc độ truyền dữ liệu thực tế đo được giữa hai đầu cuối trong một khoảng thời gian.",
+            "C": "Tỷ lệ phần trăm dung lượng bộ đệm còn trống tại các cổng giao tiếp của bộ định tuyến.",
+            "D": "Tổng thời gian một gói tin di chuyển từ máy gửi qua các nút trung gian đến máy nhận."
+          },
+          "answer": "B",
+          "explanation": "Băng thông (Bandwidth) là tốc độ truyền dẫn lý thuyết tối đa của kênh truyền, trong khi Thông lượng (Throughput) là tốc độ truyền dữ liệu hữu ích thực tế đạt được giữa máy gửi và máy nhận, phụ thuộc vào tắc nghẽn, độ trễ và giao thức."
+        },
+        {
+          "id": 58,
+          "question": "Trong mạng chuyển mạch gói, hiện tượng mất gói (Packet Loss) xảy ra chủ yếu do nguyên nhân nào sau đây?",
+          "options": {
+            "A": "Tốc độ xử lý của vi xử lý trên router nhanh hơn tốc độ đẩy dữ liệu ra cổng kết nối.",
+            "B": "Gói tin đến router khi bộ đệm hàng đợi (Queue buffer) của cổng ra đã bị đầy.",
+            "C": "Độ trễ lan truyền vượt quá thời gian timeout được thiết lập ở tầng ứng dụng người dùng.",
+            "D": "Môi trường cáp quang truyền dẫn bị khúc xạ ánh sáng làm đảo trạng thái bit nhị phân."
+          },
+          "answer": "B",
+          "explanation": "Khi tốc độ gói tin đến một liên kết vượt quá dung lượng truyền của liên kết đó trong một khoảng thời gian, các gói tin phải chờ trong hàng đợi. Nếu dung lượng bộ đệm hàng đợi (buffer) bị tràn, các gói tin đến sau bắt buộc phải bị loại bỏ (packet drop/loss)."
+        },
+        {
+          "id": 59,
+          "question": "Cường độ lưu lượng (Traffic Intensity) tại một nút mạng được tính bằng công thức I = (L * a) / R. Trạng thái xếp hàng tại bộ đệm router sẽ thế nào khi I tiến gần tới 1?",
+          "options": {
+            "A": "Các gói tin lập tức được định tuyến qua các đường nhánh khác mà không cần xếp hàng.",
+            "B": "Độ trễ xếp hàng giảm dần về 0 do router tự động tăng tốc độ xử lý phần cứng.",
+            "C": "Hệ thống tự động chuyển đổi sang phương thức chuyển mạch kênh để giải phóng kênh.",
+            "D": "Độ trễ xếp hàng tiến dần tới vô cùng và hàng đợi bộ đệm nhanh chóng bị tràn."
+          },
+          "answer": "D",
+          "explanation": "Traffic intensity I = (L*a)/R (với a là tốc độ gói tin đến, L là kích thước gói, R là băng thông). Khi I xấp xỉ 1, hàng đợi tích lũy rất nhanh và thời gian chờ đợi trung bình trong hàng đợi tăng theo hàm mũ tới vô cùng."
+        },
+        {
+          "id": 60,
+          "question": "Điểm khác biệt căn bản giữa chuyển mạch kênh (Circuit Switching) và chuyển mạch gói (Packet Switching) là gì?",
+          "options": {
+            "A": "Chuyển mạch kênh dùng cáp quang; chuyển mạch gói bắt buộc phải dùng sóng vô tuyến.",
+            "B": "Chuyển mạch kênh dành riêng tài nguyên trước; chuyển mạch gói dùng tài nguyên theo nhu cầu.",
+            "C": "Chuyển mạch kênh hỗ trợ nhiều người dùng hơn; chuyển mạch gói chỉ dành cho thoại.",
+            "D": "Chuyển mạch kênh không gây ra độ trễ; chuyển mạch gói không thể phát hiện lỗi dữ liệu."
+          },
+          "answer": "B",
+          "explanation": "Chuyển mạch kênh thiết lập một đường truyền chuyên biệt và giữ trước tài nguyên (băng thông, khe thời gian) trong suốt phiên liên lạc (như mạng điện thoại truyền thống). Chuyển mạch gói chia nhỏ dữ liệu thành các gói tin và chia sẻ tài nguyên động theo nhu cầu (Statistical Multiplexing)."
+        },
+        {
+          "id": 61,
+          "question": "Trong kỹ thuật ghép kênh phân chia theo thời gian TDM (Time-Division Multiplexing) của chuyển mạch kênh, điều gì sẽ xảy ra nếu một người dùng không truyền dữ liệu trong khe thời gian của mình?",
+          "options": {
+            "A": "Bộ ghép kênh lập tức thu hồi và cấp khe đó cho người dùng có lưu lượng lớn nhất.",
+            "B": "Khe thời gian đó sẽ bị bỏ phí và không người dùng nào khác được phép sử dụng.",
+            "C": "Tất cả các khe thời gian còn lại tự động co giãn để lấp đầy chu kỳ truyền dẫn.",
+            "D": "Kênh truyền tự động ngắt kết nối vật lý và buộc người dùng phải quay số lại."
+          },
+          "answer": "B",
+          "explanation": "Trong TDM truyền thống, mỗi kết nối được ấn định một khe thời gian cố định lặp lại theo chu kỳ. Nếu người dùng im lặng (idle), khe thời gian đó vẫn bị bỏ trống (lãng phí tài nguyên), đây là nhược điểm lớn so với chuyển mạch gói."
+        },
+        {
+          "id": 62,
+          "question": "Kỹ thuật ghép kênh phân chia theo tần số FDM (Frequency-Division Multiplexing) hoạt động dựa trên nguyên lý nào?",
+          "options": {
+            "A": "Các gói tin tự động điều chỉnh tần số phát dựa theo mức độ tắc nghẽn của liên kết mạng.",
+            "B": "Mỗi người dùng chiếm dụng toàn bộ phổ tần số của đường truyền nhưng trong các khoảng thời gian.",
+            "C": "Dữ liệu được gắn các mã số ngẫu nhiên để truyền đồng thời trên cùng một tần số sóng.",
+            "D": "Dải tần số của môi trường truyền được chia thành các băng tần con hẹp dùng riêng biệt."
+          },
+          "answer": "D",
+          "explanation": "FDM chia phổ tần số khả dụng của liên kết thành nhiều dải tần hẹp riêng biệt (như các kênh truyền hình cáp hay sóng phát thanh), mỗi cuộc gọi/kết nối được phân bổ một dải tần cố định trong suốt quá trình truyền."
+        },
+        {
+          "id": 63,
+          "question": "Thành phần 'Network Edge' (Bìa mạng / Rìa mạng) trong kiến trúc Internet bao gồm những thiết bị nào?",
+          "options": {
+            "A": "Các bộ định tuyến lõi trung chuyển lưu lượng quốc tế của các nhà cung cấp Tier-1.",
+            "B": "Các trạm trao đổi lưu lượng Internet công cộng (IXP) và các tuyến cáp quang biển.",
+            "C": "Các thiết bị chuyển mạch xương sống liên kết các mạng diện rộng liên lục địa.",
+            "D": "Các hệ thống đầu cuối (End-systems / Hosts) như máy tính, điện thoại, máy chủ dữ liệu."
+          },
+          "answer": "D",
+          "explanation": "Network Edge gồm các End-systems (hosts) chạy các ứng dụng mạng (PC, laptop, smartphone, IoT, server). Phần Network Core gồm các bộ định tuyến (routers) và thiết bị chuyển mạch (switches) kết nối mạng."
+        },
+        {
+          "id": 64,
+          "question": "Thành phần 'Network Core' (Lõi mạng) trong kiến trúc Internet đảm nhận vai trò chủ yếu nào sau đây?",
+          "options": {
+            "A": "Thực thi trực tiếp mã lệnh của các ứng dụng mạng phía người dùng cuối như Web và Email.",
+            "B": "Chuyển tiếp dữ liệu thông qua hệ thống lưới các bộ định tuyến và thiết bị chuyển mạch liên kết.",
+            "C": "Quản lý quyền truy cập tệp tin nội bộ và thiết lập các chính sách phân quyền người dùng.",
+            "D": "Chuyển đổi giao diện người dùng đồ họa (GUI) thành các gói tin nhị phân chuẩn hóa."
+          },
+          "answer": "B",
+          "explanation": "Lõi mạng (Network Core) là lưới các router và switch liên kết với nhau, có nhiệm vụ chuyển tiếp (forwarding) và định tuyến (routing) các gói tin dữ liệu từ nguồn tới đích xuyên qua các liên kết mạng."
+        },
+        {
+          "id": 65,
+          "question": "Mạng truy nhập theo công nghệ DSL (Digital Subscriber Line) tận dụng hạ tầng vật lý có sẵn nào để truyền dữ liệu?",
+          "options": {
+            "A": "Hệ thống đường dây cáp quang biển liên lục địa sử dụng ghép kênh theo bước sóng.",
+            "B": "Hạ tầng cáp đồng trục của hệ thống truyền hình cáp thông qua bộ điều giải quang.",
+            "C": "Hệ thống dây đôi cáp đồng điện thoại truyền thống kết nối từ nhà đến tổng đài CO.",
+            "D": "Mạng lưới truyền tải điện lực cao thế sử dụng kỹ thuật điều chế tần số sóng mang."
+          },
+          "answer": "C",
+          "explanation": "DSL sử dụng chính đường dây điện thoại bằng cáp đồng xoắn đôi (local loop) đã kết nối tới tổng đài viễn thông trung tâm (Central Office - CO), chia dải tần số ra thành kênh thoại và các kênh tải lên/tải xuống tốc độ cao."
+        },
+        {
+          "id": 66,
+          "question": "Công nghệ mạng truy nhập lai ghép cáp quang - cáp đồng trục HFC (Hybrid Fiber-Coaxial) thường được triển khai bởi đơn vị cung cấp nào?",
+          "options": {
+            "A": "Các công ty điện lực phân phối lưới điện hạ thế tới từng hộ gia đình tiêu dùng.",
+            "B": "Các tổ chức quản lý tên miền quốc gia và điều phối địa chỉ mạng cấp cao.",
+            "C": "Các nhà mạng cung cấp dịch vụ truyền hình cáp (Cable TV Operators).",
+            "D": "Các nhà sản xuất thiết bị phần cứng bo mạch chủ máy tính cá nhân trên thế giới."
+          },
+          "answer": "C",
+          "explanation": "HFC là công nghệ của các công ty truyền hình cáp. Dữ liệu từ trung tâm phát (headend) đi qua cáp quang đến các nút quang (fiber node) ở khu dân cư, rồi từ nút quang phân phối qua cáp đồng trục tới từng hộ gia đình."
+        },
+        {
+          "id": 67,
+          "question": "Đặc điểm cơ bản của môi trường truyền dẫn có định hướng (Guided Media) so với môi trường không định hướng (Unguided Media) là gì?",
+          "options": {
+            "A": "Sóng tín hiệu lan truyền tự do trong không gian vô tuyến mà không cần dây dẫn hữu hình.",
+            "B": "Tín hiệu truyền dẫn được dẫn hướng dọc theo một cấu trúc vật lý rắn xác định.",
+            "C": "Tốc độ truyền dữ liệu luôn bị giới hạn dưới mức 100 Mbps do ảnh hưởng của điện trở.",
+            "D": "Không thể bị suy hao hoặc nhiễu loạn bởi các nguồn điện từ trường bên ngoài tác động."
+          },
+          "answer": "B",
+          "explanation": "Guided Media (môi trường có hướng) dẫn sóng tín hiệu đi trong môi trường vật lý rắn (cáp xoắn đôi, cáp đồng trục, cáp quang). Unguided Media (môi trường không định hướng) truyền sóng tự do trong không khí/chân không (sóng vô tuyến, hồng ngoại, vệ tinh)."
+        },
+        {
+          "id": 68,
+          "question": "Tại sao các đôi dây đồng trong cáp xoắn đôi (Twisted-Pair Cable: UTP, STP) lại được xoắn chặt vào nhau từng cặp?",
+          "options": {
+            "A": "Tăng cường độ bền cơ học để chống chịu lực kéo căng khi thi công trong ống ghen.",
+            "B": "Giúp phân biệt các màu dây khác nhau theo các chuẩn bấm đầu cáp mạng quốc tế.",
+            "C": "Tạo ra điện dung phụ nhằm tăng tốc độ truyền dẫn của xung điện áp trên lõi đồng.",
+            "D": "Triệt tiêu hiện tượng nhiễu điện từ lẫn nhau (Crosstalk) và nhiễu từ các nguồn bên ngoài."
+          },
+          "answer": "D",
+          "explanation": "Bằng cách xoắn hai dây lại với nhau, sóng nhiễu điện từ tác động đều lên cả hai dây và khi lấy hiệu điện thế giữa hai dây (truyền tín hiệu vi sai), điện áp nhiễu sẽ tự triệt tiêu lẫn nhau, giảm thiểu can nhiễu xuyên âm (crosstalk)."
+        },
+        {
+          "id": 69,
+          "question": "So với cáp đồng xoắn đôi và cáp đồng trục, cáp sợi quang (Fiber Optic) sở hữu ưu điểm vượt trội nào?",
+          "options": {
+            "A": "Dễ uốn cong gấp khúc ở góc hẹp và chi phí đầu nối rẻ hơn rất nhiều.",
+            "B": "Có khả năng vừa truyền tín hiệu quang học vừa cấp nguồn điện trực tiếp cho thiết bị.",
+            "C": "Băng thông cực cao, suy hao tín hiệu thấp và hoàn toàn miễn nhiễm với can nhiễu điện từ.",
+            "D": "Không yêu cầu sử dụng thiết bị chuyển đổi quang điện chuyên dụng tại hai đầu kết nối."
+          },
+          "answer": "C",
+          "explanation": "Cáp quang truyền dữ liệu bằng xung ánh sáng nên có băng thông cực kỳ rộng, độ suy hao trên khoảng cách xa rất nhỏ và hoàn toàn không bị ảnh hưởng bởi nhiễu điện từ (EMI) hay sét đánh."
+        },
+        {
+          "id": 70,
+          "question": "Trong phân cấp các nhà cung cấp dịch vụ Internet (ISPs), các ISP cấp 1 (Tier-1 ISPs) có đặc điểm cốt lõi nào?",
+          "options": {
+            "A": "Chỉ hoạt động ở phạm vi một thành phố và bán dịch vụ trực tiếp cho hộ gia đình.",
+            "B": "Bắt buộc phải trả phí chuyển tiếp lưu lượng (Transit fee) cho tất cả các ISP cấp dưới.",
+            "C": "Có vùng phủ sóng toàn cầu và trao đổi lưu lượng ngang hàng (Peering) miễn phí với nhau.",
+            "D": "Không được phép kết nối với các điểm trao đổi lưu lượng Internet công cộng (IXP)."
+          },
+          "answer": "C",
+          "explanation": "Tier-1 ISPs (như AT&T, Lumen, Telia) là các nhà cung cấp xương sống quốc tế. Chúng kết nối trực tiếp với nhau thông qua các thỏa thuận Peering không tính cước (settlement-free peering), không phải mua lưu lượng từ bất kỳ ai."
+        },
+        {
+          "id": 71,
+          "question": "Điểm trao đổi lưu lượng Internet công cộng (Internet Exchange Point - IXP) mang lại lợi ích chủ yếu nào cho các mạng tham gia?",
+          "options": {
+            "A": "Tự động phân phối bản quyền hệ điều hành máy chủ và phần mềm bảo mật tới máy trạm.",
+            "B": "Cho phép các ISP trao đổi trực tiếp lưu lượng mà không cần trả phí trung chuyển cho ISP cấp trên.",
+            "C": "Loại bỏ hoàn toàn yêu cầu sử dụng các bộ định tuyến trong cấu trúc định tuyến liên miền.",
+            "D": "Chuyển đổi toàn bộ gói tin định dạng IPv4 sang IPv6 để giải quyết cạn kiệt địa chỉ."
+          },
+          "answer": "B",
+          "explanation": "IXP là các hạ tầng vật lý trung lập nơi các nhà mạng (ISPs, Content Providers như Google, Facebook) kết nối trực tiếp để trao đổi lưu lượng nội vùng, giảm chi phí trả cho các nhà mạng trung chuyển (transit) và giảm độ trễ."
+        },
+        {
+          "id": 72,
+          "question": "Kiểu tấn công 'Packet Sniffing' (Nghe lén gói tin) trên mạng máy tính hoạt động dựa trên cơ chế nào?",
+          "options": {
+            "A": "Gửi một lượng lớn gói tin yêu cầu giả mạo khiến cho máy chủ bị cạn kiệt tài nguyên xử lý.",
+            "B": "Chèn mã độc vào phần cứng router nhằm phá hủy vật lý các cổng giao tiếp chuyển mạch.",
+            "C": "Chỉnh sửa bảng định tuyến của các nhà mạng quốc tế để chuyển hướng lưu lượng toàn cầu.",
+            "D": "Đặt card mạng ở chế độ hỗn tạp (Promiscuous mode) để thu nhận bản sao mọi khung dữ liệu truyền qua."
+          },
+          "answer": "D",
+          "explanation": "Trong packet sniffing, kẻ tấn công dùng công cụ như Wireshark đặt giao diện mạng ở chế độ hỗn tạp (Promiscuous mode) để đọc tất cả các gói tin lưu thông trên phân đoạn mạng dùng chung (như Hub hoặc mạng Wi-Fi không mã hóa)."
+        },
+        {
+          "id": 73,
+          "question": "Hành vi giả mạo địa chỉ IP (IP Spoofing) thường được kẻ tấn công sử dụng nhằm mục đích gì?",
+          "options": {
+            "A": "Chèn một địa chỉ nguồn giả mạo vào gói tin để che giấu danh tính hoặc mạo danh máy khác.",
+            "B": "Đo lường chính xác khoảng cách vật lý giữa hai máy tính thông qua thời gian phản hồi ICMP.",
+            "C": "Gia tăng tốc độ truyền dẫn của gói tin khi đi qua các liên kết mạng bị nghẽn băng thông.",
+            "D": "Vượt qua sự kiểm soát của hệ điều hành để tăng dung lượng bộ nhớ RAM trên máy cục bộ."
+          },
+          "answer": "A",
+          "explanation": "IP Spoofing là kỹ thuật kẻ tấn công tạo các gói tin IP với địa chỉ nguồn (Source IP) giả nhằm mạo danh một máy tính đáng tin cậy hoặc chuyển hướng phản hồi để thực hiện tấn công khuếch đại DDoS."
+        },
+        {
+          "id": 74,
+          "question": "Hình thức tấn công từ chối dịch vụ phân tán (DDoS) khác với tấn công DoS truyền thống ở điểm mấu chốt nào?",
+          "options": {
+            "A": "DDoS bắt buộc kẻ tấn công phải có quyền truy cập vật lý trực tiếp vào phòng máy chủ mục tiêu.",
+            "B": "DDoS chỉ nhắm vào các đường truyền cáp quang biển chứ không tấn công các máy chủ dịch vụ.",
+            "C": "DDoS sử dụng mạng lưới hàng nghìn máy tính bị chiếm quyền (Botnet) tấn công từ nhiều hướng.",
+            "D": "DDoS chỉ làm sai lệch dữ liệu bảng tính chứ không làm gián đoạn khả năng phản hồi dịch vụ."
+          },
+          "answer": "C",
+          "explanation": "DoS truyền thống xuất phát từ một nguồn duy nhất (dễ bị lọc IP ngăn chặn). DDoS huy động mạng lưới máy tính ma (Botnet) gồm hàng nghìn đến hàng triệu thiết bị trên khắp thế giới đồng loạt gửi lưu lượng rác làm tê liệt máy chủ."
+        },
+        {
+          "id": 75,
+          "question": "Mạng máy tính diện rộng (WAN - Wide Area Network) có đặc điểm nào sau đây so với mạng LAN?",
+          "options": {
+            "A": "Phạm vi địa lý rộng lớn (quốc gia, châu lục) và thường sử dụng đường truyền của bên thứ ba.",
+            "B": "Phạm vi địa lý giới hạn trong một căn phòng và tốc độ truyền dữ liệu luôn cao hơn 10 Gbps.",
+            "C": "Hoàn toàn không bao giờ xảy ra hiện tượng mất gói hay suy hao tín hiệu trên đường truyền.",
+            "D": "Chỉ cho phép kết nối tối đa 254 thiết bị đầu cuối do giới hạn của không gian địa chỉ."
+          },
+          "answer": "A",
+          "explanation": "WAN phủ sóng trên phạm vi địa lý rộng lớn (thành phố, quốc gia hoặc toàn cầu), kết nối các mạng LAN lại với nhau và thường phải thuê hạ tầng viễn thông công cộng của các nhà mạng (Telco/ISP)."
+        },
+        {
+          "id": 76,
+          "question": "Mô hình mạng PAN (Personal Area Network) thường có phạm vi hoạt động trong khoảng cách nào?",
+          "options": {
+            "A": "Trong phạm vi vài mét xung quanh một cá nhân, sử dụng các công nghệ như Bluetooth, ZigBee.",
+            "B": "Kết nối các chi nhánh ngân hàng trong phạm vi một tỉnh hoặc thành phố trực thuộc trung ương.",
+            "C": "Liên kết các trạm radar giám sát hàng hải xuyên biên giới giữa các vùng biển quốc tế.",
+            "D": "Mạng truyền hình cáp quang phủ kín khu vực toàn bộ các quận nội thành đô thị lớn."
+          },
+          "answer": "A",
+          "explanation": "PAN (Personal Area Network) là mạng cá nhân, phạm vi bán kính chỉ khoảng vài mét xung quanh một người, kết nối các thiết bị cá nhân (tai nghe, đồng hồ thông minh, điện thoại) thường qua Bluetooth."
+        },
+        {
+          "id": 77,
+          "question": "Trong kiến trúc phân lớp giao thức, nguyên tắc 'Encapsulation' (Đóng gói) được thực hiện như thế nào khi truyền dữ liệu?",
+          "options": {
+            "A": "Mỗi tầng khi nhận dữ liệu từ tầng dưới sẽ bóc tách bớt phần thông tin điều khiển.",
+            "B": "Dữ liệu được nén lại theo chuẩn mã hóa Huffman trước khi chuyển giao giữa các tầng kề nhau.",
+            "C": "Mỗi tầng khi nhận dữ liệu từ tầng trên sẽ bổ sung thêm phần tiêu đề điều khiển (Header).",
+            "D": "Dữ liệu được chia đều vào các hàng đợi cố định để gửi đi đồng thời trên nhiều cổng mạng."
+          },
+          "answer": "C",
+          "explanation": "Tại máy gửi, dữ liệu di chuyển từ tầng trên xuống tầng dưới. Mỗi tầng sẽ coi dữ liệu nhận được là payload và gắn thêm phần thông tin tiêu đề (Header, và Trailer ở Data Link) của tầng đó, gọi là quá trình Đóng gói (Encapsulation)."
+        },
+        {
+          "id": 78,
+          "question": "Tổ chức IETF (Internet Engineering Task Force) chịu trách nhiệm chính về việc gì đối với mạng Internet?",
+          "options": {
+            "A": "Sản xuất và phân phối độc quyền các bộ vi xử lý chuyên dụng cho các thiết bị định tuyến.",
+            "B": "Trực tiếp thu cước phí truy cập mạng hàng tháng của tất cả người dùng Internet toàn cầu.",
+            "C": "Cấp phép kinh doanh tần số vô tuyến vệ tinh thương mại cho các quốc gia trên thế giới.",
+            "D": "Xây dựng, phát triển và chuẩn hóa các giao thức Internet thông qua các tài liệu RFC."
+          },
+          "answer": "D",
+          "explanation": "IETF là cơ quan tiêu chuẩn hóa của Internet, phát triển các tiêu chuẩn giao thức (như TCP, IP, HTTP, DNS) và công bố dưới dạng các tài liệu kỹ thuật có tên là RFC (Request for Comments)."
+        },
+        {
+          "id": 79,
+          "question": "Tài liệu kỹ thuật định nghĩa các chuẩn giao thức Internet được gọi là gì?",
+          "options": {
+            "A": "ISO (International Standard Overview).",
+            "B": "RFC (Request for Comments).",
+            "C": "IEEE (Institute of Electrical Engineering).",
+            "D": "ANSI (American National Standards)."
+          },
+          "answer": "B",
+          "explanation": "Các giao thức và tiêu chuẩn Internet chính thức được tài liệu hóa và xuất bản dưới tên gọi RFC (Request for Comments) bởi IETF."
+        },
+        {
+          "id": 80,
+          "question": "Mô hình mạng Client - Server có ưu điểm vượt trội nào so với mô hình mạng ngang hàng Peer-to-Peer (P2P)?",
+          "options": {
+            "A": "Không cần bất kỳ máy tính chuyên dụng nào đảm nhận việc lưu trữ tập trung dữ liệu.",
+            "B": "Khả năng tự phục vụ gia tăng tỷ lệ thuận với số lượng máy trạm tham gia vào hệ thống.",
+            "C": "Dễ dàng quản lý dữ liệu tập trung, sao lưu và thiết lập chính sách bảo mật hệ thống.",
+            "D": "Chi phí đầu tư phần cứng ban đầu luôn thấp hơn vì không đòi hỏi máy chủ cấu hình mạnh."
+          },
+          "answer": "C",
+          "explanation": "Mô hình Client-Server có máy chủ tập trung giúp việc quản trị tài nguyên, sao lưu (backup), phân quyền và bảo mật trở nên đơn giản, nhất quán hơn nhiều so với việc phân tán dữ liệu ở mô hình P2P."
+        },
+        {
+          "id": 81,
+          "question": "Mô hình mạng ngang hàng (P2P) sở hữu đặc tính 'Self-scalability' (Tự mở rộng). Thuật ngữ này có nghĩa là gì?",
+          "options": {
+            "A": "Mỗi nút mạng mới gia nhập vừa yêu cầu tài nguyên vừa đóng góp thêm năng lực phục vụ.",
+            "B": "Hệ thống tự động mua thêm băng thông từ các nhà mạng khi lưu lượng tải vượt quá định mức.",
+            "C": "Các máy trạm có khả năng tự động sửa chữa các lỗi vật lý trên đường dây cáp quang kết nối.",
+            "D": "Mạng tự động chuyển đổi địa chỉ IP từ phiên bản IPv4 sang IPv6 mà không cần khởi động lại."
+          },
+          "answer": "A",
+          "explanation": "Tính tự mở rộng (Self-scalability) của P2P: Các peer mới tham gia tạo ra nhu cầu tải dữ liệu, nhưng đồng thời chúng cũng chia sẻ dung lượng tải lên (upload capacity) cho các peer khác, giúp hệ thống mở rộng tải tự nhiên."
+        },
+        {
+          "id": 82,
+          "question": "Độ trễ xử lý nút (Nodal Processing Delay) tại một bộ định tuyến bao gồm các tác vụ nào?",
+          "options": {
+            "A": "Thời gian kiểm tra lỗi bit ở tiêu đề gói tin và xác định cổng ra tiếp theo trong bảng định tuyến.",
+            "B": "Thời gian truyền tín hiệu điện chạy dọc trên đường cáp nối giữa hai cổng giao tiếp.",
+            "C": "Thời gian gói tin nằm trong bộ đệm chờ đến lượt được phát ra đường truyền vật lý.",
+            "D": "Thời gian đẩy toàn bộ các bit nhị phân của gói tin lên liên kết truyền dẫn tốc độ cao."
+          },
+          "answer": "A",
+          "explanation": "Độ trễ xử lý (Processing delay) d_proc thường chỉ tính bằng microgiây, là thời gian router đọc header, kiểm tra lỗi bit (checksum) và tra bảng định tuyến để xác định cổng giao tiếp đầu ra phù hợp."
+        },
+        {
+          "id": 83,
+          "question": "Tổng độ trễ tại một nút mạng (Total Nodal Delay) là tổng của 4 thành phần nào sau đây?",
+          "options": {
+            "A": "Độ trễ xử lý, độ trễ xếp hàng, độ trễ truyền dẫn và độ trễ lan truyền.",
+            "B": "Độ trễ mã hóa, độ trễ nén, độ trễ đóng khung và độ trễ giải điều chế.",
+            "C": "Độ trễ phân giải tên miền, độ trễ bắt tay TCP, độ trễ phiên và độ trễ ngắt kết nối.",
+            "D": "Độ trễ cáp đồng trục, độ trễ cáp xoắn đôi, độ trễ cáp quang và độ trễ vô tuyến."
+          },
+          "answer": "A",
+          "explanation": "Tổng độ trễ nút: d_nodal = d_proc (xử lý) + d_queue (xếp hàng) + d_trans (truyền dẫn L/R) + d_prop (lan truyền d/s)."
+        },
+        {
+          "id": 84,
+          "question": "Trong các thành phần của độ trễ nút, thành phần nào có tính chất biến thiên khó dự đoán nhất?",
+          "options": {
+            "A": "Độ trễ truyền dẫn (Transmission Delay).",
+            "B": "Độ trễ xếp hàng (Queuing Delay).",
+            "C": "Độ trễ lan truyền (Propagation Delay).",
+            "D": "Độ trễ xử lý nút (Processing Delay)."
+          },
+          "answer": "B",
+          "explanation": "Độ trễ xếp hàng (d_queue) biến động lớn nhất từ mili-giây đến vô cùng tùy thuộc vào mức độ tắc nghẽn tức thời và lượng gói tin đang chờ sẵn trong hàng đợi tại router."
+        },
+        {
+          "id": 85,
+          "question": "Vận tốc lan truyền của tín hiệu điện hoặc ánh sáng trong các môi trường dẫn truyền vật lý (s) xấp xỉ khoảng bao nhiêu?",
+          "options": {
+            "A": "300.000 km/s trong chân không và khoảng 2 * 10^8 m/s trong cáp đồng hoặc cáp quang.",
+            "B": "Bằng đúng vận tốc của âm thanh trong không khí ở điều kiện áp suất tiêu chuẩn.",
+            "C": "Khoảng 1.000 mét mỗi giây và giảm đi một nửa khi truyền qua các môi trường chất lỏng.",
+            "D": "Không đổi ở mức 100 Mbps bất kể môi trường vật lý dẫn truyền là cáp quang hay đồng."
+          },
+          "answer": "A",
+          "explanation": "Vận tốc lan truyền tín hiệu s phụ thuộc môi trường vật lý: trong chân không là c = 3*10^8 m/s, còn trong cáp đồng và cáp quang thường khoảng 2*10^8 m/s (khoảng 200.000 km/s)."
+        },
+        {
+          "id": 86,
+          "question": "Nguyên lý 'Lưu trữ và chuyển tiếp' (Store-and-Forward Transmission) trong chuyển mạch gói đòi hỏi router phải làm gì?",
+          "options": {
+            "A": "Lưu trữ toàn bộ tệp tin của người dùng vào ổ cứng trước khi chuyển giao quyền kiểm soát.",
+            "B": "Tạo ra một bản sao lưu vĩnh viễn trên máy chủ dự phòng để phòng trường hợp đường truyền đứt.",
+            "C": "Gửi ngay bit đầu tiên của gói tin ra cổng đích ngay khi đọc xong địa chỉ đích ở header.",
+            "D": "Nhận đầy đủ toàn bộ gói tin trước khi bắt đầu truyền bit đầu tiên của gói tin đó ra liên kết đích."
+          },
+          "answer": "D",
+          "explanation": "Store-and-forward yêu cầu switch/router phải nhận đủ toàn bộ gói tin (store) và kiểm tra lỗi trước khi bắt đầu đẩy (forward) bit đầu tiên của gói đó sang liên kết tiếp theo."
+        },
+        {
+          "id": 87,
+          "question": "Hiện tượng 'Cổ chai' (Bottleneck Link) trong đường truyền dữ liệu đầu - cuối được định nghĩa là gì?",
+          "options": {
+            "A": "Liên kết mạng có độ dài vật lý ngắn nhất trên hành trình di chuyển của gói tin.",
+            "B": "Bộ định tuyến có dung lượng bộ nhớ RAM lớn nhất trong toàn bộ hệ thống liên mạng.",
+            "C": "Liên kết mạng có thông lượng nhỏ nhất trên đường truyền dẫn nối giữa máy gửi và máy nhận.",
+            "D": "Giao diện mạng sử dụng công nghệ cáp quang đơn mốt có băng thông rộng nhất."
+          },
+          "answer": "C",
+          "explanation": "Bottleneck link là liên kết có thông lượng truyền dẫn (throughput/capacity) nhỏ nhất trên toàn bộ tuyến đường end-to-end, quyết định thông lượng tối đa mà kết nối có thể đạt được."
+        },
+        {
+          "id": 88,
+          "question": "Mã độc máy tính dạng 'Worm' (Sâu mạng) có đặc trưng nguy hiểm nào khác biệt so với 'Virus' truyền thống?",
+          "options": {
+            "A": "Worm chỉ tồn tại trong các tài liệu văn bản Word dưới dạng các đoạn mã macro đơn giản.",
+            "B": "Worm chỉ có thể lây lan khi người dùng nhấp đúp chuột để chạy một tệp tin thực thi đính kèm.",
+            "C": "Worm không bao giờ gây ra hiện tượng nghẽn mạng hay tiêu tốn băng thông đường truyền.",
+            "D": "Worm có khả năng tự nhân bản và tự lây lan qua mạng mà không cần sự can thiệp của người dùng."
+          },
+          "answer": "D",
+          "explanation": "Virus cần vật chủ (file thực thi) và cần người dùng kích hoạt để lây lan. Worm (sâu mạng) là phần mềm độc hại độc lập, tự khai thác lỗ hổng bảo mật và tự lây lan chủ động qua kết nối mạng tới các máy khác."
+        },
+        {
+          "id": 89,
+          "question": "Chương trình mã độc dạng 'Trojan Horse' hoạt động theo phương thức nào?",
+          "options": {
+            "A": "Tự động phân mảnh ổ đĩa cứng theo định kỳ để tăng tốc độ khởi động của hệ thống.",
+            "B": "Ngụy trang dưới dạng một phần mềm hữu ích, hợp lệ để lừa người dùng cài đặt vào máy tính.",
+            "C": "Chiếm đoạt các liên kết cáp quang dưới biển nhằm thay đổi đường truyền tín hiệu quốc tế.",
+            "D": "Khóa toàn bộ các cổng mạng vật lý của thiết bị switch để ngăn chặn việc bắt gói tin."
+          },
+          "answer": "B",
+          "explanation": "Trojan horse là mã độc ẩn mình bên trong một chương trình có vẻ vô hại hoặc hữu ích (tiện ích, trò chơi). Khi người dùng cài đặt và kích hoạt, nó âm thầm mở cổng hậu (backdoor) cho kẻ tấn công xâm nhập."
+        },
+        {
+          "id": 90,
+          "question": "Hệ thống 'Botnet' trong các cuộc tấn công mạng quy mô lớn thực chất là gì?",
+          "options": {
+            "A": "Một tập hợp các siêu máy tính chuyên dụng phục vụ việc dự báo thời tiết toàn cầu.",
+            "B": "Hệ thống tường lửa thông minh do các ISP triển khai để bảo vệ đường trục quốc tế.",
+            "C": "Mạng lưới các máy tính bị nhiễm mã độc và bị điều khiển từ xa bởi kẻ tấn công (Botmaster).",
+            "D": "Tập hợp các trạm thu phát vệ tinh quỹ đạo thấp cung cấp dịch vụ Internet băng rộng."
+          },
+          "answer": "C",
+          "explanation": "Botnet là mạng lưới các máy tính (zombie/bots) bị cài cắm mã độc từ xa. Kẻ điều khiển (botmaster) ra lệnh cho hàng nghìn zombie này đồng loạt tấn công DDoS hoặc gửi thư rác."
+        },
+        {
+          "id": 91,
+          "question": "Hình thức tấn công 'Man-in-the-Middle' (MITM - Người đứng giữa) nhằm mục tiêu gì?",
+          "options": {
+            "A": "Kẻ tấn công bí mật chặn, nghe lén hoặc sửa đổi thông tin trao đổi giữa hai bên mà họ không biết.",
+            "B": "Ngắt nguồn điện của máy chủ trung tâm để buộc người dùng phải chuyển sang dùng máy tính bảng.",
+            "C": "Thay đổi vị trí các cột mốc địa lý để đánh lừa hệ thống định vị toàn cầu GPS trên điện thoại.",
+            "D": "Xóa toàn bộ các tệp tin lưu trữ trong thùng rác hệ thống của máy nạn nhân."
+          },
+          "answer": "A",
+          "explanation": "Trong tấn công MITM, kẻ tấn công chen vào giữa luồng liên lạc của hai máy (ví dụ bằng ARP spoofing hoặc rogue Wi-Fi), có thể nghe lén, thu thập mật khẩu hoặc chỉnh sửa dữ liệu mà nạn nhân không hay biết."
+        },
+        {
+          "id": 92,
+          "question": "Đặc điểm cơ bản của mô hình mạng hình trục (Bus Topology) truyền thống là gì?",
+          "options": {
+            "A": "Mỗi máy trạm được nối với một cổng chuyên biệt trên thiết bị chuyển mạch trung tâm.",
+            "B": "Mỗi máy tính đều có đường cáp riêng biệt kết nối trực tiếp đến tất cả các máy còn lại.",
+            "C": "Dữ liệu chỉ được truyền theo đúng một chiều vòng tròn khép kín qua từng máy trạm.",
+            "D": "Tất cả các máy trạm cùng chia sẻ một đường truyền cáp trục chính (Backbone cáp chung)."
+          },
+          "answer": "D",
+          "explanation": "Mạng Bus sử dụng một đoạn cáp trục chính duy nhất (backbone, thường là cáp đồng trục). Tất cả các máy tính cắm chung vào trục cáp này qua các đầu nối chữ T (BNC-T connector)."
+        },
+        {
+          "id": 93,
+          "question": "Nhược điểm lớn nhất của mô hình mạng hình sao (Star Topology) khi sử dụng một Hub trung tâm là gì?",
+          "options": {
+            "A": "Rất khó khăn trong việc gắn thêm máy trạm mới hoặc di dời vị trí máy tính trong phòng.",
+            "B": "Bắt buộc phải sử dụng các loại cáp quang đơn mốt đắt tiền mới có thể vận hành được.",
+            "C": "Khi một máy trạm bị hỏng card mạng sẽ làm tê liệt đường truyền của tất cả các máy khác.",
+            "D": "Điểm lỗi đơn (Single Point of Failure): nếu Hub trung tâm hỏng, toàn bộ mạng ngừng hoạt động."
+          },
+          "answer": "D",
+          "explanation": "Trong cấu hình Star, toàn bộ liên lạc phụ thuộc vào thiết bị trung tâm (Hub/Switch). Nếu thiết bị này gặp sự cố hỏng hóc (Single Point of Failure), toàn bộ mạng sẽ bị gián đoạn liên lạc."
+        },
+        {
+          "id": 94,
+          "question": "Công nghệ truy nhập mạng không dây Wi-Fi hoạt động dựa trên bộ tiêu chuẩn kỹ thuật nào của IEEE?",
+          "options": {
+            "A": "IEEE 802.3.",
+            "B": "IEEE 802.11.",
+            "C": "IEEE 802.15.",
+            "D": "IEEE 802.1Q."
+          },
+          "answer": "B",
+          "explanation": "IEEE 802.11 là bộ tiêu chuẩn cho mạng cục bộ không dây (WLAN / Wi-Fi). IEEE 802.3 là tiêu chuẩn cho Ethernet (mạng có dây), 802.15 là mạng cá nhân không dây WPAN (Bluetooth), 802.1Q là VLAN trunking."
+        },
+        {
+          "id": 95,
+          "question": "Cáp xoắn đôi không có vỏ bọc chống nhiễu được ký hiệu viết tắt là gì?",
+          "options": {
+            "A": "UTP (Unshielded Twisted Pair).",
+            "B": "STP (Shielded Twisted Pair).",
+            "C": "FTP (Foiled Twisted Pair).",
+            "D": "S/FTP (Shielded Foiled Twisted Pair)."
+          },
+          "answer": "A",
+          "explanation": "UTP là Unshielded Twisted Pair (cáp xoắn đôi không bọc kim chống nhiễu), là loại cáp mạng phổ biến và rẻ nhất trong mạng LAN. STP là loại có bọc giáp chống nhiễu."
+        },
+        {
+          "id": 96,
+          "question": "Đầu nối chuẩn thường dùng cho cáp đồng xoắn đôi mạng Ethernet trong các văn phòng hiện nay là loại nào?",
+          "options": {
+            "A": "RJ-45 (loại 8 chân tiêu chuẩn cho cáp mạng Cat5e/Cat6).",
+            "B": "RJ-11 (loại 4 chân dùng cho đường dây điện thoại gia đình).",
+            "C": "BNC (loại khớp xoay dùng cho cáp đồng trục truyền hình).",
+            "D": "ST/SC (loại đầu nối quang học có khớp cắm tròn hoặc vuông)."
+          },
+          "answer": "A",
+          "explanation": "Đầu nối RJ-45 (Registered Jack-45) gồm 8 chân tiếp xúc bằng đồng, là đầu nối chuẩn cho cáp xoắn đôi mạng Ethernet (Cat5, Cat5e, Cat6, Cat6a)."
+        },
+        {
+          "id": 97,
+          "question": "Mô hình mạng phân tán hình lưới bán phần (Partial-Mesh Topology) có đặc trưng gì?",
+          "options": {
+            "A": "Tất cả các nút mạng đều có kết nối trực tiếp đến toàn bộ các nút còn lại trong mạng.",
+            "B": "Hoàn toàn không sử dụng dây cáp mà kết nối qua vệ tinh viễn thông địa tĩnh.",
+            "C": "Chỉ một số nút mạng quan trọng mới có nhiều liên kết dự phòng tới các nút khác.",
+            "D": "Tín hiệu chỉ được phép truyền theo một chiều duy nhất từ máy chủ đến máy khách."
+          },
+          "answer": "C",
+          "explanation": "Trong Partial-Mesh, chỉ các nút mạng huyết mạch (như router biên, core router) mới kết nối đa đường dự phòng với nhau, còn các nút ít quan trọng hơn chỉ có 1-2 liên kết, giúp cân đối giữa độ tin cậy và chi phí triển khai."
+        },
+        {
+          "id": 98,
+          "question": "Chương trình tiện ích 'Traceroute' (hoặc `tracert` trên Windows) giúp người quản trị mạng xác định điều gì?",
+          "options": {
+            "A": "Băng thông tối đa của card mạng không dây đang kết nối vào điểm truy cập Wi-Fi.",
+            "B": "Mật khẩu quản trị và cấu hình phần cứng chi tiết của máy chủ từ xa trên Internet.",
+            "C": "Số lượng các tệp tin độc hại đang chạy ngầm trong bộ nhớ RAM của máy tính cá nhân.",
+            "D": "Danh sách các bộ định tuyến trung gian và thời gian trễ khứ hồi trên đường đi tới đích."
+          },
+          "answer": "D",
+          "explanation": "Traceroute sử dụng trường TTL của gói tin IP và thông điệp ICMP Time Exceeded để lần lượt xác định danh sách tất cả các hop (router trung gian) dọc theo lộ trình từ nguồn đến đích cùng thời gian trễ RTT tương ứng."
+        },
+        {
+          "id": 99,
+          "question": "Hiện tượng 'Jitter' trong truyền dữ liệu mạng máy tính được hiểu là gì?",
+          "options": {
+            "A": "Sự dao động, mất ổn định về thời gian trễ (Delay Variation) giữa các gói tin liên tiếp.",
+            "B": "Sự suy giảm công suất tín hiệu khi di chuyển trên quãng đường dài trong cáp quang.",
+            "C": "Tỷ lệ các bit dữ liệu bị đảo ngược giá trị từ 0 thành 1 do nhiễu trường điện từ.",
+            "D": "Khoảng thời gian cần thiết để thiết lập một phiên làm việc mới trên tầng giao vận."
+          },
+          "answer": "A",
+          "explanation": "Jitter là độ trôi/độ biến thiên trễ (Delay variation) giữa các gói tin nhận được. Jitter ảnh hưởng rất lớn đến các ứng dụng thời gian thực như gọi thoại VoIP, phát trực tiếp video streaming hay chơi game online."
+        },
+        {
+          "id": 100,
+          "question": "Giao thức IP ở tầng Network cung cấp mô hình dịch vụ nào cho tầng ứng dụng và giao vận?",
+          "options": {
+            "A": "Dịch vụ truyền dữ liệu hướng kết nối tin cậy tuyệt đối và có kiểm soát tắc nghẽn.",
+            "B": "Dịch vụ phân phát nỗ lực tối đa (Best-Effort Delivery), không cam kết độ tin cậy hay trễ.",
+            "C": "Dịch vụ đảm bảo duy trì cố định băng thông kênh truyền suốt thời gian phiên làm việc.",
+            "D": "Dịch vụ tự động phục hồi và phát hiện truyền lại khung dữ liệu bị hư hỏng ở tầng vật lý."
+          },
+          "answer": "B",
+          "explanation": "Giao thức IP (Internet Protocol) là dịch vụ không kết nối và theo cơ chế Best-Effort (nỗ lực tối đa): nó cố gắng chuyển gói tin tới đích nhưng không đảm bảo gói tin không bị mất, không bị trùng lặp hay đến đúng thứ tự. Việc đảm bảo tin cậy được giao cho tầng Transport (TCP) xử lý."
         }
       ]
     },
     {
       "topic_id": 2,
       "topic_title": "Chuyên đề 2: Mô hình OSI & Bộ giao thức TCP/IP",
-      "total_questions": 50,
+      "total_questions": 100,
       "questions": [
         {
           "id": 1,
@@ -1213,13 +1813,613 @@
           },
           "answer": "B",
           "explanation": "Theo slide 'Đóng gói dữ liệu - 2 & 3' trong tài liệu '04 - OSI - TCPIP- T5.pdf': Khung dữ liệu truyền trên dây có cấu trúc: [Frame Header (MAC)] bao bên ngoài [Network Header (IP)], bao ngoài [Transport Header (TCP)], bên trong là [Upper Layer Data], và cuối cùng là [Frame Trailer (FCS/CRC)]."
+        },
+        {
+          "id": 51,
+          "question": "Trong mô hình OSI 7 tầng, tầng nào sau đây chịu trách nhiệm chuyển đổi định dạng dữ liệu, nén dữ liệu và mã hóa bảo mật thông tin?",
+          "options": {
+            "A": "Tầng Ứng dụng (Application Layer).",
+            "B": "Tầng Trình bày (Presentation Layer).",
+            "C": "Tầng Phiên liên lạc (Session Layer).",
+            "D": "Tầng Vận chuyển (Transport Layer)."
+          },
+          "answer": "B",
+          "explanation": "Tầng Trình bày (Presentation Layer - Tầng 6) chịu trách nhiệm định dạng cú pháp, chuẩn hóa biểu diễn dữ liệu (như ASCII, Unicode, JPEG), nén dữ liệu để tiết kiệm băng thông và mã hóa/giải mã để bảo mật."
+        },
+        {
+          "id": 52,
+          "question": "Chức năng thiết lập, đồng bộ hóa điểm kiểm tra (Checkpoints) và giải phóng phiên trao đổi giữa hai ứng dụng thuộc về tầng nào trong mô hình OSI?",
+          "options": {
+            "A": "Tầng Mạng (Network Layer).",
+            "B": "Tầng Trình bày (Presentation Layer).",
+            "C": "Tầng Phiên (Session Layer).",
+            "D": "Tầng Liên kết dữ liệu (Data Link Layer)."
+          },
+          "answer": "C",
+          "explanation": "Tầng Phiên (Session Layer - Tầng 5) quản lý các phiên làm việc (dialog control), đồng bộ luồng dữ liệu bằng các điểm kiểm tra (checkpoints) giúp tiếp tục truyền từ điểm ngắt nếu xảy ra sự cố."
+        },
+        {
+          "id": 53,
+          "question": "Điểm khác biệt căn bản nhất giữa dịch vụ của Tầng Giao vận (Transport) và Tầng Mạng (Network) trong mô hình mạng là gì?",
+          "options": {
+            "A": "Transport truyền process-to-process; Network truyền host-to-host giữa hai máy.",
+            "B": "Transport truyền host-to-host; Network truyền link-to-link trực tiếp kề nhau.",
+            "C": "Transport truyền bits nhị phân; Network truyền các khung dữ liệu đã được đóng gói.",
+            "D": "Transport chỉ dùng trong mạng LAN; Network chỉ dùng trong các kết nối mạng WAN."
+          },
+          "answer": "A",
+          "explanation": "Tầng Network chỉ đảm bảo việc chuyển gói tin từ máy gửi đến máy nhận (Host-to-Host). Tầng Transport đảm bảo việc chuyển giao dữ liệu giữa các tiến trình cụ thể (Process-to-Process) chạy trên các máy đó qua số hiệu cổng (Port)."
+        },
+        {
+          "id": 54,
+          "question": "Đơn vị dữ liệu giao thức (PDU) tại Tầng Liên kết dữ liệu (Data Link Layer) được gọi là gì?",
+          "options": {
+            "A": "Segment (Phân đoạn dữ liệu).",
+            "B": "Packet (Gói tin liên mạng).",
+            "C": "Bits (Chuỗi bit tín hiệu điện).",
+            "D": "Frame (Khung dữ liệu liên kết)."
+          },
+          "answer": "D",
+          "explanation": "Quy ước tên gọi PDU: Tầng Application là Message/Data; Tầng Transport là Segment (TCP) hoặc Datagram (UDP); Tầng Network là Packet; Tầng Data Link là Frame; Tầng Physical là Bit."
+        },
+        {
+          "id": 55,
+          "question": "Tại sao Tầng Liên kết dữ liệu (Data Link) là tầng duy nhất gắn cả tiêu đề (Header) ở đầu và đuôi (Trailer) ở cuối PDU?",
+          "options": {
+            "A": "Phần Trailer lưu trữ địa chỉ IP logic của thiết bị định tuyến kế tiếp trên đường truyền.",
+            "B": "Phần Trailer chứa chuỗi kiểm tra lỗi khung FCS (Frame Check Sequence) bằng thuật toán CRC.",
+            "C": "Phần Trailer chứa thông tin số hiệu cổng dịch vụ của tiến trình nhận ở tầng trên.",
+            "D": "Phần Trailer làm nhiệm vụ nén dung lượng của khung dữ liệu trước khi đẩy xuống tầng cáp."
+          },
+          "answer": "B",
+          "explanation": "Data Link gắn Trailer ở cuối khung chứa mã kiểm tra lỗi FCS (Frame Check Sequence, thường dùng mã CRC). Khi máy nhận nhận được khung, nó tính lại CRC để đối chiếu xem có bit nào bị lỗi trong quá trình truyền qua cáp hay không."
+        },
+        {
+          "id": 56,
+          "question": "Tiêu chuẩn IEEE 802 đã chia nhỏ Tầng Liên kết dữ liệu (Data Link Layer) thành hai tầng con nào?",
+          "options": {
+            "A": "Tầng con LLC (Logical Link Control) và Tầng con MAC (Media Access Control).",
+            "B": "Tầng con IP và Tầng con ICMP.",
+            "C": "Tầng con TCP và Tầng con UDP.",
+            "D": "Tầng con CSMA/CD và Tầng con CSMA/CA."
+          },
+          "answer": "A",
+          "explanation": "Theo chuẩn IEEE 802, tầng Data Link được tách làm 2 tầng con: LLC (IEEE 802.2 - kiểm soát liên kết logic, giao tiếp với tầng mạng) và MAC (IEEE 802.3, 802.11... - kiểm soát truy cập môi trường vật lý, quản lý địa chỉ MAC)."
+        },
+        {
+          "id": 57,
+          "question": "Tầng con MAC (Media Access Control) đảm nhận chức năng cốt lõi nào sau đây?",
+          "options": {
+            "A": "Định tuyến đường đi tối ưu cho gói tin xuyên qua nhiều mạng con khác nhau.",
+            "B": "Thiết lập kết nối 3 bước tin cậy giữa hai chương trình ứng dụng trên mạng.",
+            "C": "Điều khiển việc truy cập đường truyền dùng chung và định dạng địa chỉ phần cứng vật lý.",
+            "D": "Chuyển đổi các ký tự văn bản từ bảng mã Unicode sang bảng mã chuẩn ASCII."
+          },
+          "answer": "C",
+          "explanation": "Tầng con MAC xử lý việc gắn địa chỉ MAC nguồn/đích vào khung dữ liệu và thực thi các giao thức truy cập đường truyền dùng chung (như CSMA/CD cho Ethernet, CSMA/CA cho Wi-Fi) để tránh xung đột."
+        },
+        {
+          "id": 58,
+          "question": "Khi gói tin di chuyển từ máy gửi đến máy nhận, địa chỉ nào sau đây sẽ bị thay đổi sau mỗi lần đi qua một Router?",
+          "options": {
+            "A": "Địa chỉ MAC nguồn (Source MAC) và địa chỉ MAC đích (Destination MAC).",
+            "B": "Địa chỉ IP nguồn (Source IP) và địa chỉ IP đích (Destination IP).",
+            "C": "Số hiệu cổng nguồn (Source Port) và số hiệu cổng đích (Destination Port).",
+            "D": "Mã nhận diện giao dịch (Transaction ID) của tiến trình ứng dụng người dùng."
+          },
+          "answer": "A",
+          "explanation": "Địa chỉ IP nguồn/đích và Port nguồn/đích được giữ nguyên dọc suốt hành trình (end-to-end, trừ khi dùng NAT). Ngược lại, địa chỉ MAC nguồn/đích (hop-by-hop) sẽ liên tục bị gỡ ra và thay thế mới tại mỗi router để chuyển khung qua từng chặng liên kết mạng."
+        },
+        {
+          "id": 59,
+          "question": "Thiết bị Hub hoạt động ở tầng nào của mô hình OSI và xử lý dữ liệu như thế nào?",
+          "options": {
+            "A": "Tầng 1 (Physical), khuếch đại và phát lặp tín hiệu nhận được ra tất cả các cổng còn lại.",
+            "B": "Tầng 2 (Data Link), đọc địa chỉ MAC đích để chuyển tiếp chính xác đến cổng của máy nhận.",
+            "C": "Tầng 3 (Network), đọc địa chỉ IP để tìm đường đi ngắn nhất qua các liên kết mạng.",
+            "D": "Tầng 4 (Transport), quản lý việc bắt tay 3 bước và kiểm soát tắc nghẽn luồng dữ liệu."
+          },
+          "answer": "A",
+          "explanation": "Hub là thiết bị tầng 1 (Physical Layer). Nó không đọc địa chỉ MAC hay IP mà chỉ đơn thuần nhận tín hiệu điện trên một cổng và nhân bản (broadcast điện) ra tất cả các cổng còn lại, tạo thành một miền xung đột (collision domain) duy nhất."
+        },
+        {
+          "id": 60,
+          "question": "Thiết bị chuyển mạch Switch (Layer 2) khác với Hub ở điểm mấu chốt nào sau đây?",
+          "options": {
+            "A": "Switch hoạt động ở tầng Physical nên có khả năng truyền tín hiệu đi xa hơn Hub rất nhiều.",
+            "B": "Switch bắt buộc phải cấu hình địa chỉ IP cho từng cổng thì mới có thể chuyển tiếp khung.",
+            "C": "Switch tự động chặn toàn bộ các gói tin quảng bá (Broadcast) không cho đi qua các cổng.",
+            "D": "Mỗi cổng trên Switch tạo thành một miền xung đột (Collision Domain) riêng biệt."
+          },
+          "answer": "D",
+          "explanation": "Switch Layer 2 đọc địa chỉ MAC, có bảng địa chỉ MAC (CAM table) để chuyển mạch khung riêng biệt giữa các cổng, nhờ đó mỗi cổng của Switch là một Collision Domain độc lập (loại bỏ hoàn toàn xung đột nếu chạy Full-Duplex)."
+        },
+        {
+          "id": 61,
+          "question": "Thiết bị định tuyến Router phân tách mạng thành những miền nào sau đây?",
+          "options": {
+            "A": "Chỉ phân tách các miền xung đột (Collision Domain), không phân tách miền quảng bá.",
+            "B": "Chỉ tạo ra một miền quảng bá duy nhất cho toàn bộ các cổng mạng được cắm dây.",
+            "C": "Không phân tách bất kỳ miền nào mà chỉ khuếch đại bước sóng ánh sáng trong sợi cáp.",
+            "D": "Phân tách cả miền xung đột (Collision Domain) và miền quảng bá (Broadcast Domain)."
+          },
+          "answer": "D",
+          "explanation": "Mỗi cổng của Router là một Collision Domain riêng biệt VÀ là một Broadcast Domain riêng biệt. Router mặc định không chuyển tiếp các gói tin broadcast tầng 2 hoặc tầng 3, giúp giới hạn phạm vi của miền quảng bá."
+        },
+        {
+          "id": 62,
+          "question": "Trong mô hình TCP/IP chuẩn 4 tầng, tầng nào đảm nhận toàn bộ chức năng của 3 tầng trên cùng (Session, Presentation, Application) của mô hình OSI?",
+          "options": {
+            "A": "Tầng Mạng (Internet Layer).",
+            "B": "Tầng Ứng dụng (Application Layer).",
+            "C": "Tầng Giao vận (Transport Layer).",
+            "D": "Tầng Giao tiếp mạng (Network Interface Layer)."
+          },
+          "answer": "B",
+          "explanation": "Mô hình TCP/IP kết hợp cả 3 tầng Application, Presentation và Session của OSI thành một tầng duy nhất là Tầng Ứng dụng (Application Layer). Các chức năng như mã hóa, định dạng, quản lý phiên nếu cần sẽ do lập trình viên tự tích hợp."
+        },
+        {
+          "id": 63,
+          "question": "Tầng Internet trong mô hình TCP/IP tương ứng trực tiếp với tầng nào trong mô hình tham chiếu OSI 7 tầng?",
+          "options": {
+            "A": "Tầng Trình bày (Presentation Layer - Tầng 6).",
+            "B": "Tầng Vận chuyển (Transport Layer - Tầng 4).",
+            "C": "Tầng Liên kết dữ liệu (Data Link Layer - Tầng 2).",
+            "D": "Tầng Mạng (Network Layer - Tầng 3)."
+          },
+          "answer": "D",
+          "explanation": "Tầng Internet trong mô hình TCP/IP tương ứng trực tiếp với Tầng Mạng (Network Layer) của OSI, sử dụng giao thức chính là IP (IPv4, IPv6) cùng các giao thức hỗ trợ như ICMP, ARP, IGMP."
+        },
+        {
+          "id": 64,
+          "question": "Giao thức ARP (Address Resolution Protocol) đảm nhận vai trò chuyển đổi nào sau đây trên mạng LAN?",
+          "options": {
+            "A": "Chuyển đổi từ tên miền ký tự (Domain Name) sang địa chỉ IP 32 bit.",
+            "B": "Chuyển đổi từ địa chỉ logic IP nguồn sang địa chỉ cổng dịch vụ của tiến trình.",
+            "C": "Chuyển đổi từ địa chỉ MAC vật lý sang địa chỉ IP công cộng trên Internet.",
+            "D": "Chuyển đổi từ địa chỉ logic IP đã biết sang địa chỉ vật lý MAC tương ứng."
+          },
+          "answer": "D",
+          "explanation": "Giao thức ARP phân giải địa chỉ IP tầng 3 sang địa chỉ MAC tầng 2 tương ứng trong cùng một mạng LAN để máy gửi có thể đóng khung (frame) và gửi đi."
+        },
+        {
+          "id": 65,
+          "question": "Thông điệp yêu cầu ARP Request được gửi đi theo phương thức truyền thông nào trên mạng?",
+          "options": {
+            "A": "Broadcast tới tất cả các máy tính trong cùng phân đoạn mạng LAN.",
+            "B": "Unicast trực tiếp đến địa chỉ MAC của máy đích.",
+            "C": "Multicast đến một nhóm các máy chủ đã đăng ký dịch vụ trước.",
+            "D": "Anycast tới bộ định tuyến gần nhất để chuyển tiếp qua WAN."
+          },
+          "answer": "A",
+          "explanation": "Bản tin ARP Request được đóng gói trong khung Ethernet với địa chỉ MAC đích là Broadcast (FF-FF-FF-FF-FF-FF) vì máy gửi chưa biết MAC của đích. Tất cả các máy trong LAN đều nhận được nhưng chỉ máy có IP trùng khớp mới gửi ARP Reply (bằng Unicast)."
+        },
+        {
+          "id": 66,
+          "question": "Giao thức ICMP (Internet Control Message Protocol) hoạt động ở tầng nào và nhằm mục đích gì?",
+          "options": {
+            "A": "Tầng Mạng, thông báo lỗi và gửi các thông tin chẩn đoán trạng thái hoạt động của mạng.",
+            "B": "Tầng Vận chuyển, cung cấp dịch vụ truyền dữ liệu hướng kết nối và kiểm soát dòng.",
+            "C": "Tầng Liên kết dữ liệu, phát hiện và tự động sửa các lỗi bit tín hiệu trên dây cáp.",
+            "D": "Tầng Ứng dụng, hỗ trợ duyệt các trang tài liệu siêu văn bản trên máy chủ web."
+          },
+          "answer": "A",
+          "explanation": "ICMP thuộc tầng Mạng (Network Layer, nằm bên trong gói tin IP). Nó dùng để truyền các thông điệp điều khiển, báo cáo lỗi (Destination Unreachable, Time Exceeded) và chẩn đoán mạng (Echo Request/Reply dùng cho lệnh Ping)."
+        },
+        {
+          "id": 67,
+          "question": "Lệnh 'Ping' quen thuộc trong chẩn đoán kết nối mạng sử dụng cặp thông điệp nào của giao thức ICMP?",
+          "options": {
+            "A": "Router Solicitation và Router Advertisement.",
+            "B": "Time Exceeded và Parameter Problem.",
+            "C": "Destination Unreachable và Source Quench.",
+            "D": "Echo Request (Type 8) và Echo Reply (Type 0)."
+          },
+          "answer": "D",
+          "explanation": "Tiện ích Ping gửi thông điệp ICMP Echo Request (Type 8) đến máy đích. Nếu máy đích còn hoạt động và đường truyền thông suốt, nó sẽ phản hồi lại thông điệp ICMP Echo Reply (Type 0)."
+        },
+        {
+          "id": 68,
+          "question": "Trường TTL (Time-To-Live) trong tiêu đề gói tin IPv4 có mục đích chính là gì?",
+          "options": {
+            "A": "Ngăn chặn hiện tượng gói tin bị lặp vô tận trên mạng do lỗi trong bảng định tuyến.",
+            "B": "Xác định thời gian chính xác theo giờ quốc tế mà gói tin được tạo ra tại máy gửi.",
+            "C": "Đo lường tổng thời gian gói tin phải chờ đợi trong bộ đệm hàng đợi của router.",
+            "D": "Quy định thời hạn bản quyền phần mềm được phép trao đổi dữ liệu qua mạng."
+          },
+          "answer": "A",
+          "explanation": "Trường TTL (8 bit) được máy gửi đặt giá trị (ví dụ 64, 128). Mỗi khi qua một router, TTL giảm đi 1 đơn vị. Khi TTL = 0, router sẽ loại bỏ gói tin và gửi thông báo ICMP Time Exceeded về nguồn, tránh cho gói tin chạy vòng quanh mãi mãi (looping)."
+        },
+        {
+          "id": 69,
+          "question": "Kích thước tiêu đề (Header) tiêu chuẩn tối thiểu của một gói tin IPv4 không có trường tùy chọn (Options) là bao nhiêu?",
+          "options": {
+            "A": "8 bytes.",
+            "B": "32 bytes.",
+            "C": "20 bytes.",
+            "D": "64 bytes."
+          },
+          "answer": "C",
+          "explanation": "Header tiêu chuẩn của IPv4 gồm 5 hàng, mỗi hàng 32 bit (4 byte), tổng cộng là 20 byte nếu không chứa các trường tùy chọn (Options). Kích thước tối đa có Options là 60 byte."
+        },
+        {
+          "id": 70,
+          "question": "Kích thước tiêu đề (Header) tối thiểu của một phân đoạn TCP tiêu chuẩn là bao nhiêu bytes?",
+          "options": {
+            "A": "8 bytes.",
+            "B": "16 bytes.",
+            "C": "20 bytes.",
+            "D": "40 bytes."
+          },
+          "answer": "C",
+          "explanation": "Header của TCP segment tối thiểu là 20 bytes (khi không có trường Options). Ngược lại, header của UDP chỉ có đúng 8 bytes (cố định)."
+        },
+        {
+          "id": 71,
+          "question": "Tiêu đề của giao thức UDP có kích thước cố định là bao nhiêu và bao gồm những trường nào?",
+          "options": {
+            "A": "20 bytes, gồm: Sequence Number, Acknowledgment Number, Window, và Flags.",
+            "B": "8 bytes, gồm: Source Port, Destination Port, Length, và Checksum.",
+            "C": "16 bytes, gồm: IP Nguồn, IP Đích, Mã dịch vụ và Thời gian sống.",
+            "D": "4 bytes, gồm: Số thứ tự gói tin và Cờ xác nhận kết nối bắt tay."
+          },
+          "answer": "B",
+          "explanation": "UDP header rất gọn nhẹ, đúng 8 bytes (4 trường, mỗi trường 2 bytes / 16 bits): Source Port (2B), Destination Port (2B), Length (2B), và Checksum (2B)."
+        },
+        {
+          "id": 72,
+          "question": "Trong tiêu đề của phân đoạn TCP, trường 'Sequence Number' (Số thứ tự) phản ánh điều gì?",
+          "options": {
+            "A": "Số thứ tự của byte dữ liệu đầu tiên trong phân đoạn này so với toàn bộ luồng truyền.",
+            "B": "Số thứ tự thứ mấy của phân đoạn TCP được phát đi trong phiên kết nối.",
+            "C": "Tổng số lượng các cổng dịch vụ đang mở đồng thời trên máy chủ web.",
+            "D": "Số lần router trung gian đã truyền lại phân đoạn dữ liệu này do lỗi đường truyền."
+          },
+          "answer": "A",
+          "explanation": "TCP là giao thức hướng dòng byte (byte-stream). Trường Sequence Number chỉ ra số thứ tự của byte dữ liệu đầu tiên nằm trong payload của segment đó so với toàn bộ luồng byte được truyền."
+        },
+        {
+          "id": 73,
+          "question": "Trường 'Acknowledgment Number' trong TCP mang ý nghĩa nào sau đây?",
+          "options": {
+            "A": "Số thứ tự của byte dữ liệu tiếp theo mà bên nhận đang kỳ vọng được nhận từ bên gửi.",
+            "B": "Xác nhận số thứ tự của byte dữ liệu cuối cùng mà máy nhận đã nhận thành công.",
+            "C": "Tổng dung lượng bộ nhớ RAM mà máy nhận cam kết dành riêng cho kết nối.",
+            "D": "Mã số bí mật dùng để xác thực quyền đăng nhập của người dùng vào máy chủ."
+          },
+          "answer": "A",
+          "explanation": "TCP dùng cơ chế Cumulative ACK (xác nhận lũy tích). Ack Number = N nghĩa là bên nhận đã nhận trọn vẹn mọi byte từ 0 đến N-1 và đang chờ đợi bên gửi phát byte tiếp theo có số thứ tự là N."
+        },
+        {
+          "id": 74,
+          "question": "Quá trình bắt tay 3 bước (Three-Way Handshake) để thiết lập kết nối TCP sử dụng các cờ (Flags) nào theo đúng trình tự?",
+          "options": {
+            "A": "SYN -> ACK -> FIN.",
+            "B": "FIN -> ACK -> FIN-ACK.",
+            "C": "ACK -> SYN -> RST.",
+            "D": "SYN -> SYN-ACK -> ACK."
+          },
+          "answer": "D",
+          "explanation": "Trình tự bắt tay 3 bước: 1) Client gửi segment có cờ SYN = 1; 2) Server trả lời segment có cờ SYN = 1 và ACK = 1; 3) Client gửi lại segment có cờ ACK = 1 để hoàn tất và bắt đầu truyền dữ liệu."
+        },
+        {
+          "id": 75,
+          "question": "Để giải phóng (đóng) một kết nối TCP một cách hoàn chỉnh và bình thường, các bên trao đổi các cờ nào?",
+          "options": {
+            "A": "Chỉ cần bên chủ động gửi một cờ RST duy nhất là kết nối đóng ngay lập tức.",
+            "B": "Bên nhận gửi thông điệp ICMP Port Unreachable để buộc bên gửi ngừng truyền.",
+            "C": "Gửi cờ URG để thông báo dữ liệu khẩn cấp và tự động hủy bỏ socket kết nối.",
+            "D": "Sử dụng quy trình 4 bước bắt tay với các cờ FIN và ACK từ cả hai phía."
+          },
+          "answer": "D",
+          "explanation": "Kết nối TCP là full-duplex nên mỗi chiều cần được đóng riêng biệt bằng cờ FIN và nhận lại ACK (FIN -> ACK -> FIN -> ACK), tạo thành quy trình đóng kết nối 4 bước (4-way termination)."
+        },
+        {
+          "id": 76,
+          "question": "Cờ 'RST' (Reset) trong tiêu đề phân đoạn TCP được bật lên khi nào?",
+          "options": {
+            "A": "Khi một bên muốn yêu cầu bên kia tăng gấp đôi tốc độ truyền dữ liệu trên mạng.",
+            "B": "Khi một bên nhận được gói tin gửi đến một cổng dịch vụ hiện đang đóng (không lắng nghe).",
+            "C": "Khi toàn bộ dữ liệu trong tệp tin đã được truyền tải hoàn tất đến máy nhận.",
+            "D": "Khi gói tin bắt đầu chuyển từ môi trường cáp đồng sang môi trường cáp quang."
+          },
+          "answer": "B",
+          "explanation": "Cờ RST = 1 dùng để từ chối hoặc hủy bỏ ngay lập tức một kết nối bất thường (ví dụ: máy gửi segment đến một cổng mà server không mở dịch vụ lắng nghe, server sẽ trả về RST)."
+        },
+        {
+          "id": 77,
+          "question": "Cơ chế 'Flow Control' (Kiểm soát luồng) trong giao thức TCP được thực hiện thông qua trường nào trong tiêu đề?",
+          "options": {
+            "A": "Trường Checksum (Mã kiểm tra lỗi toàn vẹn).",
+            "B": "Trường Urgent Pointer (Con trỏ dữ liệu khẩn cấp).",
+            "C": "Trường Receive Window (Cửa sổ nhận - rwnd).",
+            "D": "Trường Time-To-Live (Thời gian tồn tại của gói)."
+          },
+          "answer": "C",
+          "explanation": "Kiểm soát luồng (Flow Control) nhằm ngăn bên gửi làm tràn bộ đệm của bên nhận. Bên nhận liên tục thông báo dung lượng bộ đệm còn trống của mình thông qua trường Receive Window (rwnd) trong header TCP."
+        },
+        {
+          "id": 78,
+          "question": "Sự khác biệt cốt lõi giữa Kiểm soát luồng (Flow Control) và Kiểm soát tắc nghẽn (Congestion Control) trong TCP là gì?",
+          "options": {
+            "A": "Flow Control mã hóa dữ liệu; Congestion Control kiểm tra tính toàn vẹn của bit.",
+            "B": "Flow Control chạy ở tầng Network; Congestion Control chạy ở tầng Data Link.",
+            "C": "Flow Control chỉ dùng cho UDP; Congestion Control chỉ dành riêng cho TCP.",
+            "D": "Flow Control chống tràn bộ đệm bên nhận; Congestion Control chống nghẽn đường truyền mạng lõi."
+          },
+          "answer": "D",
+          "explanation": "Flow Control (rwnd) là bảo vệ bên nhận khỏi bị ngập dữ liệu từ bên gửi (end-to-end). Congestion Control (cwnd) là bảo vệ toàn bộ mạng lõi khỏi bị tắc nghẽn do quá nhiều nguồn đồng thời đẩy lưu lượng vào mạng."
+        },
+        {
+          "id": 79,
+          "question": "Thuật toán kiểm soát tắc nghẽn của TCP điều chỉnh tốc độ truyền dựa trên kích thước của cửa sổ nào?",
+          "options": {
+            "A": "Cửa sổ bộ đệm socket người dùng (User Socket Window).",
+            "B": "Cửa sổ tắc nghẽn (Congestion Window - cwnd).",
+            "C": "Cửa sổ định tuyến động của giao thức OSPF.",
+            "D": "Cửa sổ khung truyền dẫn của card mạng Ethernet."
+          },
+          "answer": "B",
+          "explanation": "Bên gửi TCP duy trì biến trạng thái cwnd (Congestion Window). Tốc độ gửi bị giới hạn bởi: Min(cwnd, rwnd). cwnd tăng khi mạng thông suốt và giảm đột ngột khi phát hiện mất gói tin."
+        },
+        {
+          "id": 80,
+          "question": "Giai đoạn 'Khởi động chậm' (Slow Start) trong kiểm soát tắc nghẽn TCP hoạt động như thế nào?",
+          "options": {
+            "A": "Kích thước cwnd giữ cố định ở mức 64 KB trong suốt 10 giây đầu tiên của phiên.",
+            "B": "Kích thước cwnd tăng tuyến tính mỗi lần 1 MSS cho đến khi kết nối bị ngắt hoàn toàn.",
+            "C": "Kích thước cwnd bắt đầu từ 1 MSS và tăng gấp đôi (hàm mũ) sau mỗi khoảng thời gian RTT.",
+            "D": "Kích thước cwnd giảm đi một nửa sau mỗi lần nhận được một gói tin ACK xác nhận."
+          },
+          "answer": "C",
+          "explanation": "Trong pha Slow Start, ban đầu cwnd = 1 MSS (Maximum Segment Size). Với mỗi ACK nhận về, cwnd tăng thêm 1 MSS, tức là sau mỗi vòng thời gian khứ hồi (RTT), cwnd tăng gấp đôi (tăng theo hàm số mũ) cho đến ngưỡng ssthresh."
+        },
+        {
+          "id": 81,
+          "question": "Trong mô hình OSI, quá trình truyền dữ liệu từ tầng 7 xuống tầng 1 tại máy gửi được gọi là gì?",
+          "options": {
+            "A": "Đóng gói dữ liệu (Encapsulation).",
+            "B": "Phân rã dữ liệu (Decapsulation).",
+            "C": "Đồng bộ hóa phiên (Synchronization).",
+            "D": "Chuyển mạch gói dữ liệu (Packet Switching)."
+          },
+          "answer": "A",
+          "explanation": "Quá trình đi từ tầng cao (Application) xuống tầng thấp (Physical) và bổ sung header tại mỗi tầng được gọi là Đóng gói (Encapsulation). Quá trình ngược lại tại máy nhận là Mở gói (Decapsulation)."
+        },
+        {
+          "id": 82,
+          "question": "Một thiết bị Switch Layer 2 chuyển tiếp khung dữ liệu dựa trên thông tin nào trong tiêu đề?",
+          "options": {
+            "A": "Địa chỉ IP đích (Destination IP Address).",
+            "B": "Số thứ tự phân đoạn (Sequence Number).",
+            "C": "Số hiệu cổng đích (Destination Port Number).",
+            "D": "Địa chỉ MAC đích (Destination MAC Address)."
+          },
+          "answer": "D",
+          "explanation": "Switch Layer 2 hoạt động ở tầng Data Link, nó tra bảng MAC (CAM Table) dựa trên địa chỉ MAC đích của khung Ethernet để quyết định chuyển tiếp khung ra đúng cổng tương ứng."
+        },
+        {
+          "id": 83,
+          "question": "Khi Switch nhận được một khung dữ liệu có địa chỉ MAC đích chưa từng xuất hiện trong bảng MAC của nó, Switch sẽ xử lý như thế nào?",
+          "options": {
+            "A": "Lập tức hủy bỏ khung dữ liệu và gửi thông báo lỗi ngược về cho máy gửi.",
+            "B": "Gửi yêu cầu truy vấn đến máy chủ DNS để xin cấp địa chỉ MAC tương ứng.",
+            "C": "Thực hiện 'Flooding': phát khung ra tất cả các cổng ngoại trừ cổng vừa nhận vào.",
+            "D": "Khóa cổng nhận khung trong vòng 30 giây để kiểm tra khả năng có virus."
+          },
+          "answer": "C",
+          "explanation": "Nếu địa chỉ MAC đích chưa có trong bảng (unknown unicast), Switch sẽ 'flood' (làm ngập/phát tràn) khung đó ra tất cả các cổng còn lại (trừ cổng vừa nhận khung vào) để đảm bảo máy đích nhận được."
+        },
+        {
+          "id": 84,
+          "question": "Switch cập nhật (học) bảng địa chỉ MAC của nó dựa trên thông tin nào?",
+          "options": {
+            "A": "Địa chỉ IP mặc định do máy chủ DHCP phân bổ cho từng cổng kết nối.",
+            "B": "Địa chỉ MAC đích (Destination MAC) của các khung dữ liệu chuẩn bị gửi đi.",
+            "C": "Địa chỉ MAC nguồn (Source MAC) của các khung dữ liệu đi vào các cổng của nó.",
+            "D": "Các lệnh cấu hình thủ công bắt buộc phải nhập bằng tay bởi người quản trị."
+          },
+          "answer": "C",
+          "explanation": "Cơ chế tự học (Self-learning) của Switch: Khi nhận được một khung trên cổng X, nó đọc địa chỉ MAC nguồn của khung đó và ghi vào bảng MAC ánh xạ: 'MAC nguồn này đang gắn ở cổng X'."
+        },
+        {
+          "id": 85,
+          "question": "Giao thức định tuyến IP được xếp vào tầng nào trong mô hình OSI?",
+          "options": {
+            "A": "Tầng Vận chuyển (Transport Layer).",
+            "B": "Tầng Trình bày (Presentation Layer).",
+            "C": "Tầng Liên kết dữ liệu (Data Link Layer).",
+            "D": "Tầng Mạng (Network Layer)."
+          },
+          "answer": "D",
+          "explanation": "Giao thức IP (IPv4, IPv6) cùng các giao thức định tuyến (như RIP, OSPF, BGP) và các giao thức phụ trợ (ICMP, IGMP) đều hoạt động ở Tầng Mạng (Network Layer - Tầng 3)."
+        },
+        {
+          "id": 86,
+          "question": "Dịch vụ mạng nào sau đây hoạt động trên nền giao thức UDP ở tầng Giao vận?",
+          "options": {
+            "A": "Dịch vụ truyền tải tệp tin an toàn qua giao thức SFTP.",
+            "B": "Dịch vụ phân giải tên miền DNS cho các truy vấn thông thường của máy trạm.",
+            "C": "Dịch vụ gửi thư điện tử giữa các máy chủ thư viện qua SMTP.",
+            "D": "Dịch vụ tải trang web bảo mật thông qua giao thức HTTPS."
+          },
+          "answer": "B",
+          "explanation": "Các truy vấn tên miền thông thường của DNS sử dụng UDP (port 53) vì tốc độ nhanh, không tốn thời gian thiết lập kết nối. HTTP/HTTPS, FTP, SMTP đòi hỏi độ tin cậy tuyệt đối nên dùng TCP."
+        },
+        {
+          "id": 87,
+          "question": "Tầng nào trong mô hình OSI đảm bảo việc truyền thông dữ liệu không có lỗi (Error-free) giữa hai nút mạng kết nối kề nhau?",
+          "options": {
+            "A": "Tầng Liên kết dữ liệu (Data Link Layer).",
+            "B": "Tầng Vật lý (Physical Layer).",
+            "C": "Tầng Phiên (Session Layer).",
+            "D": "Tầng Ứng dụng (Application Layer)."
+          },
+          "answer": "A",
+          "explanation": "Tầng Data Link đảm nhận việc truyền dữ liệu qua từng chặng trực tiếp (hop-by-hop / link-to-link), phát hiện lỗi khung bằng mã kiểm tra FCS/CRC."
+        },
+        {
+          "id": 88,
+          "question": "Trường 'Checksum' trong tiêu đề phân đoạn UDP được tính toán dựa trên những thành phần nào?",
+          "options": {
+            "A": "Chỉ duy nhất 8 bytes tiêu đề của chính phân đoạn UDP đó.",
+            "B": "Tiêu đề giả (Pseudo-header IP), tiêu đề UDP và toàn bộ dữ liệu ứng dụng đi kèm.",
+            "C": "Toàn bộ khung Ethernet bao gồm cả địa chỉ MAC vật lý của card mạng.",
+            "D": "Các bảng ghi trạng thái định tuyến lưu trong bộ nhớ tạm của router trung gian."
+          },
+          "answer": "B",
+          "explanation": "UDP checksum bao gồm một 'tiêu đề giả' (Pseudo-header chứa IP nguồn, IP đích, mã giao thức = 17, độ dài UDP) cộng với tiêu đề UDP và dữ liệu payload để phát hiện lỗi xuyên tầng."
+        },
+        {
+          "id": 89,
+          "question": "Trong trường hợp gói tin IP có kích thước lớn hơn đơn vị truyền tối đa (MTU) của liên kết kế tiếp, điều gì sẽ xảy ra nếu cờ DF (Don't Fragment) bằng 0?",
+          "options": {
+            "A": "Router lập tức hủy bỏ gói tin và không gửi lại bất kỳ thông báo lỗi nào.",
+            "B": "Router tự động tăng băng thông của đường truyền để vừa vặn kích thước gói tin.",
+            "C": "Router thực hiện phân mảnh (Fragmentation) gói tin thành nhiều phần nhỏ hơn phù hợp MTU.",
+            "D": "Router chuyển gói tin đó sang sử dụng kết nối vô tuyến vệ tinh băng rộng."
+          },
+          "answer": "C",
+          "explanation": "Nếu gói tin IP lớn hơn MTU của đường truyền tiếp theo và cờ DF = 0 (cho phép phân mảnh), router sẽ chia nhỏ gói tin đó thành nhiều mảnh (fragments). Nếu DF = 1 (không phân mảnh), router sẽ loại bỏ gói tin và gửi ICMP lỗi."
+        },
+        {
+          "id": 90,
+          "question": "Khi một gói tin IP bị phân mảnh, trường nào trong tiêu đề IPv4 giúp máy đích ghép nối lại đúng thứ tự ban đầu?",
+          "options": {
+            "A": "Trường Source Port và Destination Port.",
+            "B": "Trường Type of Service và Protocol.",
+            "C": "Trường Identification, Flags và Fragment Offset.",
+            "D": "Trường Window Size và Urgent Pointer."
+          },
+          "answer": "C",
+          "explanation": "Ba trường điều khiển phân mảnh trong IPv4 header: Identification (mã định danh chung của các mảnh cùng gói), Flags (cờ MF - More Fragments), và Fragment Offset (vị trí offset tính theo khối 8-byte)."
+        },
+        {
+          "id": 91,
+          "question": "Địa chỉ cổng (Port Number) có kích thước bao nhiêu bit và cho phép tối đa bao nhiêu cổng dịch vụ trên một máy chủ?",
+          "options": {
+            "A": "8 bits, tương đương với tối đa 256 cổng dịch vụ.",
+            "B": "48 bits, tương tự như độ dài của địa chỉ phần cứng card mạng.",
+            "C": "32 bits, tương đương với hơn 4 tỷ cổng dịch vụ khác nhau.",
+            "D": "16 bits, tương đương với tối đa 65.536 cổng dịch vụ (từ 0 đến 65535)."
+          },
+          "answer": "D",
+          "explanation": "Trường Port Number trong cả TCP và UDP header đều có độ dài 16 bits, do đó một thiết bị có thể hỗ trợ từ cổng số 0 đến 65.535 (tổng cộng 65.536 cổng)."
+        },
+        {
+          "id": 92,
+          "question": "Một kết nối TCP (TCP Socket Connection) được định danh duy nhất bởi bộ thông tin (4-tuple) nào sau đây?",
+          "options": {
+            "A": "(Địa chỉ MAC nguồn, MAC đích, Loại cáp, Tốc độ đường truyền).",
+            "B": "(IP nguồn, Port nguồn, IP đích, Port đích).",
+            "C": "(Tên miền web, Đường dẫn URL, Phiên bản hệ điều hành, Mã hóa SSL).",
+            "D": "(Số thứ tự Seq, Số xác nhận Ack, Cửa sổ nhận, Mã kiểm tra)."
+          },
+          "answer": "B",
+          "explanation": "Một kết nối TCP được định danh duy nhất trên toàn mạng bằng bộ 4 tham số (4-tuple): (Source IP, Source Port, Destination IP, Destination Port)."
+        },
+        {
+          "id": 93,
+          "question": "Tại sao trong mô hình TCP/IP, việc kiểm tra lỗi được thực hiện ở nhiều tầng khác nhau (Data Link, Network, Transport)?",
+          "options": {
+            "A": "Do lỗi trong thiết kế ban đầu của các kỹ sư mạng và không thể sửa đổi được nữa.",
+            "B": "Mỗi tầng kiểm tra lỗi trên các phạm vi khác nhau nhằm đảm bảo tính toàn vẹn đa lớp (End-to-End argument).",
+            "C": "Nhằm mục đích kéo dài thời gian truyền dữ liệu để tránh hiện tượng tràn bộ đệm.",
+            "D": "Để hỗ trợ việc chuyển đổi tự động giữa các loại cáp quang và cáp đồng trục."
+          },
+          "answer": "B",
+          "explanation": "Data Link kiểm tra lỗi từng chặng liên kết vật lý (link-to-link). Tầng Network kiểm tra lỗi tiêu đề IP (IPv4 header checksum). Tầng Transport kiểm tra lỗi toàn vẹn đầu-cuối (end-to-end) bao gồm cả dữ liệu người dùng."
+        },
+        {
+          "id": 94,
+          "question": "Khái niệm 'Dồn kênh' (Multiplexing) tại tầng Giao vận (Transport Layer) có nghĩa là gì?",
+          "options": {
+            "A": "Gán nhiều địa chỉ IP vật lý khác nhau cho một card mạng duy nhất trong máy tính.",
+            "B": "Truyền đồng thời một tệp tin qua nhiều đường cáp quang khác nhau để tăng tốc độ.",
+            "C": "Thu thập dữ liệu từ nhiều tiến trình ứng dụng khác nhau, gắn thêm tiêu đề cổng và chuyển xuống tầng mạng.",
+            "D": "Khuếch đại tín hiệu điện áp trên dây xoắn đôi để giảm độ suy hao đường truyền."
+          },
+          "answer": "C",
+          "explanation": "Multiplexing ở tầng Transport: thu gom dữ liệu từ nhiều socket của nhiều tiến trình ứng dụng, đóng gói thêm header (gồm port) để tạo thành các segment và đẩy xuống tầng Network. Quá trình ngược lại ở máy nhận là Demultiplexing."
+        },
+        {
+          "id": 95,
+          "question": "Thiết bị nào sau đây KHÔNG làm thay đổi nội dung tiêu đề của khung Ethernet khi nó truyền qua?",
+          "options": {
+            "A": "Cầu nối mạng (Bridge) hoặc Thiết bị chuyển mạch (Switch Layer 2).",
+            "B": "Bộ định tuyến (Router).",
+            "C": "Cổng kết nối đa năng (Default Gateway).",
+            "D": "Thiết bị chuyển đổi địa chỉ mạng (NAT Router)."
+          },
+          "answer": "A",
+          "explanation": "Switch Layer 2 và Bridge chỉ đọc địa chỉ MAC của khung để chuyển tiếp, không bóc tách hay thay đổi header của khung Ethernet. Router là thiết bị Layer 3 bóc khung cũ và đóng khung mới với MAC mới."
+        },
+        {
+          "id": 96,
+          "question": "Chế độ truyền thông 'Bán song công' (Half-Duplex) có đặc điểm gì?",
+          "options": {
+            "A": "Dữ liệu chỉ có thể truyền theo một chiều duy nhất và vĩnh viễn (như truyền hình cáp).",
+            "B": "Dữ liệu có thể truyền theo cả hai chiều nhưng tại một thời điểm chỉ một bên được phép truyền.",
+            "C": "Dữ liệu có thể truyền đồng thời theo cả hai chiều tại cùng một thời điểm.",
+            "D": "Chỉ truyền được nửa số bit trong mỗi khung dữ liệu và phải gửi lại nửa còn lại."
+          },
+          "answer": "B",
+          "explanation": "Simplex: truyền 1 chiều cố định. Half-Duplex: truyền 2 chiều nhưng luân phiên, không thể đồng thời (như bộ đàm). Full-Duplex: truyền 2 chiều đồng thời tại cùng một thời điểm (như điện thoại, Switch)."
+        },
+        {
+          "id": 97,
+          "question": "Chế độ truyền thông 'Song công toàn phần' (Full-Duplex) mang lại lợi ích nổi bật nào?",
+          "options": {
+            "A": "Loại bỏ hoàn toàn nguy cơ xung đột tín hiệu và tăng gấp đôi băng thông hiệu dụng lý thuyết.",
+            "B": "Không yêu cầu thiết bị phải sử dụng địa chỉ MAC vật lý khi gửi khung dữ liệu.",
+            "C": "Tự động phát hiện và ngăn chặn mọi cuộc tấn công giả mạo địa chỉ IP trên mạng.",
+            "D": "Giảm bớt một nửa số lượng dây dẫn cần thiết trong sợi cáp đồng xoắn đôi."
+          },
+          "answer": "A",
+          "explanation": "Full-Duplex sử dụng các kênh thu và phát tách biệt, cho phép truyền và nhận đồng thời mà không bao giờ xảy ra xung đột (loại bỏ collision), nâng gấp đôi thông lượng hai chiều."
+        },
+        {
+          "id": 98,
+          "question": "Khi hai máy tính trong cùng một mạng LAN muốn liên lạc với nhau, chúng sử dụng loại địa chỉ nào để tìm đích trực tiếp ở tầng 2?",
+          "options": {
+            "A": "Địa chỉ cổng dịch vụ (Port Number).",
+            "B": "Địa chỉ vật lý (MAC Address).",
+            "C": "Địa chỉ tên miền (FQDN).",
+            "D": "Địa chỉ mạng diện rộng (Public IP)."
+          },
+          "answer": "B",
+          "explanation": "Trong cùng một mạng LAN (cùng Broadcast Domain), dữ liệu được đóng vào khung Ethernet và phân phát trực tiếp giữa các card mạng thông qua địa chỉ vật lý MAC."
+        },
+        {
+          "id": 99,
+          "question": "Tầng nào trong mô hình OSI trực tiếp giao tiếp với các dây cáp mạng, bước sóng ánh sáng và tín hiệu điện áp?",
+          "options": {
+            "A": "Tầng Mạng (Network Layer).",
+            "B": "Tầng Liên kết dữ liệu (Data Link Layer).",
+            "C": "Tầng Vật lý (Physical Layer).",
+            "D": "Tầng Trình bày (Presentation Layer)."
+          },
+          "answer": "C",
+          "explanation": "Tầng Vật lý (Physical Layer - Tầng 1) là tầng thấp nhất, chuyển đổi các bit 0 và 1 thành các xung điện áp, xung ánh sáng hoặc sóng vô tuyến và truyền trực tiếp qua môi trường truyền dẫn."
+        },
+        {
+          "id": 100,
+          "question": "Sự khác biệt cơ bản nhất giữa mô hình chuẩn OSI và mô hình thực tế TCP/IP là gì?",
+          "options": {
+            "A": "Mô hình OSI có 4 tầng; mô hình TCP/IP có 7 tầng.",
+            "B": "OSI là mô hình tham chiếu lý thuyết chuẩn hóa; TCP/IP là bộ giao thức kiến trúc thực tế của Internet.",
+            "C": "Mô hình OSI chỉ dùng cho cáp quang; mô hình TCP/IP chỉ dùng cho mạng không dây.",
+            "D": "Mô hình OSI bắt buộc dùng UDP; mô hình TCP/IP chỉ hoạt động duy nhất với TCP."
+          },
+          "answer": "B",
+          "explanation": "Mô hình OSI (7 tầng do ISO thiết kế) là khung tham chiếu chuẩn về mặt lý thuyết giúp chuẩn hóa việc thiết kế mạng. Bộ giao thức TCP/IP (4 tầng do Cerf và Kahn thiết kế) là kiến trúc thực tế được triển khai và vận hành Internet."
         }
       ]
     },
     {
       "topic_id": 3,
       "topic_title": "Chuyên đề 3: Địa chỉ IPv4, MAC & Kỹ thuật chia mạng con",
-      "total_questions": 50,
+      "total_questions": 100,
       "questions": [
         {
           "id": 1,
@@ -1820,13 +3020,613 @@
           },
           "answer": "B",
           "explanation": "Mạng /26 có bước nhảy 64. Subnet 1: 192.168.1.64/26 (dải IP .65 - .126); Subnet 2: 192.168.1.128/26 (dải IP .129 - .190). Vì .65 và .130 nằm ở hai dải subnet khác nhau nên chúng không cùng mạng con và không thể nói chuyện trực tiếp ở tầng 2 mà phải qua Router."
+        },
+        {
+          "id": 51,
+          "question": "Địa chỉ IPv4 nào sau đây thuộc về dải địa chỉ riêng (Private IP Address) theo tiêu chuẩn RFC 1918?",
+          "options": {
+            "A": "172.25.100.1",
+            "B": "172.32.10.5",
+            "C": "192.169.1.1",
+            "D": "11.0.0.1"
+          },
+          "answer": "A",
+          "explanation": "Dải IP Private Lớp B theo RFC 1918 là 172.16.0.0 đến 172.31.255.255 (tiền tố /12). Địa chỉ 172.25.100.1 nằm trong khoảng này. 172.32.10.5 là Public IP, 192.169.1.1 là Public IP (Private lớp C chỉ đến 192.168.255.255)."
+        },
+        {
+          "id": 52,
+          "question": "Dải địa chỉ IP riêng (Private IP) dành riêng cho Lớp C theo tiêu chuẩn RFC 1918 là dải nào?",
+          "options": {
+            "A": "192.168.0.0 đến 192.168.255.255 (Prefix /16).",
+            "B": "192.168.1.0 đến 192.168.1.255 (Prefix /24).",
+            "C": "192.0.0.0 đến 192.255.255.255 (Prefix /8).",
+            "D": "192.168.0.0 đến 192.169.255.255 (Prefix /15)."
+          },
+          "answer": "A",
+          "explanation": "Không gian IP riêng (Private IP) của Lớp C là 192.168.0.0/16, bao gồm 256 dải mạng /24 liên tiếp từ 192.168.0.0 đến 192.168.255.255."
+        },
+        {
+          "id": 53,
+          "question": "Địa chỉ IP `169.254.10.20` xuất hiện trên máy tính Windows khi nào?",
+          "options": {
+            "A": "Khi máy tính được cấu hình làm máy chủ cấp phát tên miền chính thức.",
+            "B": "Khi máy bật chế độ nhận IP động nhưng không tìm thấy máy chủ DHCP nào (APIPA).",
+            "C": "Khi máy tính kết nối trực tiếp vào mạng diện rộng Internet không qua tường lửa.",
+            "D": "Khi người quản trị cấu hình địa chỉ IP tĩnh bị trùng lặp với một máy khác."
+          },
+          "answer": "B",
+          "explanation": "Dải 169.254.0.0/16 là dải tự động gán APIPA (Automatic Private IP Addressing). Khi client cấu hình DHCP nhưng không nhận được phản hồi từ bất kỳ DHCP server nào, hệ điều hành sẽ tự gán một IP ngẫu nhiên trong dải này."
+        },
+        {
+          "id": 54,
+          "question": "Địa chỉ `127.0.0.1` có vai trò và ý nghĩa đặc biệt nào sau đây?",
+          "options": {
+            "A": "Địa chỉ quảng bá chung cho tất cả các máy tính trong toàn mạng diện rộng Internet.",
+            "B": "Địa chỉ đại diện cho cổng kết nối mặc định ra ngoài của nhà cung cấp dịch vụ mạng.",
+            "C": "Địa chỉ vòng lặp cục bộ (Loopback Address) dùng để kiểm tra hoạt động ngăn xếp TCP/IP.",
+            "D": "Địa chỉ chuyên dụng dùng để định tuyến các gói tin truyền thông đa hướng Multicast."
+          },
+          "answer": "C",
+          "explanation": "Toàn bộ dải 127.0.0.0/8 là dải Loopback, phổ biến nhất là 127.0.0.1 (localhost). Gói tin gửi tới địa chỉ này không ra ngoài card mạng mà quay ngược lại ngăn xếp giao thức nội bộ để kiểm tra phần mềm."
+        },
+        {
+          "id": 55,
+          "question": "Một máy tính có địa chỉ IP `192.168.1.135` và Subnet Mask là `255.255.255.224`. Địa chỉ đường mạng (Network Address) của máy này là gì?",
+          "options": {
+            "A": "192.168.1.130",
+            "B": "192.168.1.128",
+            "C": "192.168.1.96",
+            "D": "192.168.1.0"
+          },
+          "answer": "B",
+          "explanation": "Mask 255.255.255.224 có bước nhảy ở octet 4 là 256 - 224 = 32. Các mạng con: 0, 32, 64, 96, 128, 160... Vì 128 <= 135 < 160 nên địa chỉ mạng là 192.168.1.128."
+        },
+        {
+          "id": 56,
+          "question": "Với địa chỉ đường mạng `192.168.1.128/27`, địa chỉ quảng bá (Broadcast Address) của mạng con này là gì?",
+          "options": {
+            "A": "192.168.1.160",
+            "B": "192.168.1.159",
+            "C": "192.168.1.255",
+            "D": "192.168.1.191"
+          },
+          "answer": "B",
+          "explanation": "Mạng là 192.168.1.128/27, bước nhảy là 32. Mạng kế tiếp là 192.168.1.160. Địa chỉ liền trước mạng kế tiếp chính là Broadcast: 192.168.1.159."
+        },
+        {
+          "id": 57,
+          "question": "Dải địa chỉ IP hợp lệ có thể gán cho máy trạm trong subnet `192.168.1.128/27` là bao nhiêu?",
+          "options": {
+            "A": "Từ 192.168.1.128 đến 192.168.1.159",
+            "B": "Từ 192.168.1.130 đến 192.168.1.158",
+            "C": "Từ 192.168.1.129 đến 192.168.1.160",
+            "D": "Từ 192.168.1.129 đến 192.168.1.158"
+          },
+          "answer": "D",
+          "explanation": "Net Addr là .128 và Broadcast là .159. Dải IP khả dụng cho host bắt đầu từ Net + 1 đến Broadcast - 1, tức là từ 192.168.1.129 đến 192.168.1.158 (tổng cộng 30 hosts)."
+        },
+        {
+          "id": 58,
+          "question": "Hai máy tính A (IP `10.1.30.50/22`) và B (IP `10.1.32.10/22`) có cùng thuộc một mạng con (Subnet) hay không?",
+          "options": {
+            "A": "Không cùng subnet vì máy A thuộc mạng 10.1.28.0 còn máy B thuộc mạng 10.1.32.0.",
+            "B": "Cùng thuộc một subnet có địa chỉ mạng là 10.1.30.0.",
+            "C": "Cùng thuộc một subnet có địa chỉ mạng là 10.1.0.0.",
+            "D": "Không cùng subnet vì địa chỉ của máy B là địa chỉ quảng bá không hợp lệ."
+          },
+          "answer": "A",
+          "explanation": "Prefix /22 có mask 255.255.252.0. Bước nhảy ở octet 3 là 256 - 252 = 4 (các mạng: 0, 4, 8... 24, 28, 32...). Máy A (octet 3 = 30) thuộc mạng 10.1.28.0 (dải 28.0 - 31.255). Máy B (octet 3 = 32) thuộc mạng kế tiếp 10.1.32.0. Do đó 2 máy KHÁC subnet."
+        },
+        {
+          "id": 59,
+          "question": "Một liên kết mạng diện rộng (WAN Point-to-Point) kết nối trực tiếp giữa 2 Router cần sử dụng Subnet Mask nào để tối ưu nhất?",
+          "options": {
+            "A": "/30 (Mask: 255.255.255.252)",
+            "B": "/29 (Mask: 255.255.255.248)",
+            "C": "/28 (Mask: 255.255.255.240)",
+            "D": "/32 (Mask: 255.255.255.255)"
+          },
+          "answer": "A",
+          "explanation": "Đường Point-to-Point giữa 2 router chỉ cần đúng 2 địa chỉ IP khả dụng. Subnet /30 có 2 bit host, cung cấp đúng 2^2 - 2 = 2 host IP (ví dụ: .1 và .2), giúp tiết kiệm IP tối đa và tránh lãng phí."
+        },
+        {
+          "id": 60,
+          "question": "Subnet Mask `/21` tương ứng với giá trị dạng thập phân chấm (Dotted-Decimal) nào sau đây?",
+          "options": {
+            "A": "255.255.240.0",
+            "B": "255.255.252.0",
+            "C": "255.255.248.0",
+            "D": "255.255.254.0"
+          },
+          "answer": "C",
+          "explanation": "Prefix /21: 16 bit đầu là 255.255. Octet 3 có 21 - 16 = 5 bit 1 (1111 1000_2 = 128 + 64 + 32 + 16 + 8 = 248). Octet 4 là 0. Vậy mask là 255.255.248.0."
+        },
+        {
+          "id": 61,
+          "question": "Cho địa chỉ IP `172.16.85.100/21`. Địa chỉ mạng của IP này là bao nhiêu?",
+          "options": {
+            "A": "172.16.85.0",
+            "B": "172.16.84.0",
+            "C": "172.16.80.0",
+            "D": "172.16.64.0"
+          },
+          "answer": "C",
+          "explanation": "Prefix /21 có mask 255.255.248.0, bước nhảy ở octet 3 là 256 - 248 = 8. Bội số của 8 gần nhất nhỏ hơn hoặc bằng 85 là 8 * 10 = 80. Vậy địa chỉ mạng là 172.16.80.0."
+        },
+        {
+          "id": 62,
+          "question": "Với địa chỉ IP `172.16.85.100/21`, địa chỉ Broadcast của mạng này là gì?",
+          "options": {
+            "A": "172.16.87.255",
+            "B": "172.16.85.255",
+            "C": "172.16.95.255",
+            "D": "172.16.88.255"
+          },
+          "answer": "A",
+          "explanation": "Mạng là 172.16.80.0/21, bước nhảy là 8. Mạng kế tiếp là 172.16.(80+8).0 = 172.16.88.0. Địa chỉ liền trước là Broadcast: 172.16.87.255."
+        },
+        {
+          "id": 63,
+          "question": "Địa chỉ nào sau đây là địa chỉ Host hợp lệ có thể gán cho một máy tính cá nhân?",
+          "options": {
+            "A": "192.168.10.63/26",
+            "B": "192.168.5.65/27",
+            "C": "10.10.10.128/25",
+            "D": "172.20.15.255/20"
+          },
+          "answer": "B",
+          "explanation": "Kiểm tra từng câu: Với /27 (bước nhảy 32), dải của .65 là 64-95, .65 là host hợp lệ (A là broadcast của /26, B là broadcast của /20 vì 0-15.255, C là địa chỉ mạng của /25)."
+        },
+        {
+          "id": 64,
+          "question": "Cho mạng `192.168.1.0/24`. Nếu mượn 3 bit để chia mạng con thì số subnet tạo ra và số host hợp lệ trên mỗi subnet lần lượt là bao nhiêu?",
+          "options": {
+            "A": "8 subnet và 30 hosts.",
+            "B": "6 subnet và 30 hosts.",
+            "C": "8 subnet và 32 hosts.",
+            "D": "16 subnet và 14 hosts."
+          },
+          "answer": "A",
+          "explanation": "Mượn n = 3 bit: Số subnet tạo ra = 2^3 = 8 subnet. Số bit host còn lại m = 8 - 3 = 5 bit. Số host hợp lệ mỗi subnet = 2^5 - 2 = 30 hosts."
+        },
+        {
+          "id": 65,
+          "question": "Để chia một đường mạng Lớp C thành các subnet, trong đó mỗi subnet chứa được tối thiểu 50 máy tính (PCs), Subnet Mask phù hợp nhất là gì?",
+          "options": {
+            "A": "/25 (255.255.255.128)",
+            "B": "/26 (255.255.255.192)",
+            "C": "/27 (255.255.255.224)",
+            "D": "/28 (255.255.255.240)"
+          },
+          "answer": "B",
+          "explanation": "Cần 50 host: 2^m - 2 >= 50 => m = 6 (vì 2^6 - 2 = 62 >= 50). Số bit host giữ lại là 6, do đó số bit mượn n = 8 - 6 = 2 bit. Prefix mới = 24 + 2 = /26 (mask 255.255.255.192)."
+        },
+        {
+          "id": 66,
+          "question": "Subnet Mask nào sau đây là KHÔNG HỢP LỆ theo quy tắc của giao thức IPv4?",
+          "options": {
+            "A": "255.255.240.0",
+            "B": "255.255.255.192",
+            "C": "255.255.255.248",
+            "D": "255.255.228.0"
+          },
+          "answer": "D",
+          "explanation": "Subnet Mask bắt buộc phải gồm một chuỗi các bit 1 liên tục, sau đó là chuỗi các bit 0 liên tục. 228 dạng nhị phân là 1110 0100 (có bit 0 xen giữa các bit 1), do đó 255.255.228.0 là mask không hợp lệ."
+        },
+        {
+          "id": 67,
+          "question": "Địa chỉ MAC (Media Access Control) có cấu trúc bao nhiêu bit và được biểu diễn dưới dạng cơ số nào?",
+          "options": {
+            "A": "32 bits, biểu diễn bằng 4 số thập phân cách nhau bằng dấu chấm.",
+            "B": "64 bits, biểu diễn bằng 8 cặp ký tự số bát phân.",
+            "C": "48 bits, biểu diễn bằng 12 chữ số thập lục phân (Hexadecimal).",
+            "D": "128 bits, biểu diễn bằng 8 nhóm chữ số thập lục phân cách nhau bằng dấu hai chấm."
+          },
+          "answer": "C",
+          "explanation": "Địa chỉ MAC chuẩn Ethernet có độ dài 48 bits (6 bytes), được biểu diễn dưới dạng 12 chữ số Hex (ví dụ: 00:1A:2B:3C:4D:5E hoặc 00-1A-2B-3C-4D-5E)."
+        },
+        {
+          "id": 68,
+          "question": "Trong địa chỉ MAC 48 bit, 24 bit đầu tiên (3 bytes đầu) mang tên gọi là gì và do tổ chức nào quản lý cấp phát?",
+          "options": {
+            "A": "FCS (Frame Check Sequence), do người quản trị mạng thiết lập trên hệ điều hành.",
+            "B": "NIC (Network Interface Controller), do nhà sản xuất card mạng tự ý đánh số ngẫu nhiên.",
+            "C": "IANA (Internet Assigned Numbers Authority), do tổ chức IETF phân bổ cho quốc gia.",
+            "D": "OUI (Organizationally Unique Identifier), do tổ chức IEEE quản lý cấp cho nhà sản xuất."
+          },
+          "answer": "D",
+          "explanation": "3 byte đầu tiên (24 bit) của MAC gọi là OUI (Organizationally Unique Identifier), do tổ chức IEEE cấp duy nhất cho từng nhà sản xuất phần cứng để tránh trùng lặp mã nhận diện toàn cầu."
+        },
+        {
+          "id": 69,
+          "question": "Ba byte cuối cùng (24 bit sau) của địa chỉ MAC được ấn định bởi đối tượng nào?",
+          "options": {
+            "A": "Tổ chức tiêu chuẩn hóa quốc tế ISO.",
+            "B": "Nhà sản xuất thiết bị phần cứng card mạng (Vendor-assigned serial number).",
+            "C": "Máy chủ cấp phát địa chỉ động DHCP trên mạng LAN.",
+            "D": "Nhà cung cấp dịch vụ Internet (ISP) nơi máy tính kết nối đường truyền."
+          },
+          "answer": "B",
+          "explanation": "24 bit sau của địa chỉ MAC do chính nhà sản xuất gán làm số xê-ri duy nhất cho từng card mạng được xuất xưởng."
+        },
+        {
+          "id": 70,
+          "question": "Địa chỉ MAC quảng bá (Broadcast MAC Address) có giá trị chuẩn là gì?",
+          "options": {
+            "A": "00:00:00:00:00:00",
+            "B": "AA:BB:CC:DD:EE:FF",
+            "C": "01:00:5E:00:00:01",
+            "D": "FF:FF:FF:FF:FF:FF"
+          },
+          "answer": "D",
+          "explanation": "Địa chỉ MAC Broadcast chuẩn có tất cả 48 bit đều bằng 1, thể hiện dưới dạng Hex là FF:FF:FF:FF:FF:FF (hoặc FF-FF-FF-FF-FF-FF)."
+        },
+        {
+          "id": 71,
+          "question": "Bit thứ 8 của byte đầu tiên trong địa chỉ MAC (bit I/G - Individual/Group) bằng 1 cho biết điều gì?",
+          "options": {
+            "A": "Đây là địa chỉ Unicast dành riêng cho một giao diện mạng duy nhất.",
+            "B": "Đây là địa chỉ Multicast hoặc Broadcast dành cho một nhóm hoặc toàn bộ máy nhận.",
+            "C": "Địa chỉ MAC này đã hết hạn bản quyền sản xuất và không được phép lưu thông.",
+            "D": "Card mạng đang hoạt động ở chế độ tiết kiệm năng lượng ngủ đông."
+          },
+          "answer": "B",
+          "explanation": "Bit I/G (Individual/Group) là bit có trọng số thấp nhất của byte đầu tiên (bit 0/bit 8 tùy quy ước đếm). Nếu bit này = 0 thì đó là địa chỉ Unicast; nếu bit này = 1 thì đó là địa chỉ Multicast hoặc Broadcast."
+        },
+        {
+          "id": 72,
+          "question": "Dải địa chỉ Multicast trong IPv4 thuộc về Lớp nào và có dải địa chỉ từ đâu đến đâu?",
+          "options": {
+            "A": "Lớp C, từ 192.0.0.0 đến 223.255.255.255.",
+            "B": "Lớp B, từ 128.0.0.0 đến 191.255.255.255.",
+            "C": "Lớp E, từ 240.0.0.0 đến 254.255.255.255.",
+            "D": "Lớp D, từ 224.0.0.0 đến 239.255.255.255."
+          },
+          "answer": "D",
+          "explanation": "IPv4 Lớp D (các bit đầu là 1110) có dải địa chỉ từ 224.0.0.0 đến 239.255.255.255 được dành riêng cho truyền thông đa hướng (Multicast)."
+        },
+        {
+          "id": 73,
+          "question": "Các địa chỉ thuộc Lớp E trong không gian địa chỉ IPv4 (từ 240.0.0.0 đến 255.255.255.255) được sử dụng cho mục đích gì?",
+          "options": {
+            "A": "Cấp phát độc quyền cho các cơ quan quân sự và chính phủ các nước.",
+            "B": "Dành riêng cho mục đích dự phòng và nghiên cứu thực nghiệm trong tương lai.",
+            "C": "Phân bổ cho các hệ thống máy chủ thư tín điện tử xuyên quốc gia.",
+            "D": "Sử dụng làm địa chỉ mạng cục bộ cho các thiết bị di động thông minh."
+          },
+          "answer": "B",
+          "explanation": "Lớp E (các bit đầu là 1111, từ 240.0.0.0 đến 255.255.255.255) được IETF giữ lại làm địa chỉ thử nghiệm và nghiên cứu phát triển (Experimental/Reserved)."
+        },
+        {
+          "id": 74,
+          "question": "Địa chỉ `255.255.255.255` được định nghĩa là loại địa chỉ nào trong mạng IPv4?",
+          "options": {
+            "A": "Địa chỉ quảng bá hướng đích (Directed Broadcast Address).",
+            "B": "Địa chỉ ngẫu nhiên tự tạo của hệ điều hành máy khách.",
+            "C": "Địa chỉ quảng bá giới hạn cục bộ (Limited Broadcast Address).",
+            "D": "Địa chỉ máy chủ gốc của toàn bộ mạng Internet quốc tế."
+          },
+          "answer": "C",
+          "explanation": "255.255.255.255 là địa chỉ Limited Broadcast. Gói tin gửi đến địa chỉ này sẽ được gửi tới tất cả các máy trong mạng LAN nội bộ nhưng tuyệt đối không bao giờ được Router chuyển tiếp ra ngoài."
+        },
+        {
+          "id": 75,
+          "question": "Sự khác biệt cốt lõi giữa Limited Broadcast (`255.255.255.255`) và Directed Broadcast (ví dụ: `192.168.1.255`) là gì?",
+          "options": {
+            "A": "Limited Broadcast bắt buộc dùng TCP; Directed Broadcast bắt buộc dùng UDP.",
+            "B": "Limited Broadcast dùng cho cáp quang; Directed Broadcast chỉ dùng cho mạng không dây.",
+            "C": "Limited Broadcast có thể đi qua router; Directed Broadcast bị chặn ngay tại máy gửi.",
+            "D": "Limited Broadcast chỉ gửi trong mạng nội bộ; Directed Broadcast có thể được định tuyến từ ngoài vào."
+          },
+          "answer": "D",
+          "explanation": "Limited Broadcast (255.255.255.255) không bao giờ qua router. Directed Broadcast (như 192.168.1.255) có thể được một máy ở ngoài mạng gửi tới router đích để router đó phát quảng bá vào subnet của nó (mặc dù hiện nay router thường chặn vì lý do bảo mật)."
+        },
+        {
+          "id": 76,
+          "question": "Một mạng con có địa chỉ mạng là `172.16.128.0` và Broadcast là `172.16.191.255`. Subnet Mask của mạng này là bao nhiêu?",
+          "options": {
+            "A": "/17 (255.255.128.0)",
+            "B": "/19 (255.255.224.0)",
+            "C": "/18 (255.255.192.0)",
+            "D": "/20 (255.255.240.0)"
+          },
+          "answer": "C",
+          "explanation": "Mạng kế tiếp sau 172.16.191.255 là 172.16.192.0. Khoảng cách bước nhảy ở octet 3 là 192 - 128 = 64. Bước nhảy = 64 tương ứng mask octet 3 = 256 - 64 = 192 (1100 0000_2 = 2 bit 1). Prefix = 16 + 2 = /18 (255.255.192.0)."
+        },
+        {
+          "id": 77,
+          "question": "Khi áp dụng kỹ thuật VLSM (Variable Length Subnet Mask), nguyên tắc phân chia bắt buộc phải tuân thủ là gì?",
+          "options": {
+            "A": "Luôn ưu tiên phân bổ cho các mạng con có nhu cầu số lượng host lớn nhất trước.",
+            "B": "Luôn phân chia cho các mạng con có nhu cầu host nhỏ nhất trước để tránh lãng phí.",
+            "C": "Tất cả các mạng con bắt buộc phải sử dụng chung một Subnet Mask đồng nhất.",
+            "D": "Chỉ được phép mượn bit ở octet thứ 4 của địa chỉ IP bất kể lớp mạng ban đầu."
+          },
+          "answer": "A",
+          "explanation": "Nguyên tắc sống còn của VLSM: luôn sắp xếp các subnet cần chia theo thứ tự giảm dần về số lượng host. Chia cho mạng lớn nhất trước, sau đó lấy các khối còn lại chia tiếp cho các mạng nhỏ hơn để tránh đè chéo địa chỉ."
+        },
+        {
+          "id": 78,
+          "question": "Địa chỉ IP `10.0.0.0` với Subnet Mask `255.0.0.0` (/8) có thể cung cấp tối đa bao nhiêu địa chỉ host khả dụng?",
+          "options": {
+            "A": "65.534 hosts.",
+            "B": "2.097.150 hosts.",
+            "C": "16.777.214 hosts.",
+            "D": "1.048.574 hosts."
+          },
+          "answer": "C",
+          "explanation": "Mạng /8 có 32 - 8 = 24 bit host. Số host khả dụng là 2^24 - 2 = 16.777.216 - 2 = 16.777.214 hosts."
+        },
+        {
+          "id": 79,
+          "question": "Subnet Mask dạng nhị phân nào sau đây đại diện cho Prefix `/27`?",
+          "options": {
+            "A": "11111111.11111111.11111111.11000000",
+            "B": "11111111.11111111.11111111.11100000",
+            "C": "11111111.11111111.11111111.11110000",
+            "D": "11111111.11111111.11111111.11111000"
+          },
+          "answer": "B",
+          "explanation": "Prefix /27 gồm 24 bit 1 ở 3 octet đầu và 3 bit 1 ở octet cuối: 1110 0000_2 = 224 (255.255.255.224)."
+        },
+        {
+          "id": 80,
+          "question": "Cho địa chỉ IP `192.168.10.180/28`. Máy này thuộc về đường mạng con nào?",
+          "options": {
+            "A": "192.168.10.160",
+            "B": "192.168.10.128",
+            "C": "192.168.10.192",
+            "D": "192.168.10.176"
+          },
+          "answer": "D",
+          "explanation": "Prefix /28 có mask 255.255.255.240, bước nhảy ở octet 4 là 256 - 240 = 16. Bội số của 16 gần nhất nhỏ hơn hoặc bằng 180 là 16 * 11 = 176. Vậy địa chỉ mạng là 192.168.10.176."
+        },
+        {
+          "id": 81,
+          "question": "Với subnet `192.168.10.176/28`, dải địa chỉ IP hợp lệ có thể gán cho các thiết bị là gì?",
+          "options": {
+            "A": "Từ 192.168.10.176 đến 192.168.10.191",
+            "B": "Từ 192.168.10.177 đến 192.168.10.190",
+            "C": "Từ 192.168.10.177 đến 192.168.10.191",
+            "D": "Từ 192.168.10.161 đến 192.168.10.175"
+          },
+          "answer": "B",
+          "explanation": "Net Addr là .176, bước nhảy là 16 nên mạng kế tiếp là .192, Broadcast là .191. Dải IP host hợp lệ là từ 192.168.10.177 đến 192.168.10.190 (tổng cộng 14 host)."
+        },
+        {
+          "id": 82,
+          "question": "Một quản trị viên muốn chia mạng `10.0.0.0/8` thành các subnet có thể chứa tối thiểu 1.000 hosts mỗi mạng. Subnet Mask tối ưu nhất là gì?",
+          "options": {
+            "A": "255.255.240.0 (/20)",
+            "B": "255.255.254.0 (/23)",
+            "C": "255.255.252.0 (/22)",
+            "D": "255.255.255.0 (/24)"
+          },
+          "answer": "C",
+          "explanation": "Cần 1.000 host: 2^m - 2 >= 1.000 => m = 10 bit host (2^10 - 2 = 1.022 >= 1.000). Prefix = 32 - 10 = /22. Mask tương ứng là 255.255.252.0."
+        },
+        {
+          "id": 83,
+          "question": "Khi thực hiện phép tính logic AND giữa địa chỉ IP `192.168.1.100` và Subnet Mask `255.255.255.0`, kết quả thu được là gì?",
+          "options": {
+            "A": "Địa chỉ của cổng Default Gateway.",
+            "B": "Địa chỉ MAC vật lý của card mạng trên máy tính.",
+            "C": "Địa chỉ quảng bá (Broadcast Address) 192.168.1.255.",
+            "D": "Địa chỉ đường mạng (Network Address) 192.168.1.0."
+          },
+          "answer": "D",
+          "explanation": "Phép toán logic AND từng bit giữa IP và Subnet Mask sẽ giữ nguyên các bit ở phần NetID và đưa toàn bộ các bit ở phần HostID về 0, kết quả chính là Địa chỉ đường mạng (Network Address)."
+        },
+        {
+          "id": 84,
+          "question": "Tại sao không thể gán địa chỉ `172.16.31.255/19` cho một card mạng máy tính cá nhân?",
+          "options": {
+            "A": "Vì đây là địa chỉ thuộc dải mạng thử nghiệm Lớp E bị cấm sử dụng.",
+            "B": "Vì đây là địa chỉ Broadcast của mạng con 172.16.0.0/19.",
+            "C": "Vì đây là địa chỉ mạng (Network Address) không có phần định danh host.",
+            "D": "Vì đây là địa chỉ vòng lặp nội bộ chỉ dùng cho hệ điều hành Linux."
+          },
+          "answer": "B",
+          "explanation": "Với /19, bước nhảy ở octet 3 là 32 (mạng 172.16.0.0 đến 172.16.31.255). Do đó 172.16.31.255 là địa chỉ Broadcast của mạng này, không được phép gán cho host."
+        },
+        {
+          "id": 85,
+          "question": "Một tổ chức được cấp đường mạng `192.168.50.0/24`. Họ cần chia thành 4 subnet có quy mô bằng nhau. Subnet Mask của các subnet mới là gì?",
+          "options": {
+            "A": "255.255.255.128 (/25)",
+            "B": "255.255.255.240 (/28)",
+            "C": "255.255.255.224 (/27)",
+            "D": "255.255.255.192 (/26)"
+          },
+          "answer": "D",
+          "explanation": "Cần 4 subnet: 2^n >= 4 => n = 2 bit mượn. Prefix mới = 24 + 2 = /26. Subnet Mask mới là 255.255.255.192."
+        },
+        {
+          "id": 86,
+          "question": "Số lượng địa chỉ IP khả dụng cho host trong một subnet có Prefix `/29` là bao nhiêu?",
+          "options": {
+            "A": "2 hosts.",
+            "B": "14 hosts.",
+            "C": "6 hosts.",
+            "D": "30 hosts."
+          },
+          "answer": "C",
+          "explanation": "Prefix /29 có số bit host m = 32 - 29 = 3 bit. Số IP host khả dụng = 2^3 - 2 = 8 - 2 = 6 hosts."
+        },
+        {
+          "id": 87,
+          "question": "Địa chỉ IP `10.200.5.1` thuộc về lớp mạng nào theo cách phân chia địa chỉ Classful ban đầu?",
+          "options": {
+            "A": "Lớp A.",
+            "B": "Lớp B.",
+            "C": "Lớp C.",
+            "D": "Lớp D."
+          },
+          "answer": "A",
+          "explanation": "Octet đầu là 10 (nằm trong khoảng 1 đến 126), do đó theo kiến trúc mạng phân lớp (Classful) truyền thống, nó thuộc Lớp A."
+        },
+        {
+          "id": 88,
+          "question": "Đặc điểm nhận dạng của các địa chỉ IPv4 thuộc Lớp B là gì?",
+          "options": {
+            "A": "Bit đầu tiên luôn là 0 và octet đầu có giá trị từ 1 đến 126.",
+            "B": "Ba bit đầu tiên luôn là 110 và octet đầu có giá trị từ 192 đến 223.",
+            "C": "Hai bit đầu tiên luôn là 10 và octet đầu có giá trị từ 128 đến 191.",
+            "D": "Bốn bit đầu tiên luôn là 1110 và octet đầu có giá trị từ 224 đến 239."
+          },
+          "answer": "C",
+          "explanation": "Lớp B có 2 bit đầu cố định là 10 (nhị phân từ 10000000 đến 10111111), giá trị thập phân octet đầu từ 128 đến 191."
+        },
+        {
+          "id": 89,
+          "question": "Giá trị thập phân nào sau đây KHÔNG THỂ xuất hiện trong một Subnet Mask hợp lệ?",
+          "options": {
+            "A": "250",
+            "B": "248",
+            "C": "240",
+            "D": "252"
+          },
+          "answer": "A",
+          "explanation": "Các giá trị hợp lệ của 1 octet trong mask (các bit 1 liên tục): 0, 128, 192, 224, 240, 248, 252, 254, 255. Giá trị 250 (1111 1010_2) có bit 0 xen giữa nên không hợp lệ."
+        },
+        {
+          "id": 90,
+          "question": "Một mạng con có địa chỉ mạng `172.16.64.0/20`. Subnet này có bước nhảy (Block Size) ở octet thứ 3 là bao nhiêu?",
+          "options": {
+            "A": "8",
+            "B": "64",
+            "C": "32",
+            "D": "16"
+          },
+          "answer": "D",
+          "explanation": "Prefix /20 có mask 255.255.240.0. Bước nhảy ở octet 3 là 256 - 240 = 16."
+        },
+        {
+          "id": 91,
+          "question": "Địa chỉ nào sau đây cùng thuộc subnet với IP `172.16.65.10/20`?",
+          "options": {
+            "A": "172.16.80.1",
+            "B": "172.16.79.250",
+            "C": "172.16.63.254",
+            "D": "172.16.95.100"
+          },
+          "answer": "B",
+          "explanation": "Mạng của 172.16.65.10/20 là 172.16.64.0/20 (bước nhảy 16), dải IP từ 172.16.64.1 đến 172.16.79.254 (Broadcast 79.255). Do đó 172.16.79.250 cùng subnet."
+        },
+        {
+          "id": 92,
+          "question": "Cho địa chỉ mạng `192.168.1.0/24`. Nếu chia thành các subnet với Prefix `/27`, ta thu được bao nhiêu subnet khả dụng?",
+          "options": {
+            "A": "8 subnet.",
+            "B": "4 subnet.",
+            "C": "16 subnet.",
+            "D": "32 subnet."
+          },
+          "answer": "A",
+          "explanation": "Số bit mượn n = 27 - 24 = 3 bit. Số subnet tạo ra = 2^3 = 8 subnet."
+        },
+        {
+          "id": 93,
+          "question": "Trong địa chỉ IPv4, vai trò cốt lõi của Subnet Mask là gì?",
+          "options": {
+            "A": "Giúp thiết bị phân biệt ranh giới giữa phần Network ID và phần Host ID trong địa chỉ IP.",
+            "B": "Mã hóa toàn bộ các gói tin dữ liệu truyền qua cổng mạng Ethernet.",
+            "C": "Tăng cường xung nhịp truyền dữ liệu của card mạng lên mức tối đa.",
+            "D": "Xác định danh tính của nhà sản xuất phần cứng bo mạch chủ."
+          },
+          "answer": "A",
+          "explanation": "Subnet Mask dùng để phân tách địa chỉ IP 32 bit thành 2 phần: phần bit mạng (NetID tương ứng với các bit 1) và phần bit máy trạm (HostID tương ứng với các bit 0)."
+        },
+        {
+          "id": 94,
+          "question": "Một máy tính có IP `192.168.1.50` và Default Gateway là `192.168.2.1` với Mask `255.255.255.0`. Hiện tượng gì sẽ xảy ra khi máy này muốn gửi dữ liệu ra Internet?",
+          "options": {
+            "A": "Dữ liệu vẫn truyền bình thường vì Switch tự động chuyển tiếp qua mạng khác.",
+            "B": "Máy chủ DNS sẽ tự động chuyển đổi gói tin sang địa chỉ IPv6.",
+            "C": "Máy tự động thay đổi địa chỉ IP của mình thành 192.168.2.50 để cùng mạng.",
+            "D": "Máy không thể gửi gói tin tới Gateway vì Gateway khác subnet và không kết nối trực tiếp được."
+          },
+          "answer": "D",
+          "explanation": "Với mask /24, máy tính thuộc mạng 192.168.1.0/24 trong khi Default Gateway lại thuộc mạng 192.168.2.0/24. Để liên lạc ở Layer 2, máy tính phải gửi ARP Request tìm MAC của Gateway trong cùng subnet, do khác subnet nên ARP sẽ thất bại, máy không thể ra Internet."
+        },
+        {
+          "id": 95,
+          "question": "Địa chỉ IP `0.0.0.0` trong bảng định tuyến của Router mang ý nghĩa gì?",
+          "options": {
+            "A": "Đại diện cho tuyến đường mặc định (Default Route 0.0.0.0/0).",
+            "B": "Chỉ định địa chỉ của cổng kết nối console quản trị thiết bị.",
+            "C": "Đại diện cho tất cả các máy chủ máy in trong mạng cục bộ.",
+            "D": "Báo hiệu bảng định tuyến đang bị lỗi và cần khởi động lại."
+          },
+          "answer": "A",
+          "explanation": "Trong bảng định tuyến, địa chỉ 0.0.0.0/0 đại diện cho Default Route (tuyến đường mặc định): bất kỳ gói tin nào không khớp với các mạng cụ thể trong bảng định tuyến sẽ được đẩy ra cổng này."
+        },
+        {
+          "id": 96,
+          "question": "Địa chỉ `0.0.0.0` được Client sử dụng làm địa chỉ IP nguồn trong trường hợp nào?",
+          "options": {
+            "A": "Khi client đang gửi thông điệp DHCPDISCOVER để xin cấp địa chỉ IP.",
+            "B": "Khi client đang tải một tệp tin lớn qua giao thức FTP bảo mật.",
+            "C": "Khi client thực hiện lệnh Ping kiểm tra kết nối tới máy in mạng.",
+            "D": "Khi client ngắt kết nối vật lý với thiết bị chuyển mạch trung tâm."
+          },
+          "answer": "A",
+          "explanation": "Khi vừa khởi động và chưa có địa chỉ IP, trong bản tin DHCPDISCOVER, Client đặt trường Source IP của gói tin IP là 0.0.0.0 (nghĩa là 'tôi chưa có địa chỉ IP')."
+        },
+        {
+          "id": 97,
+          "question": "Cần bao nhiêu bit Host để đáp ứng cho một subnet yêu cầu có đúng 120 máy tính khả dụng?",
+          "options": {
+            "A": "6 bits.",
+            "B": "7 bits.",
+            "C": "8 bits.",
+            "D": "9 bits."
+          },
+          "answer": "B",
+          "explanation": "Công thức: 2^m - 2 >= 120. Nếu m = 6: 2^6 - 2 = 62 < 120 (không đủ). Nếu m = 7: 2^7 - 2 = 126 >= 120 (thỏa mãn). Vậy cần 7 bit host."
+        },
+        {
+          "id": 98,
+          "question": "Địa chỉ nào sau đây là địa chỉ mạng (Network Address) hợp lệ?",
+          "options": {
+            "A": "192.168.1.254/26",
+            "B": "192.168.1.65/26",
+            "C": "192.168.1.127/26",
+            "D": "192.168.1.64/26"
+          },
+          "answer": "D",
+          "explanation": "Với /26, bước nhảy là 64. Các địa chỉ mạng hợp lệ là 192.168.1.0, 192.168.1.64, 192.168.1.128, 192.168.1.192. Do đó 192.168.1.64 là địa chỉ mạng hợp lệ."
+        },
+        {
+          "id": 99,
+          "question": "Khi chia subnet cho một công ty có 3 phòng ban: Kỹ thuật (50 host), Kinh doanh (25 host), Kế toán (10 host) từ mạng gốc `192.168.10.0/24`, kỹ thuật chia nào sau đây tránh lãng phí IP nhất?",
+          "options": {
+            "A": "Chia đều FLSM với Prefix /26 cho tất cả các phòng.",
+            "B": "Chia đều FLSM với Prefix /27 cho tất cả các phòng.",
+            "C": "Sử dụng VLSM: Kỹ thuật /26, Kinh doanh /27, Kế toán /28.",
+            "D": "Sử dụng VLSM: Kỹ thuật /25, Kinh doanh /26, Kế toán /27."
+          },
+          "answer": "C",
+          "explanation": "Áp dụng VLSM tối ưu: Kỹ thuật (50 host) cần m = 6 bit => /26 (chứa 62 host); Kinh doanh (25 host) cần m = 5 bit => /27 (chứa 30 host); Kế toán (10 host) cần m = 4 bit => /28 (chứa 14 host). Đây là phương án tiết kiệm nhất."
+        },
+        {
+          "id": 100,
+          "question": "Một card mạng có địa chỉ MAC là `00-50-56-C0-00-08`. Địa chỉ này là loại địa chỉ nào?",
+          "options": {
+            "A": "Địa chỉ Multicast toàn cầu.",
+            "B": "Địa chỉ Broadcast cho mạng không dây.",
+            "C": "Địa chỉ Unicast vật lý duy nhất của thiết bị.",
+            "D": "Địa chỉ logic tạm thời do máy chủ DHCP ấn định."
+          },
+          "answer": "C",
+          "explanation": "Byte đầu tiên là 00 (Hex), dạng nhị phân là 0000 0000. Bit I/G (bit cuối của byte đầu) bằng 0, chứng tỏ đây là một địa chỉ Unicast vật lý của card mạng."
         }
       ]
     },
     {
       "topic_id": 4,
       "topic_title": "Chuyên đề 4: Dịch vụ mạng cốt lõi DHCP & DNS",
-      "total_questions": 50,
+      "total_questions": 100,
       "questions": [
         {
           "id": 1,
@@ -2427,13 +4227,613 @@
           },
           "answer": "B",
           "explanation": "Nội dung: Mục đích chính của kỹ thuật ủy thác quyền quản lý tên miền (DNS Delegation) giữa trụ sở chính và chi nhánh là gì? Giải thích chi tiết: DNS Delegation ủy quyền quản trị một miền con (subdomain, ví dụ `hanoi.company.com.vn`) cho Name Server tại chi nhánh đó, giúp phân tán tải và giảm thời gian trễ khi tra cứu cục bộ."
+        },
+        {
+          "id": 51,
+          "question": "Trong bản tin DHCP, trường 'chaddr' (Client Hardware Address) có kích thước bao nhiêu byte và dùng để làm gì?",
+          "options": {
+            "A": "4 bytes, lưu địa chỉ IP tạm thời mà máy chủ DHCP cấp cho client.",
+            "B": "32 bytes, lưu tên miền máy chủ mà client mong muốn truy cập.",
+            "C": "16 bytes, lưu địa chỉ MAC vật lý của client để server nhận dạng máy nhận.",
+            "D": "8 bytes, lưu mã giao dịch ngẫu nhiên đồng bộ giữa client và server."
+          },
+          "answer": "C",
+          "explanation": "Trường chaddr (Client hardware address) có kích thước 16 bytes trong thông điệp DHCP, lưu địa chỉ MAC của client để Server biết gói tin phản hồi gửi cho card mạng nào."
+        },
+        {
+          "id": 52,
+          "question": "Trường 'yiaddr' (Your IP Address) trong thông điệp DHCP có ý nghĩa cốt lõi nào sau đây?",
+          "options": {
+            "A": "Địa chỉ IP mà máy chủ DHCP đề xuất hoặc chính thức cấp cho client sử dụng.",
+            "B": "Địa chỉ IP của chính máy chủ DHCP đang xử lý yêu cầu cấp phát.",
+            "C": "Địa chỉ IP hiện tại của client khi đang thực hiện việc xin gia hạn thuê.",
+            "D": "Địa chỉ IP của thiết bị chuyển tiếp DHCP Relay Agent trên router."
+          },
+          "answer": "A",
+          "explanation": "yiaddr ('Your IP Address') là trường chứa địa chỉ IP do DHCP Server cấp cho Client, xuất hiện trong các bản tin DHCPOFFER và DHCPACK."
+        },
+        {
+          "id": 53,
+          "question": "Trong bản tin DHCPDISCOVER ban đầu khi client chưa có địa chỉ IP, giá trị của trường 'ciaddr' (Client IP Address) là gì?",
+          "options": {
+            "A": "255.255.255.255",
+            "B": "169.254.0.1",
+            "C": "127.0.0.1",
+            "D": "0.0.0.0"
+          },
+          "answer": "D",
+          "explanation": "Khi gửi DHCPDISCOVER, client chưa sở hữu IP nào nên trường ciaddr (Client IP Address) bắt buộc phải đặt là 0.0.0.0. Trường này chỉ có giá trị khi client ở trạng thái BOUND hoặc RENEWING."
+        },
+        {
+          "id": 54,
+          "question": "Trường 'giaddr' (Gateway IP Address) trong cấu trúc thông điệp DHCP được sử dụng trong tình huống nào?",
+          "options": {
+            "A": "Lưu địa chỉ IP của Default Gateway để cấp cho máy trạm cấu hình mạng.",
+            "B": "Lưu địa chỉ IP của máy chủ DNS ưu tiên hàng đầu trong mạng nội bộ.",
+            "C": "Lưu địa chỉ IP của DHCP Relay Agent khi chuyển tiếp gói tin giữa các mạng con khác nhau.",
+            "D": "Lưu địa chỉ IP của trang web khởi động mặc định trên trình duyệt client."
+          },
+          "answer": "C",
+          "explanation": "Trường giaddr (Relay Agent IP Address) được thiết bị định tuyến đóng vai trò DHCP Relay Agent điền vào khi nhận gói tin broadcast từ client ở subnet này để chuyển tiếp unicast sang DHCP Server ở subnet khác."
+        },
+        {
+          "id": 55,
+          "question": "Trường 'xid' (Transaction ID) trong thông điệp DHCP đảm nhận vai trò gì?",
+          "options": {
+            "A": "Xác định cổng dịch vụ UDP mà máy chủ DHCP đang mở để lắng nghe kết nối.",
+            "B": "Chỉ định số lượng máy tính tối đa được phép kết nối vào mạng không dây.",
+            "C": "Quy định tổng số giây client được phép sở hữu địa chỉ IP trước khi bị thu hồi.",
+            "D": "Mã số ngẫu nhiên do client tạo ra để khớp các gói tin phản hồi từ server với yêu cầu của mình."
+          },
+          "answer": "D",
+          "explanation": "Transaction ID (xid - 4 bytes) là số nguyên ngẫu nhiên do Client sinh ra khi bắt đầu phiên xin IP. Client dùng xid này để so khớp xem bản tin DHCPOFFER/DHCPACK nhận được có đúng là phản hồi cho yêu cầu của mình hay không."
+        },
+        {
+          "id": 56,
+          "question": "Cờ Broadcast (Broadcast Flag) nằm trong trường 'flags' của DHCP mang ý nghĩa gì khi được đặt bằng 1?",
+          "options": {
+            "A": "Báo cho server biết client yêu cầu cấp phát toàn bộ các dải IP đang còn trống.",
+            "B": "Báo cho server biết client chưa thể nhận gói tin Unicast nên server phải phản hồi bằng Broadcast.",
+            "C": "Thông báo rằng toàn bộ mạng nội bộ đang gặp sự cố gián đoạn đường truyền cáp.",
+            "D": "Chỉ thị cho thiết bị chuyển mạch Switch nhân bản gói tin ra tất cả các cổng mạng."
+          },
+          "answer": "B",
+          "explanation": "Một số client chưa có ngăn xếp IP hoàn chỉnh khi khởi động không thể nhận gói Unicast IP. Khi đó, client bật Broadcast Flag = 1 để yêu cầu DHCP Server phải phát gói DHCPOFFER và DHCPACK dưới dạng Broadcast."
+        },
+        {
+          "id": 57,
+          "question": "Khi thời gian thuê IP (Lease Time) trôi qua được 50% (T1 timer), Client sẽ làm gì?",
+          "options": {
+            "A": "Gửi thông điệp DHCPREQUEST dạng Unicast trực tiếp đến Server đã cấp IP để xin gia hạn.",
+            "B": "Tự động xóa địa chỉ IP hiện tại và gửi bản tin DHCPDISCOVER để tìm server mới.",
+            "C": "Gửi thông điệp DHCPREQUEST dạng Broadcast tới toàn bộ các máy chủ trong mạng.",
+            "D": "Chuyển card mạng sang chế độ tĩnh và ngừng toàn bộ các dịch vụ mạng Internet."
+          },
+          "answer": "A",
+          "explanation": "Ở mốc 50% Lease time (T1 - Renewing state), Client gửi bản tin DHCPREQUEST dưới dạng Unicast trực tiếp tới DHCP Server đã cấp IP cho nó để xin gia hạn thời gian thuê."
+        },
+        {
+          "id": 58,
+          "question": "Nếu ở mốc 50% Lease Time, DHCP Server ban đầu không phản hồi, Client sẽ hành động như thế nào khi chạm mốc 87.5% (T2 timer)?",
+          "options": {
+            "A": "Lập tức hủy bỏ địa chỉ IP và tự gán địa chỉ IP thuộc dải APIPA 169.254.0.0/16.",
+            "B": "Chuyển sang trạng thái Rebinding và gửi thông điệp DHCPREQUEST dạng Broadcast đến bất kỳ Server nào.",
+            "C": "Tiếp tục gửi Unicast tới Server ban đầu với tần suất 1 giây một lần cho đến khi hết hạn.",
+            "D": "Khởi động lại toàn bộ máy tính để xóa sạch bảng định tuyến trong hệ điều hành."
+          },
+          "answer": "B",
+          "explanation": "Khi chạm mốc 87.5% Lease time (T2 - Rebinding state) mà chưa được gia hạn, Client sẽ gửi bản tin DHCPREQUEST dưới dạng Broadcast tới tất cả các DHCP Server khả dụng trong mạng để xin gia hạn."
+        },
+        {
+          "id": 59,
+          "question": "Thông điệp 'DHCPNAK' (Negative Acknowledgment) được DHCP Server gửi cho Client trong trường hợp nào?",
+          "options": {
+            "A": "Khi Server chấp thuận cấp phát địa chỉ IP kèm theo đầy đủ thông số cấu hình DNS.",
+            "B": "Khi địa chỉ IP mà client yêu cầu không hợp lệ hoặc đã bị cấp cho một thiết bị khác.",
+            "C": "Khi client gửi thông điệp DHCPRELEASE thông báo ngắt kết nối mạng an toàn.",
+            "D": "Khi thời gian thuê IP của client vẫn còn trên 90% theo thỏa thuận ban đầu."
+          },
+          "answer": "B",
+          "explanation": "DHCPNAK (từ chối cấp phát) được Server gửi đi khi thông tin yêu cầu của Client không hợp lệ (ví dụ: Client yêu cầu một IP thuộc subnet khác hoặc IP đó đã bị gán cho máy khác)."
+        },
+        {
+          "id": 60,
+          "question": "Khi người dùng thực hiện lệnh `ipconfig /release` trên Windows, thông điệp DHCP nào sẽ được gửi đi?",
+          "options": {
+            "A": "DHCPRELEASE",
+            "B": "DHCPDISCOVER",
+            "C": "DHCPDECLINE",
+            "D": "DHCPINFORM"
+          },
+          "answer": "A",
+          "explanation": "Lệnh `ipconfig /release` khiến Client gửi bản tin DHCPRELEASE dạng Unicast đến DHCP Server để trả lại địa chỉ IP trước thời hạn, sau đó xóa IP khỏi cấu hình mạng của máy."
+        },
+        {
+          "id": 61,
+          "question": "Thông điệp 'DHCPDECLINE' được Client gửi tới Server khi nào?",
+          "options": {
+            "A": "Khi client nhận được gói DHCPOFFER nhưng quyết định chọn gói của server khác.",
+            "B": "Khi client muốn yêu cầu tăng thời gian thuê IP lên mức không giới hạn.",
+            "C": "Khi client muốn tắt card mạng để chuyển sang sử dụng kết nối mạng không dây.",
+            "D": "Khi client kiểm tra phát hiện địa chỉ IP vừa được cấp đang bị xung đột với máy khác trong mạng."
+          },
+          "answer": "D",
+          "explanation": "Sau khi nhận DHCPACK, Client thường gửi gói ARP probe để kiểm tra xem có máy nào trong mạng đang dùng IP đó không. Nếu phát hiện có máy trùng IP, Client gửi DHCPDECLINE để từ chối IP và bắt đầu lại."
+        },
+        {
+          "id": 62,
+          "question": "Tại sao giao thức DHCP phải sử dụng DHCP Relay Agent khi Client và Server nằm ở hai mạng con (Subnet) khác nhau?",
+          "options": {
+            "A": "Vì DHCP Server không có khả năng phân biệt địa chỉ MAC của các thiết bị di động.",
+            "B": "Vì giao thức UDP bắt buộc phải có thiết bị trung gian chuyển đổi sang giao thức TCP.",
+            "C": "Vì cáp mạng nối giữa hai subnet có băng thông quá nhỏ không đủ truyền dữ liệu.",
+            "D": "Vì Router mặc định chặn các gói tin Broadcast tầng 3, ngăn DHCPDISCOVER đi qua."
+          },
+          "answer": "D",
+          "explanation": "Gói tin DHCPDISCOVER do client phát là gói Broadcast (255.255.255.255). Router không chuyển tiếp gói broadcast này sang subnet khác. Do đó, cần Relay Agent trên Router để bắt gói broadcast này và chuyển thành Unicast tới DHCP Server."
+        },
+        {
+          "id": 63,
+          "question": "Trong các thông số cấu hình cấp cho client, Option 3 trong thông điệp DHCP tương ứng với thông tin gì?",
+          "options": {
+            "A": "Subnet Mask (Mặt nạ mạng con).",
+            "B": "Domain Name Server (Địa chỉ máy chủ DNS).",
+            "C": "Router / Default Gateway (Cổng kết nối mặc định).",
+            "D": "IP Address Lease Time (Thời gian thuê địa chỉ IP)."
+          },
+          "answer": "C",
+          "explanation": "Trong chuẩn DHCP Options: Option 1 là Subnet Mask; Option 3 là Router (Default Gateway); Option 6 là Domain Name Server (DNS); Option 51 là Lease Time; Option 53 là DHCP Message Type."
+        },
+        {
+          "id": 64,
+          "question": "Trong chuẩn DHCP Options, Option 6 được sử dụng để cung cấp thông tin nào cho Client?",
+          "options": {
+            "A": "Danh sách các địa chỉ IP của máy chủ DNS (Domain Name Server).",
+            "B": "Địa chỉ của cổng Default Gateway.",
+            "C": "Thời gian đồng bộ đồng hồ mạng theo chuẩn NTP.",
+            "D": "Tên miền định danh của tổ chức cung cấp dịch vụ Internet."
+          },
+          "answer": "A",
+          "explanation": "Option 6 trong thông điệp DHCP chứa danh sách một hoặc nhiều địa chỉ IP của các máy chủ DNS Server mà Client cần dùng để phân giải tên miền."
+        },
+        {
+          "id": 65,
+          "question": "Hệ thống tên miền DNS (Domain Name System) sử dụng số hiệu cổng (Port) mặc định nào ở tầng Giao vận?",
+          "options": {
+            "A": "Port 25",
+            "B": "Port 80",
+            "C": "Port 67",
+            "D": "Port 53"
+          },
+          "answer": "D",
+          "explanation": "DNS sử dụng số hiệu cổng 53 (chủ yếu là UDP 53 cho các truy vấn thông thường, và TCP 53 cho quá trình Zone Transfer hoặc phản hồi lớn hơn 512 bytes)."
+        },
+        {
+          "id": 66,
+          "question": "Trong trường hợp nào sau đây giao thức DNS sẽ sử dụng giao thức TCP thay vì UDP?",
+          "options": {
+            "A": "Khi máy trạm người dùng gửi yêu cầu tìm kiếm địa chỉ IP của một trang web tin tức.",
+            "B": "Khi truyền cơ sở dữ liệu vùng (Zone Transfer) giữa máy chủ DNS chính và DNS phụ.",
+            "C": "Khi thời gian phản hồi của mạng cục bộ vượt quá 100 mili-giây.",
+            "D": "Khi người dùng thực hiện lệnh Ping liên tục tới địa chỉ IP của máy chủ."
+          },
+          "answer": "B",
+          "explanation": "DNS sử dụng TCP cổng 53 khi thực hiện sao chép đồng bộ cơ sở dữ liệu vùng (Zone Transfer - AXFR/IXFR) giữa Primary và Secondary DNS Server, hoặc khi gói tin phản hồi vượt quá 512 bytes (DNS Message > 512B)."
+        },
+        {
+          "id": 67,
+          "question": "Cấu trúc không gian tên miền Internet được tổ chức theo mô hình hình học nào sau đây?",
+          "options": {
+            "A": "Mô hình cấu trúc vòng tròn khép kín phân tán ngang hàng.",
+            "B": "Mô hình mạng lưới liên kết đầy đủ không có trung tâm điều khiển.",
+            "C": "Mô hình cấu trúc cây phân cấp hình nón ngược có gốc (Root) ở đỉnh cao nhất.",
+            "D": "Mô hình tuyến tính một chiều tuần tự theo thứ tự chữ cái Alphabet."
+          },
+          "answer": "C",
+          "explanation": "Không gian tên miền DNS được tổ chức theo cấu trúc hình cây phân cấp (Hierarchical Tree), có gốc là Root domain (ký hiệu dấu chấm '.'), dưới Root là các TLD (.com, .vn), dưới TLD là second-level domain (yahoo.com)..."
+        },
+        {
+          "id": 68,
+          "question": "Có bao nhiêu cụm máy chủ tên miền gốc (Root DNS Servers) mang định danh logic chính thức trên toàn cầu?",
+          "options": {
+            "A": "13 tên máy chủ logic (từ a.root-servers.net đến m.root-servers.net).",
+            "B": "7 máy chủ logic (đánh số từ 1 đến 7).",
+            "C": "256 máy chủ logic tương ứng với 256 giá trị của một octet mạng.",
+            "D": "Hàng triệu máy chủ độc lập không có bất kỳ cấu trúc quản lý chung nào."
+          },
+          "answer": "A",
+          "explanation": "Hệ thống Root DNS Server trên thế giới được định danh logic bởi 13 tên từ A đến M (a.root-servers.net đến m.root-servers.net). Thực tế mỗi tên logic này được sao chép thành hàng trăm máy chủ vật lý qua kỹ thuật Anycast."
+        },
+        {
+          "id": 69,
+          "question": "Tên miền cấp cao nhất theo mã quốc gia (ccTLD - country-code Top Level Domain) bao gồm những tên miền nào?",
+          "options": {
+            "A": ".com, .org, .net, .edu",
+            "B": ".info, .biz, .gov, .mil",
+            "C": ".vn, .jp, .us, .uk",
+            "D": ".arp, .root, .local, .lan"
+          },
+          "answer": "C",
+          "explanation": "ccTLD (country-code TLD) gồm mã 2 chữ cái đại diện cho từng quốc gia: .vn (Việt Nam), .jp (Nhật Bản), .us (Hoa Kỳ), .uk (Anh). Nhóm .com, .org, .net là gTLD (generic TLD)."
+        },
+        {
+          "id": 70,
+          "question": "Bản ghi tài nguyên loại 'A' (Address Record) trong cơ sở dữ liệu DNS có chức năng gì?",
+          "options": {
+            "A": "Tạo tên bí danh đại diện cho một tên miền chính thức khác trong hệ thống.",
+            "B": "Ánh xạ một tên miền máy chủ sang một địa chỉ IPv6 128 bit chuẩn mới.",
+            "C": "Chỉ định địa chỉ của máy chủ tiếp nhận thư tín điện tử cho tên miền.",
+            "D": "Ánh xạ một tên miền máy chủ (FQDN) sang một địa chỉ IPv4 32 bit tương ứng."
+          },
+          "answer": "D",
+          "explanation": "Bản ghi A (Address record) ánh xạ từ tên máy trạm (Hostname) sang địa chỉ IPv4 32-bit (ví dụ: www.example.com -> 93.184.216.34)."
+        },
+        {
+          "id": 71,
+          "question": "Bản ghi tài nguyên loại 'AAAA' trong hệ thống DNS được sử dụng để làm gì?",
+          "options": {
+            "A": "Ánh xạ một tên miền máy chủ sang một địa chỉ IPv6 128 bit.",
+            "B": "Cung cấp chứng chỉ xác thực bảo mật đa tầng cho các máy chủ dịch vụ.",
+            "C": "Đồng bộ hóa 4 máy chủ tên miền phụ trong cùng một phân vùng dữ liệu.",
+            "D": "Xác định 4 cổng dịch vụ mở mặc định cho các ứng dụng web di động."
+          },
+          "answer": "A",
+          "explanation": "Bản ghi AAAA (Quad-A record) ánh xạ từ tên miền sang địa chỉ IPv6 128-bit (gấp 4 lần chiều dài của IPv4 nên ký hiệu là 4 chữ A)."
+        },
+        {
+          "id": 72,
+          "question": "Bản ghi 'CNAME' (Canonical Name Record) trong DNS có chức năng cốt lõi là gì?",
+          "options": {
+            "A": "Chỉ định máy chủ nắm giữ quyền lực cao nhất của một phân vùng dữ liệu.",
+            "B": "Thiết lập thời gian tồn tại tối đa của gói tin trên đường truyền mạng.",
+            "C": "Phân giải ngược từ địa chỉ IP trở về tên miền tương ứng ban đầu.",
+            "D": "Tạo tên bí danh (Alias) trỏ về một tên miền chính thức (Canonical Name)."
+          },
+          "answer": "D",
+          "explanation": "Bản ghi CNAME (Canonical Name) tạo ra một tên bí danh (alias) trỏ về tên chính thức của máy (ví dụ: ftp.example.com là bí danh của server1.example.com)."
+        },
+        {
+          "id": 73,
+          "question": "Bản ghi 'MX' (Mail Exchange Record) trong cấu hình DNS có đặc điểm nào sau đây?",
+          "options": {
+            "A": "Bắt buộc phải đi kèm với một chỉ số ưu tiên (Preference / Priority value).",
+            "B": "Chỉ có thể trỏ trực tiếp đến địa chỉ IP mà không được trỏ đến tên miền máy chủ.",
+            "C": "Không cho phép cấu hình quá một máy chủ nhận thư cho cùng một tên miền.",
+            "D": "Tự động mã hóa nội dung các bức thư điện tử bằng các khóa chứng thực."
+          },
+          "answer": "A",
+          "explanation": "Bản ghi MX chỉ định máy chủ Mail của domain và luôn có chỉ số ưu tiên (Preference number). Mail server nào có chỉ số ưu tiên nhỏ hơn sẽ được ưu tiên gửi thư tới trước."
+        },
+        {
+          "id": 74,
+          "question": "Bản ghi 'PTR' (Pointer Record) được sử dụng trong tình huống nào sau đây?",
+          "options": {
+            "A": "Truy vấn thuận: từ tên miền ký tự tìm ra địa chỉ IP của máy chủ.",
+            "B": "Ủy thác quyền quản lý tên miền cho máy chủ chi nhánh cấp dưới.",
+            "C": "Truy vấn nghịch (Reverse Lookup): từ địa chỉ IP tìm ra tên miền tương ứng.",
+            "D": "Xác thực danh tính người quản trị hệ thống máy chủ thư tín nội bộ."
+          },
+          "answer": "C",
+          "explanation": "Bản ghi PTR được lưu trong vùng tra cứu ngược (Reverse Lookup Zone, ví dụ in-addr.arpa) để phân giải ngược từ địa chỉ IP sang tên miền (Reverse DNS lookup)."
+        },
+        {
+          "id": 75,
+          "question": "Bản ghi 'NS' (Name Server Record) đảm nhận vai trò gì trong hệ thống phân giải tên miền?",
+          "options": {
+            "A": "Lưu trữ nội dung mã nguồn của các trang tài liệu web bằng ngôn ngữ HTML.",
+            "B": "Chỉ định máy chủ DNS nào có thẩm quyền (Authoritative) quản lý vùng dữ liệu tên miền đó.",
+            "C": "Ghi nhận địa chỉ MAC của card mạng trên các máy chủ cơ sở dữ liệu đám mây.",
+            "D": "Xác định danh sách các cổng dịch vụ bị tường lửa chặn không cho truy cập."
+          },
+          "answer": "B",
+          "explanation": "Bản ghi NS (Name Server) công bố các máy chủ DNS có thẩm quyền (Authoritative DNS Server) chịu trách nhiệm quản lý và trả lời cho vùng tên miền đó."
+        },
+        {
+          "id": 76,
+          "question": "Bản ghi 'SOA' (Start of Authority) trong cơ sở dữ liệu DNS chứa các thông tin nào sau đây?",
+          "options": {
+            "A": "Danh sách các tài khoản người dùng được phân quyền trong mạng nội bộ công ty.",
+            "B": "Tên máy chủ chính, email người quản trị, số Serial và các chỉ số thời gian làm mới Zone.",
+            "C": "Bảng ánh xạ địa chỉ IP sang địa chỉ MAC của toàn bộ các máy trạm trong phòng máy.",
+            "D": "Tốc độ băng thông tải lên và tải xuống thực tế của đường truyền cáp quang."
+          },
+          "answer": "B",
+          "explanation": "Bản ghi SOA đứng đầu mỗi file Zone, lưu trữ thông tin quản trị cốt lõi: Primary Name Server, email người quản trị, số Serial, Refresh interval, Retry interval, Expire limit và Minimum TTL."
+        },
+        {
+          "id": 77,
+          "question": "Số 'Serial Number' trong bản ghi SOA có ý nghĩa quan trọng nào trong việc quản trị DNS?",
+          "options": {
+            "A": "Mã số đăng ký bản quyền thương mại của phần mềm máy chủ dịch vụ DNS.",
+            "B": "Chỉ số phiên bản dữ liệu; Secondary DNS dựa vào đây để biết Zone đã thay đổi và cần sao chép.",
+            "C": "Số lượng máy tính tối đa được phép gửi yêu cầu phân giải trong một giây.",
+            "D": "Mã nhận diện địa lý của trung tâm dữ liệu đặt máy chủ phân giải tên miền."
+          },
+          "answer": "B",
+          "explanation": "Mỗi khi người quản trị cập nhật dữ liệu Zone trên Primary Server, số Serial Number phải được tăng lên. Secondary DNS định kỳ kiểm tra số Serial này; nếu thấy lớn hơn phiên bản của mình, nó sẽ tiến hành Zone Transfer."
+        },
+        {
+          "id": 78,
+          "question": "Cơ chế 'Truy vấn đệ quy' (Recursive Query) trong DNS có đặc điểm nào sau đây?",
+          "options": {
+            "A": "Server được hỏi chỉ trả về địa chỉ của server tiếp theo và bắt client phải tự đi hỏi.",
+            "B": "Server nhận yêu cầu cam kết sẽ tự đi tìm kiếm và trả về câu trả lời cuối cùng cho client.",
+            "C": "Client gửi cùng một câu hỏi tới tất cả 13 cụm Root Server tại cùng một thời điểm.",
+            "D": "Câu hỏi chỉ được luân chuyển nội bộ giữa các máy trạm ngang hàng trong mạng LAN."
+          },
+          "answer": "B",
+          "explanation": "Trong Recursive Query (thường giữa Client và Local DNS Server), Server nhận gánh nặng phải truy tìm kết quả đến cùng rồi mới trả lời kết quả cuối cùng cho Client."
+        },
+        {
+          "id": 79,
+          "question": "Cơ chế 'Truy vấn tuần tự' (Iterated Query) trong DNS hoạt động theo nguyên tắc nào?",
+          "options": {
+            "A": "Server lập tức báo lỗi 'Không tìm thấy trang web' nếu dữ liệu không có trong bộ nhớ đệm.",
+            "B": "Server nếu không biết câu trả lời sẽ phản hồi thông tin của Server tiếp theo để bên hỏi tự liên hệ.",
+            "C": "Mỗi câu truy vấn tự động nhân bản thành 4 bản sao gửi qua các giao thức mạng khác nhau.",
+            "D": "Quá trình phân giải bắt buộc phải hoàn tất trong vòng dưới 1 phần nghìn giây."
+          },
+          "answer": "B",
+          "explanation": "Trong Iterative Query (thường giữa Local DNS Server và Root/TLD), server được hỏi nếu không có câu trả lời chính xác sẽ trả về thông tin của Server tiếp theo."
+        },
+        {
+          "id": 80,
+          "question": "Chỉ số 'TTL' (Time-To-Live) đi kèm trong các bản ghi phản hồi của DNS có ý nghĩa gì?",
+          "options": {
+            "A": "Thời gian (tính bằng giây) mà bản ghi này được phép lưu tạm trong bộ nhớ đệm (Cache).",
+            "B": "Số lượng bước nhảy qua các bộ định tuyến tối đa mà gói tin DNS được phép đi qua.",
+            "C": "Thời gian tối đa mà máy chủ DNS được phép xử lý một câu truy vấn trước khi hủy bỏ.",
+            "D": "Hạn sử dụng của tên miền trước khi chủ sở hữu phải đóng phí duy trì hàng năm."
+          },
+          "answer": "A",
+          "explanation": "TTL trong bản ghi DNS là thời gian mà một máy chủ hoặc máy trạm được phép lưu tạm bản ghi đó trong Cache."
+        },
+        {
+          "id": 81,
+          "question": "Tính năng lưu đệm 'DNS Caching' mang lại lợi ích nổi bật nào cho hệ thống mạng?",
+          "options": {
+            "A": "Tự động sửa các lỗi chính tả khi người dùng gõ sai tên miền trên thanh địa chỉ.",
+            "B": "Tự động phát hiện và sửa các lỗi vật lý trên đường dây cáp quang nối ra cổng ngoài.",
+            "C": "Giảm độ trễ phân giải cho các lần truy vấn tiếp theo và giảm lưu lượng tải lên Internet.",
+            "D": "Chuyển đổi toàn bộ các trang web tĩnh thành các trang ứng dụng web động đa phương tiện."
+          },
+          "answer": "C",
+          "explanation": "DNS Caching giúp Local DNS trả lời ngay lập tức các yêu cầu tên miền đã tra cứu trước đó mà không cần hỏi lại Root/TLD, giúp giảm mạnh độ trễ và tiết kiệm băng thông."
+        },
+        {
+          "id": 82,
+          "question": "Khái niệm 'Authoritative DNS Server' (Máy chủ DNS có thẩm quyền) được định nghĩa là gì?",
+          "options": {
+            "A": "Máy tính cá nhân của người dùng được cấp quyền cài đặt các phần mềm quản trị hệ thống.",
+            "B": "Máy chủ do nhà cung cấp dịch vụ Internet thiết lập để điều phối băng thông đường truyền.",
+            "C": "Máy chủ chứa cơ sở dữ liệu gốc chính thức của một vùng tên miền được giao quản lý.",
+            "D": "Máy chủ trung gian chỉ làm nhiệm vụ lưu bộ nhớ đệm mà không chứa bất kỳ tệp dữ liệu vùng nào."
+          },
+          "answer": "C",
+          "explanation": "Authoritative DNS Server là máy chủ nắm giữ các bản ghi chính thức cho một zone cụ thể và có quyền hạn đưa ra câu trả lời dứt khoát về tên miền đó."
+        },
+        {
+          "id": 83,
+          "question": "DNS Forwarder tiêu chuẩn (Standard Forwarder) hoạt động theo cơ chế nào?",
+          "options": {
+            "A": "Chuyển tiếp toàn bộ các truy vấn tên miền ngoài vùng quản lý sang một DNS Server khác xử lý.",
+            "B": "Tự động chuyển đổi các trang web tĩnh sang định dạng ứng dụng di động thông minh.",
+            "C": "Chỉ chuyển tiếp các truy vấn có đuôi tên miền khớp với các điều kiện cấu hình trước.",
+            "D": "Ngăn chặn toàn bộ các máy trạm nội bộ không cho phép truy cập ra mạng Internet bên ngoài."
+          },
+          "answer": "A",
+          "explanation": "Standard Forwarder là cơ chế khi Local DNS Server gặp bất kỳ tên miền nào nằm ngoài các zone nội bộ của nó, nó sẽ chuyển tiếp toàn bộ truy vấn đó sang một máy chủ DNS cấp trên."
+        },
+        {
+          "id": 84,
+          "question": "Kỹ thuật 'Conditional Forwarder' (Chuyển tiếp có điều kiện) khác với Standard Forwarder ở điểm nào?",
+          "options": {
+            "A": "Chỉ chuyển tiếp câu truy vấn đến một DNS Server cụ thể khi tên miền khớp với một điều kiện đuôi miền.",
+            "B": "Bắt buộc thiết bị phải có chứng chỉ số do tổ chức viễn thông quốc tế cấp phát.",
+            "C": "Chỉ hoạt động vào các khung giờ ban đêm khi lưu lượng đường truyền mạng ở mức thấp nhất.",
+            "D": "Chuyển tiếp các gói tin DNS bằng giao thức truyền tệp tin siêu văn bản bảo mật HTTPS."
+          },
+          "answer": "A",
+          "explanation": "Conditional Forwarder cho phép chỉ định chuyển tiếp đến các DNS Server khác nhau dựa trên tên miền được hỏi."
+        },
+        {
+          "id": 85,
+          "question": "Kỹ thuật 'DNS Delegation' (Ủy thác vùng quản lý) trong quản trị mạng doanh nghiệp nhằm mục đích gì?",
+          "options": {
+            "A": "Tự động khóa đường truyền dữ liệu khi phát hiện có thiết bị lạ kết nối vào cổng switch.",
+            "B": "Bắt buộc tất cả các chi nhánh phải gửi mọi truy vấn tên miền về máy chủ trụ sở chính.",
+            "C": "Đồng bộ hóa cấu hình tài nguyên của toàn bộ nhân viên trong hệ thống công ty.",
+            "D": "Chuyển giao toàn quyền quản lý một miền con (Subdomain) cho một máy chủ DNS chi nhánh."
+          },
+          "answer": "D",
+          "explanation": "DNS Delegation là việc máy chủ cấp cha ủy quyền quản trị một miền con cho một DNS Server tại chi nhánh phụ trách thông qua bản ghi NS."
+        },
+        {
+          "id": 86,
+          "question": "Để thực hiện ủy thác (Delegation) một subdomain cho DNS Server chi nhánh, người quản trị tại trụ sở chính cần tạo loại bản ghi nào?",
+          "options": {
+            "A": "Bản ghi NS trỏ đến tên DNS Server của chi nhánh kèm bản ghi A tương ứng (Glue Record).",
+            "B": "Bản ghi MX trỏ đến địa chỉ của máy chủ thư tín chi nhánh.",
+            "C": "Bản ghi CNAME tạo bí danh cho trang web giới thiệu công ty.",
+            "D": "Bản ghi PTR thiết lập trong vùng phân giải ngược của mạng diện rộng."
+          },
+          "answer": "A",
+          "explanation": "Để ủy thác subdomain, DNS server cấp cha cần tạo bản ghi NS chỉ định Name Server của chi nhánh và bản ghi A đi kèm (gọi là Glue Record) cung cấp địa chỉ IP của Name Server đó để các máy khác tìm được."
+        },
+        {
+          "id": 87,
+          "question": "Lợi ích cốt lõi của việc triển khai DNS Delegation cho các chi nhánh xa trụ sở chính là gì?",
+          "options": {
+            "A": "Chi nhánh có thể chủ động quản trị bản ghi nội bộ, giảm tải cho trụ sở và giảm độ trễ qua WAN.",
+            "B": "Loại bỏ hoàn toàn yêu cầu phải cấu hình địa chỉ IP cho các máy trạm tại chi nhánh.",
+            "C": "Tự động mã hóa đường truyền vật lý của nhà cung cấp dịch vụ viễn thông.",
+            "D": "Giúp các máy tính cũ không có card mạng vẫn có thể kết nối vào mạng Internet."
+          },
+          "answer": "A",
+          "explanation": "DNS Delegation giúp phân tán tải, cho phép IT chi nhánh tự quản trị dữ liệu miền con của mình và các máy tại chi nhánh tra cứu trực tiếp tại chỗ không phải chạy qua đường WAN."
+        },
+        {
+          "id": 88,
+          "question": "Lệnh dòng lệnh nào trên hệ điều hành Windows cho phép người quản trị kiểm tra và truy vấn chi tiết các bản ghi của một máy chủ DNS?",
+          "options": {
+            "A": "ipconfig /flushdns",
+            "B": "nslookup",
+            "C": "netstat -an",
+            "D": "tracert"
+          },
+          "answer": "B",
+          "explanation": "Tiện ích nslookup là công cụ dòng lệnh chuyên dụng để gửi truy vấn trực tiếp đến máy chủ DNS nhằm kiểm tra các bản ghi A, MX, NS, SOA, CNAME, PTR..."
+        },
+        {
+          "id": 89,
+          "question": "Lệnh 'ipconfig /flushdns' trên hệ điều hành Windows thực hiện thao tác nào sau đây?",
+          "options": {
+            "A": "Gửi thông điệp yêu cầu máy chủ DNS khởi động lại toàn bộ các dịch vụ mạng.",
+            "B": "Tải lại trang web đang mở trên trình duyệt từ máy chủ lưu trữ chính thức.",
+            "C": "Làm mới bộ nhớ đệm phân giải DNS (DNS Resolver Cache) bằng cách làm rỗng dữ liệu cũ.",
+            "D": "Cấu hình lại địa chỉ cổng Gateway mặc định trên card mạng không dây."
+          },
+          "answer": "C",
+          "explanation": "Lệnh ipconfig /flushdns làm sạch bộ nhớ đệm phân giải DNS trên máy cục bộ, hữu ích khi một website vừa đổi IP mới."
+        },
+        {
+          "id": 90,
+          "question": "Một tên miền đầy đủ theo quy chuẩn FQDN (Fully Qualified Domain Name) luôn kết thúc bằng ký tự nào ở cấp cao nhất?",
+          "options": {
+            "A": "Dấu gạch ngang (-).",
+            "B": "Dấu hai chấm (:).",
+            "C": "Dấu sao (*).",
+            "D": "Dấu chấm (.) đại diện cho Root Domain."
+          },
+          "answer": "D",
+          "explanation": "Trong cấu trúc tên miền chuẩn, một FQDN kết thúc bằng một dấu chấm (.) ở cuối cùng (ví dụ: www.example.com.), đại diện cho Root Domain gốc của cây DNS."
+        },
+        {
+          "id": 91,
+          "question": "Hiện tượng dữ liệu phân giải trong bộ đệm DNS bị sai lệch (DNS Cache Inconsistency) gây ra ảnh hưởng nào sau đây?",
+          "options": {
+            "A": "Làm hỏng cổng giao diện mạng của máy chủ dịch vụ DNS.",
+            "B": "Chuyển đổi toàn bộ tên miền quốc tế sang địa chỉ MAC vật lý.",
+            "C": "Làm tăng gấp đôi số lượng máy chủ Root DNS logic trên toàn cầu.",
+            "D": "Làm sai lệch ánh xạ IP trong bộ đệm khiến người dùng kết nối tới địa chỉ không đúng mong muốn."
+          },
+          "answer": "D",
+          "explanation": "Sai lệch trong bộ nhớ đệm của DNS Server khiến các truy vấn tiếp theo bị dẫn tới địa chỉ IP không chính xác."
+        },
+        {
+          "id": 92,
+          "question": "Trong quy trình phân giải tên miền, khi người dùng gõ www.google.com, vị trí đầu tiên mà máy tính sẽ kiểm tra địa chỉ IP là ở đâu?",
+          "options": {
+            "A": "Tệp tin cấu hình cục bộ hosts và bộ nhớ đệm DNS Cache trên chính máy tính đó.",
+            "B": "Cụm máy chủ Root DNS Server trên Internet.",
+            "C": "Máy chủ tên miền có thẩm quyền của tổ chức quản lý tên miền quốc gia.",
+            "D": "Bộ nhớ tạm của thiết bị định tuyến Router của nhà cung cấp dịch vụ mạng."
+          },
+          "answer": "A",
+          "explanation": "Trước khi gửi gói tin truy vấn ra mạng, hệ điều hành của client luôn kiểm tra tệp tin hosts cục bộ và bộ nhớ đệm của chính nó xem đã có sẵn ánh xạ tên miền sang IP chưa."
+        },
+        {
+          "id": 93,
+          "question": "Giao thức BOOTP (Bootstrap Protocol) là tiền thân của giao thức nào sau đây?",
+          "options": {
+            "A": "Giao thức DNS.",
+            "B": "Giao thức HTTP.",
+            "C": "Giao thức DHCP.",
+            "D": "Giao thức FTP."
+          },
+          "answer": "C",
+          "explanation": "BOOTP là giao thức ra đời trước, được thiết kế để cấp cấu hình IP cho các máy trạm. DHCP được phát triển dựa trên nền tảng của BOOTP và tương thích ngược với nó."
+        },
+        {
+          "id": 94,
+          "question": "Khái niệm 'Lease Time' trong dịch vụ cấp phát địa chỉ IP động của DHCP có nghĩa là gì?",
+          "options": {
+            "A": "Thời gian tối đa mà máy chủ DHCP cần để tạo ra một địa chỉ IP mới.",
+            "B": "Thời hạn hợp đồng dịch vụ Internet ký kết giữa khách hàng và nhà mạng viễn thông.",
+            "C": "Thời gian trễ trung bình của gói tin khi truyền từ client đến server.",
+            "D": "Khoảng thời gian thỏa thuận mà client được quyền sử dụng hợp pháp địa chỉ IP được cấp."
+          },
+          "answer": "D",
+          "explanation": "Lease Time là khoảng thời gian máy chủ DHCP cho phép client sử dụng địa chỉ IP đó. Hết thời gian này nếu không được gia hạn, client phải trả lại IP."
+        },
+        {
+          "id": 95,
+          "question": "Một DHCP Server quản lý một dải IP từ 192.168.1.100 đến 192.168.1.200. Thuật ngữ chuyên môn gọi tập hợp các địa chỉ IP này là gì?",
+          "options": {
+            "A": "DHCP Domain.",
+            "B": "DHCP Scope (hoặc DHCP Pool).",
+            "C": "DHCP Gateway.",
+            "D": "DHCP Subnet Mask."
+          },
+          "answer": "B",
+          "explanation": "Tập hợp một dải địa chỉ IP liên tục cùng các thông số cấu hình mạng được định nghĩa trên DHCP Server để cấp phát cho một subnet được gọi là DHCP Scope (hoặc DHCP Pool)."
+        },
+        {
+          "id": 96,
+          "question": "Tính năng 'DHCP Reservation' (Đặt chỗ địa chỉ IP) được sử dụng nhằm mục đích gì?",
+          "options": {
+            "A": "Tăng gấp đôi tốc độ truyền dữ liệu của đường cáp mạng kết nối vào máy chủ cơ sở dữ liệu.",
+            "B": "Tự động phân bổ lại toàn bộ không gian mạng khi có thiết bị mới gia nhập phân đoạn.",
+            "C": "Luôn luôn cấp một địa chỉ IP cố định xác định cho một thiết bị dựa trên địa chỉ MAC của nó.",
+            "D": "Chuyển toàn bộ các gói tin phát thanh sang chuẩn truyền hình kỹ thuật số mặt đất."
+          },
+          "answer": "C",
+          "explanation": "DHCP Reservation cấu hình ánh xạ cố định một địa chỉ IP với một địa chỉ MAC cụ thể. Mỗi khi thiết bị đó xin IP, DHCP server luôn cấp đúng địa chỉ IP dành riêng đó."
+        },
+        {
+          "id": 97,
+          "question": "Tại sao trong mô hình DNS, máy chủ cấp cao TLD lại phản hồi bằng một địa chỉ IP của Authoritative Server thay vì tự đi tìm kết quả?",
+          "options": {
+            "A": "Vì TLD Server không được trang bị bộ vi xử lý có khả năng tính toán các phép toán logic.",
+            "B": "Vì các máy chủ TLD chỉ được phép sử dụng giao thức truyền thông đơn công một chiều.",
+            "C": "Vì nguyên tắc thiết kế phân tán giúp giảm tải xử lý cho các máy chủ cấp trên trong cây phân cấp.",
+            "D": "Vì các tiêu chuẩn kỹ thuật không cho phép các máy chủ TLD duy trì trạng thái phiên làm việc."
+          },
+          "answer": "C",
+          "explanation": "Cây DNS được thiết kế theo mô hình phân tán. Nếu TLD và Root chịu trách nhiệm đệ quy đi tìm cho tất cả người dùng thì chúng sẽ lập tức bị quá tải."
+        },
+        {
+          "id": 98,
+          "question": "Khi một máy tính di chuyển từ mạng Wi-Fi công ty sang mạng Wi-Fi tại quán cà phê, thông số mạng nào của nó sẽ thay đổi?",
+          "options": {
+            "A": "Địa chỉ MAC vật lý của card mạng không dây.",
+            "B": "Địa chỉ IP, Subnet Mask, Default Gateway và DNS Server được gán cho card mạng.",
+            "C": "Số xê-ri phần cứng của bo mạch chủ trên máy tính.",
+            "D": "Tên định danh nhà sản xuất card mạng lưu trong vi mạch OUI."
+          },
+          "answer": "B",
+          "explanation": "Địa chỉ MAC gắn cứng với phần cứng vật lý nên không đổi. Toàn bộ cấu hình logic (IP, Subnet Mask, Gateway, DNS) sẽ được máy chủ DHCP của mạng Wi-Fi mới cấp phát lại hoàn toàn."
+        },
+        {
+          "id": 99,
+          "question": "Giao thức DNS hoạt động ở tầng nào trong mô hình OSI 7 tầng?",
+          "options": {
+            "A": "Tầng Vận chuyển (Transport Layer).",
+            "B": "Tầng Mạng (Network Layer).",
+            "C": "Tầng Phiên (Session Layer).",
+            "D": "Tầng Ứng dụng (Application Layer)."
+          },
+          "answer": "D",
+          "explanation": "DNS là giao thức dịch vụ hỗ trợ mạng hoạt động ở Tầng Ứng dụng (Application Layer - Tầng 7) trong cả mô hình OSI và mô hình TCP/IP."
+        },
+        {
+          "id": 100,
+          "question": "Quá trình một máy trạm mới gia nhập mạng xin cấp địa chỉ IP từ máy chủ DHCP tuần tự trải qua 4 bước nào?",
+          "options": {
+            "A": "DHCPREQUEST -> DHCPACK -> DHCPDISCOVER -> DHCPOFFER.",
+            "B": "DHCPDISCOVER -> DHCPOFFER -> DHCPREQUEST -> DHCPACK.",
+            "C": "DHCPOFFER -> DHCPDISCOVER -> DHCPACK -> DHCPREQUEST.",
+            "D": "DHCPINFORM -> DHCPACK -> DHCPRELEASE -> DHCPDECLINE."
+          },
+          "answer": "B",
+          "explanation": "Quy trình bắt tay 4 bước chuẩn mực của DHCP (mô hình DORA): 1. Discover; 2. Offer; 3. Request; 4. Ack."
         }
       ]
     },
     {
       "topic_id": 5,
       "topic_title": "Chuyên đề 5: Tầng Ứng dụng & Lập trình Socket",
-      "total_questions": 50,
+      "total_questions": 100,
       "questions": [
         {
           "id": 1,
@@ -3034,8 +5434,610 @@
           },
           "answer": "B",
           "explanation": "Khi kết nối TCP dạng byte-stream đã hình thành, hai đầu mút trao đổi dữ liệu thông qua hàm `send()` và `recv()` (không cần phải chỉ định lại địa chỉ IP/port ở mỗi lần gửi nhận như `sendto`/`recvfrom` của UDP)."
+        },
+        {
+          "id": 51,
+          "question": "Trong kiến trúc ứng dụng Client-Server, máy chủ Server có đặc điểm nào sau đây về địa chỉ IP?",
+          "options": {
+            "A": "Bắt buộc phải thay đổi địa chỉ IP ngẫu nhiên sau mỗi lần hoàn tất một phiên truyền.",
+            "B": "Thường sở hữu địa chỉ IP tĩnh cố định (Permanent IP) và luôn ở trạng thái sẵn sàng lắng nghe.",
+            "C": "Chỉ được phép sử dụng địa chỉ thuộc dải mạng cục bộ riêng APIPA 169.254.0.0/16.",
+            "D": "Không cần sử dụng địa chỉ IP mà chỉ định danh thông qua tên miền cấp cao nhất."
+          },
+          "answer": "B",
+          "explanation": "Trong mô hình Client-Server, Server là máy chủ luôn bật (always-on host) và sở hữu IP tĩnh cố định (permanent/static IP) để các client luôn biết địa chỉ chính xác để kết nối tới."
+        },
+        {
+          "id": 52,
+          "question": "Tại sao trong mô hình Client-Server, các máy trạm Client lại thường sử dụng địa chỉ IP động?",
+          "options": {
+            "A": "Vì các quy chuẩn quốc tế cấm máy trạm người dùng cấu hình địa chỉ IP tĩnh.",
+            "B": "Vì Client bắt buộc phải chia sẻ dữ liệu liên tục cho các máy trạm khác trong mạng.",
+            "C": "Vì Client chỉ khởi tạo kết nối khi có nhu cầu và ngắt kết nối khi hoàn tất tác vụ.",
+            "D": "Vì card mạng của máy trạm không có khả năng lưu trữ thông số cấu hình quá 1 giờ."
+          },
+          "answer": "C",
+          "explanation": "Client có thể bật/tắt bất kỳ lúc nào, kết nối ngắt quãng và có thể di chuyển giữa các mạng khác nhau, do đó việc sử dụng IP động (cấp qua DHCP) giúp tiết kiệm tài nguyên IP và tiện lợi khi sử dụng."
+        },
+        {
+          "id": 53,
+          "question": "Trong kiến trúc mạng ngang hàng (P2P), các nút mạng (Peers) có đặc điểm vận hành nào sau đây?",
+          "options": {
+            "A": "Chỉ có thể đóng vai trò máy khách yêu cầu tệp tin từ máy chủ trung tâm cố định.",
+            "B": "Bắt buộc phải có kết nối vật lý bằng cáp quang trực tiếp tới các nút mạng còn lại.",
+            "C": "Vừa đóng vai trò là Client (khi tải về) vừa đóng vai trò là Server (khi tải lên).",
+            "D": "Không được phép sử dụng các giao thức ở tầng Giao vận như TCP hay UDP."
+          },
+          "answer": "C",
+          "explanation": "Trong mạng P2P, không có server trung tâm cố định; mỗi nút (peer) vừa hoạt động như một client khi tải dữ liệu từ các peer khác, vừa hoạt động như một server khi tải dữ liệu chia sẻ lên cho các peer khác."
+        },
+        {
+          "id": 54,
+          "question": "Giao thức truyền tải tệp tin FTP (File Transfer Protocol) sử dụng hai kết nối TCP riêng biệt cho mục đích gì?",
+          "options": {
+            "A": "Một kết nối cho tệp tin văn bản (Text) và một kết nối cho tệp tin nhị phân (Binary).",
+            "B": "Kết nối điều khiển (Control, port 21) và kết nối truyền dữ liệu (Data, port 20).",
+            "C": "Một kết nối tải dữ liệu lên (Upload) và một kết nối tải dữ liệu xuống (Download).",
+            "D": "Một kết nối gửi yêu cầu ban ngày và một kết nối nhận kết quả vào ban đêm."
+          },
+          "answer": "B",
+          "explanation": "FTP hoạt động theo cơ chế Out-of-band: sử dụng kết nối điều khiển trên cổng TCP 21 (truyền lệnh, xác thực tài khoản) và kết nối dữ liệu riêng trên cổng TCP 20 (truyền nội dung tệp tin thực tế)."
+        },
+        {
+          "id": 55,
+          "question": "Thuật ngữ 'Out-of-band Control' trong hoạt động của giao thức FTP mang ý nghĩa gì?",
+          "options": {
+            "A": "Máy chủ tự động ngắt toàn bộ các kết nối khi phát hiện có lưu lượng bất thường.",
+            "B": "Dữ liệu được truyền qua sóng vô tuyến vệ tinh thay vì sử dụng hệ thống cáp ngầm.",
+            "C": "Dữ liệu được mã hóa thành các chuỗi ký tự không thể đọc được bởi người thường.",
+            "D": "Thông tin điều khiển và dữ liệu thực tế được truyền trên hai kết nối mạng tách biệt nhau."
+          },
+          "answer": "D",
+          "explanation": "Out-of-band (ngoài băng) nghĩa là các thông tin điều khiển (user, password, lệnh PUT, GET) được truyền trên một kết nối riêng biệt (port 21) tách rời hoàn toàn khỏi kết nối truyền tải dữ liệu (port 20)."
+        },
+        {
+          "id": 56,
+          "question": "Giao thức gửi thư điện tử SMTP (Simple Mail Transfer Protocol) sử dụng số hiệu cổng mặc định nào ở tầng Transport?",
+          "options": {
+            "A": "Cổng TCP 21",
+            "B": "Cổng TCP 110",
+            "C": "Cổng UDP 53",
+            "D": "Cổng TCP 25"
+          },
+          "answer": "D",
+          "explanation": "Giao thức SMTP (Simple Mail Transfer Protocol) dùng để gửi thư điện tử giữa các mail server (hoặc client gửi lên server) sử dụng kết nối TCP cổng 25."
+        },
+        {
+          "id": 57,
+          "question": "Điểm khác biệt căn bản giữa giao thức gửi thư SMTP và các giao thức lấy thư (POP3/IMAP) là gì?",
+          "options": {
+            "A": "SMTP là giao thức đẩy (Push protocol); còn POP3 và IMAP là giao thức kéo (Pull protocol).",
+            "B": "SMTP sử dụng sóng vi ba vô tuyến; POP3 và IMAP sử dụng kết nối cáp sợi quang.",
+            "C": "SMTP chỉ truyền được hình ảnh; POP3 và IMAP chỉ truyền được văn bản thô sơ.",
+            "D": "SMTP hoạt động ở tầng Network; POP3 và IMAP hoạt động ở tầng Data Link."
+          },
+          "answer": "A",
+          "explanation": "SMTP là giao thức Push (máy gửi chủ động đẩy thư lên server nhận). Ngược lại, POP3 và IMAP là các giao thức Pull (client chủ động kết nối tới mail server để kéo/lấy thư về máy)."
+        },
+        {
+          "id": 58,
+          "question": "Giao thức lấy thư IMAP (Internet Message Access Protocol) có ưu điểm nổi bật nào so với POP3?",
+          "options": {
+            "A": "Hoàn toàn không yêu cầu người dùng phải xác thực tên đăng nhập hay mật khẩu.",
+            "B": "Tự động xóa vĩnh viễn toàn bộ thư trên máy chủ ngay sau lần tải về máy đầu tiên.",
+            "C": "Cho phép quản lý, tạo thư mục và đồng bộ trạng thái đọc/chưa đọc trực tiếp trên server.",
+            "D": "Chỉ hoạt động được trên các máy tính sử dụng hệ điều hành mã nguồn mở Linux."
+          },
+          "answer": "C",
+          "explanation": "IMAP lưu trữ và duy trì trạng thái thư (thư mục, cờ đã đọc, gắn dấu sao) trên server, giúp người dùng đồng bộ nhất quán trải nghiệm trên nhiều thiết bị (điện thoại, laptop). POP3 tải thư về máy cục bộ và thường xóa trên server."
+        },
+        {
+          "id": 59,
+          "question": "Số hiệu cổng mặc định của giao thức nhận thư POP3 và IMAP lần lượt là bao nhiêu?",
+          "options": {
+            "A": "POP3 dùng cổng TCP 25; IMAP dùng cổng TCP 80.",
+            "B": "POP3 dùng cổng UDP 67; IMAP dùng cổng UDP 68.",
+            "C": "POP3 dùng cổng TCP 110; IMAP dùng cổng TCP 143.",
+            "D": "POP3 dùng cổng TCP 443; IMAP dùng cổng TCP 21."
+          },
+          "answer": "C",
+          "explanation": "POP3 sử dụng cổng TCP 110 (hoặc 995 qua SSL). IMAP sử dụng cổng TCP 143 (hoặc 993 qua SSL)."
+        },
+        {
+          "id": 60,
+          "question": "Phiên bản HTTP/1.0 ban đầu sử dụng kết nối không duy trì (Non-persistent HTTP). Điều này có nghĩa là gì?",
+          "options": {
+            "A": "Mỗi kết nối TCP chỉ được dùng để truyền đúng một đối tượng web rồi lập tức đóng lại.",
+            "B": "Trình duyệt chỉ được phép gửi một yêu cầu duy nhất trong suốt thời gian mở tab.",
+            "C": "Máy chủ web tự động xóa toàn bộ lịch sử truy cập của người dùng sau 5 phút.",
+            "D": "Tất cả các hình ảnh trên trang web bắt buộc phải chuyển sang định dạng đen trắng."
+          },
+          "answer": "A",
+          "explanation": "Trong Non-persistent HTTP (HTTP/1.0), mỗi đối tượng (HTML, ảnh, CSS) yêu cầu mở một kết nối TCP riêng biệt; sau khi đối tượng được truyền xong, kết nối TCP đó lập tức bị đóng lại."
+        },
+        {
+          "id": 61,
+          "question": "Để tải một trang web chứa 1 tệp HTML cơ sở và 3 hình ảnh nhỏ bằng kết nối Non-persistent HTTP (không dùng song song), cần tổng cộng bao nhiêu thời gian RTT?",
+          "options": {
+            "A": "2 RTT",
+            "B": "8 RTT",
+            "C": "4 RTT",
+            "D": "16 RTT"
+          },
+          "answer": "B",
+          "explanation": "Với Non-persistent HTTP, mỗi đối tượng cần 2 RTT (1 RTT để bắt tay TCP + 1 RTT để gửi HTTP request và nhận dữ liệu). Tổng cộng có 1 HTML + 3 ảnh = 4 đối tượng => 4 * 2 RTT = 8 RTT (chưa tính thời gian truyền dẫn file)."
+        },
+        {
+          "id": 62,
+          "question": "Tính năng kết nối duy trì (Persistent HTTP) được đưa vào làm mặc định từ phiên bản nào của HTTP?",
+          "options": {
+            "A": "HTTP/0.9",
+            "B": "HTTP/1.0",
+            "C": "HTTP/3.0",
+            "D": "HTTP/1.1"
+          },
+          "answer": "D",
+          "explanation": "Từ phiên bản HTTP/1.1, Persistent Connection (kết nối duy trì) được thiết lập làm mặc định: nhiều đối tượng web có thể được truyền tuần tự qua cùng một kết nối TCP duy nhất giữa client và server."
+        },
+        {
+          "id": 63,
+          "question": "Trong HTTP/1.1, tiêu đề nào sau đây là BẮT BUỘC phải xuất hiện trong mọi bản tin yêu cầu (HTTP Request)?",
+          "options": {
+            "A": "User-Agent",
+            "B": "If-Modified-Since",
+            "C": "Accept-Language",
+            "D": "Host"
+          },
+          "answer": "D",
+          "explanation": "Trong HTTP/1.1, tiêu đề `Host:` là bắt buộc trong mọi Request để hỗ trợ Virtual Hosting (cho phép một máy chủ vật lý với một địa chỉ IP duy nhất có thể chạy đồng thời nhiều website có tên miền khác nhau)."
+        },
+        {
+          "id": 64,
+          "question": "Phương thức yêu cầu HTTP nào sau đây thường được sử dụng khi người dùng gửi thông tin biểu mẫu (Form) chứa mật khẩu lên máy chủ?",
+          "options": {
+            "A": "GET (Dữ liệu gửi kèm trực tiếp trên thanh địa chỉ URL).",
+            "B": "DELETE (Yêu cầu máy chủ xóa bỏ tài nguyên lưu trữ).",
+            "C": "HEAD (Chỉ lấy về phần thông tin tiêu đề của trang tài liệu).",
+            "D": "POST (Dữ liệu được đặt an toàn bên trong phần thân Entity Body của thông điệp)."
+          },
+          "answer": "D",
+          "explanation": "Phương thức POST đưa dữ liệu vào phần thân (Entity Body) của HTTP message, không hiển thị trên URL như phương thức GET, phù hợp để gửi dữ liệu biểu mẫu, thông tin đăng nhập hoặc tải tệp lên server."
+        },
+        {
+          "id": 65,
+          "question": "Phương thức 'HEAD' trong giao thức HTTP có đặc điểm hoạt động nào sau đây?",
+          "options": {
+            "A": "Máy chủ chỉ trả về các dòng tiêu đề (Header) mà không gửi kèm nội dung trang web.",
+            "B": "Yêu cầu máy chủ khởi động lại tiến trình dịch vụ web ngay lập tức.",
+            "C": "Tải toàn bộ phần đầu của các tệp tin video để phát thử nghiệm trong 5 giây.",
+            "D": "Gán quyền quản trị cao nhất của trang web cho người dùng hiện tại."
+          },
+          "answer": "A",
+          "explanation": "Phương thức HEAD yêu cầu máy chủ phản hồi chính xác các header giống như phương thức GET, nhưng KHÔNG gửi kèm nội dung thực tế (Entity Body). Thường dùng để kiểm tra tính hợp lệ của liên kết hoặc thời gian sửa đổi."
+        },
+        {
+          "id": 66,
+          "question": "Mã trạng thái HTTP '200 OK' mang ý nghĩa nào sau đây?",
+          "options": {
+            "A": "Trang web đã được chuyển vĩnh viễn sang một địa chỉ liên kết mới.",
+            "B": "Yêu cầu đã được máy chủ tiếp nhận, xử lý thành công và tài nguyên được gửi kèm theo.",
+            "C": "Người dùng không có quyền truy cập vào tài nguyên do thiếu thông tin đăng nhập.",
+            "D": "Máy chủ hiện đang bị quá tải và không thể phản hồi yêu cầu người dùng."
+          },
+          "answer": "B",
+          "explanation": "Mã trạng thái 200 OK thuộc nhóm 2xx (Success), báo hiệu yêu cầu từ client đã được server xử lý hoàn toàn thành công và tài nguyên yêu cầu nằm trong phần body phản hồi."
+        },
+        {
+          "id": 67,
+          "question": "Mã trạng thái HTTP '301 Moved Permanently' được máy chủ phản hồi trong trường hợp nào?",
+          "options": {
+            "A": "Trang web bị lỗi cú pháp lập trình phía máy chủ dịch vụ đám mây.",
+            "B": "Tài nguyên trong bộ nhớ đệm client vẫn còn mới và không cần tải lại.",
+            "C": "Tài nguyên được yêu cầu đã được di dời vĩnh viễn sang một địa chỉ URL mới.",
+            "D": "Client gửi yêu cầu có kích thước dữ liệu vượt quá giới hạn cho phép."
+          },
+          "answer": "C",
+          "explanation": "Mã 301 Moved Permanently thuộc nhóm 3xx (Redirection), báo cho client biết trang web đã chuyển vĩnh viễn sang URL mới (thường kèm tiêu đề `Location:` để trình duyệt tự động chuyển hướng)."
+        },
+        {
+          "id": 68,
+          "question": "Mã phản hồi HTTP '304 Not Modified' xuất hiện khi nào trong quá trình duyệt web?",
+          "options": {
+            "A": "Khi client gửi Conditional GET và server xác nhận tài nguyên trên cache client vẫn còn mới.",
+            "B": "Khi máy chủ web bị mất kết nối với cơ sở dữ liệu lưu trữ phía sau.",
+            "C": "Khi trang web yêu cầu người dùng phải nạp phí để tiếp tục đọc bài viết.",
+            "D": "Khi người dùng cố tình chỉnh sửa nội dung mã nguồn của trình duyệt web."
+          },
+          "answer": "A",
+          "explanation": "Khi trình duyệt có bản sao trong cache và gửi request kèm tiêu đề `If-Modified-Since: <date>`, nếu server thấy tệp chưa thay đổi kể từ ngày đó, nó trả về mã 304 Not Modified (không gửi kèm nội dung tệp), giúp tiết kiệm băng thông."
+        },
+        {
+          "id": 69,
+          "question": "Mã lỗi HTTP '404 Not Found' có ý nghĩa phổ biến là gì đối với người dùng?",
+          "options": {
+            "A": "Trình duyệt web của người dùng không hỗ trợ hiển thị các hình ảnh màu.",
+            "B": "Tên miền của website đã bị cơ quan quản lý thu hồi do hết hạn duy trì.",
+            "C": "Dây cáp mạng Ethernet cắm vào máy tính người dùng bị đứt hoặc tuột đầu nối.",
+            "D": "Máy chủ không tìm thấy tài nguyên tương ứng với đường dẫn URL mà client yêu cầu."
+          },
+          "answer": "D",
+          "explanation": "Mã 404 Not Found là mã lỗi phía client (4xx Client Error), báo hiệu URL mà client yêu cầu không tồn tại trên máy chủ web."
+        },
+        {
+          "id": 70,
+          "question": "Mã trạng thái HTTP '500 Internal Server Error' thuộc nhóm lỗi nào sau đây?",
+          "options": {
+            "A": "Nhóm thông tin điều hướng mạng (Informational).",
+            "B": "Nhóm lỗi xuất phát từ phía máy khách người dùng (Client Error).",
+            "C": "Nhóm lỗi nội bộ phát sinh từ phía máy chủ dịch vụ web (Server Error).",
+            "D": "Nhóm thông báo giao dịch thành công trọn vẹn (Success)."
+          },
+          "answer": "C",
+          "explanation": "Các mã trạng thái bắt đầu bằng số 5 (5xx) là lỗi từ phía máy chủ (Server Error), trong đó 500 Internal Server Error báo hiệu server gặp sự cố nội bộ (lỗi mã nguồn backend, lỗi database) nên không thể phục vụ yêu cầu."
+        },
+        {
+          "id": 71,
+          "question": "Bản chất của giao thức HTTP là 'Stateless' (Phi trạng thái). Thuật ngữ này có nghĩa là gì?",
+          "options": {
+            "A": "Tất cả các máy tính tham gia vào mạng đều phải sử dụng chung một hệ điều hành.",
+            "B": "Các gói tin HTTP không thể truyền qua ranh giới địa lý giữa các quốc gia khác nhau.",
+            "C": "Trình duyệt web không được phép lưu trữ mật khẩu đăng nhập của người sử dụng.",
+            "D": "Máy chủ web không lưu lại bất kỳ thông tin trạng thái nào về các yêu cầu trước của client."
+          },
+          "answer": "D",
+          "explanation": "HTTP là Stateless protocol: máy chủ xử lý từng yêu cầu độc lập và không ghi nhớ thông tin về các phiên làm việc hay request trước đó của cùng một client. Để duy trì trạng thái phiên (session), người ta phải dùng Cookie."
+        },
+        {
+          "id": 72,
+          "question": "Kỹ thuật 'Cookie' trong giao thức Web HTTP bao gồm 4 thành phần nào sau đây?",
+          "options": {
+            "A": "Dòng tiêu đề trong response, dòng tiêu đề trong request, tệp cookie tại client, và cơ sở dữ liệu tại server.",
+            "B": "Cáp quang, Card mạng, Bộ phát Wi-Fi và Phần mềm diệt virus.",
+            "C": "Mã hóa khóa công khai, Mã hóa khóa đối xứng, Chữ ký số và Chứng chỉ SSL.",
+            "D": "Tên miền gốc, Tên miền cấp cao, Tên miền quốc gia và Tên miền phụ."
+          },
+          "answer": "A",
+          "explanation": "Cơ chế Cookie gồm 4 thành phần: 1. Header `Set-Cookie:` trong HTTP response; 2. Header `Cookie:` trong các HTTP request tiếp theo của client; 3. File cookie lưu trữ trên máy client; 4. Cơ sở dữ liệu backend phía server liên kết với cookie ID."
+        },
+        {
+          "id": 73,
+          "question": "Tính năng 'Web Caching' (Máy chủ Proxy / Cache Server) mang lại lợi ích chủ yếu nào cho người dùng và tổ chức?",
+          "options": {
+            "A": "Tự động dịch toàn bộ nội dung trang web sang ngôn ngữ bản địa của người dùng.",
+            "B": "Rút ngắn thời gian phản hồi cho client và giảm tải lưu lượng truy cập ra đường truyền Internet.",
+            "C": "Cấp phát địa chỉ MAC ngẫu nhiên để che giấu danh tính thiết bị trên mạng LAN.",
+            "D": "Tự động nâng cấp phiên bản trình duyệt web lên phiên bản mới nhất."
+          },
+          "answer": "B",
+          "explanation": "Web Cache (Proxy Server) lưu trữ bản sao các trang web phổ biến. Client trong mạng có thể tải dữ liệu trực tiếp từ Proxy ở mạng cục bộ với tốc độ cao, độ trễ thấp và giảm lưu lượng phải mua trên liên kết ra Internet."
+        },
+        {
+          "id": 74,
+          "question": "Trong HTTP/2, cơ chế 'Multiplexing' (Dồn kênh trên một kết nối) giải quyết vấn đề nhược điểm lớn nào của HTTP/1.1?",
+          "options": {
+            "A": "Hiện tượng tắc nghẽn đầu dòng (Head-of-Line Blocking) ở tầng ứng dụng.",
+            "B": "Sự phụ thuộc vào các đường truyền mạng sử dụng sóng vệ tinh viễn thông.",
+            "C": "Việc máy tính người dùng bắt buộc phải cài đặt thêm các card mạng phụ trợ.",
+            "D": "Khả năng tương thích ngược với các máy in văn phòng sử dụng cổng song song."
+          },
+          "answer": "A",
+          "explanation": "Trong HTTP/1.1, các request gửi nối tiếp nhau trên cùng 1 kết nối TCP; nếu request đầu bị nghẽn thì tất cả request sau phải chờ (Head-of-Line Blocking). HTTP/2 chia nhỏ thông điệp thành các khung nhị phân (binary frames) và đan xen gửi đồng thời trên 1 kết nối TCP duy nhất."
+        },
+        {
+          "id": 75,
+          "question": "Giao thức HTTP/3 có bước đột phá công nghệ nào khi lựa chọn giao thức ở tầng Giao vận?",
+          "options": {
+            "A": "Loại bỏ hoàn toàn tầng Transport và truyền trực tiếp dữ liệu lên sóng vô tuyến.",
+            "B": "Bắt buộc chỉ hoạt động trên mạng riêng ảo sử dụng công nghệ chuyển mạch kênh.",
+            "C": "Chuyển từ sử dụng TCP sang sử dụng giao thức QUIC chạy trên nền tảng UDP.",
+            "D": "Sử dụng đồng thời cả giao thức ICMP và giao thức ARP để truyền tải dữ liệu."
+          },
+          "answer": "C",
+          "explanation": "HTTP/3 sử dụng giao thức QUIC (Quick UDP Internet Connections) chạy trên nền UDP, loại bỏ hoàn toàn hiện tượng Head-of-Line Blocking ở tầng TCP và giảm thời gian thiết lập kết nối (0-RTT handshake)."
+        },
+        {
+          "id": 76,
+          "question": "Trong lập trình mạng, khái niệm 'Socket' được định nghĩa một cách chính xác nhất là gì?",
+          "options": {
+            "A": "Giao diện lập trình đóng vai trò là điểm cuối (End-point) cho việc truyền thông giữa hai tiến trình.",
+            "B": "Một khe cắm phần cứng trên bo mạch chủ dành riêng cho việc gắn card mạng Ethernet.",
+            "C": "Một loại cáp mạng chuyên dụng dùng để kết nối trực tiếp giữa hai máy chủ dữ liệu.",
+            "D": "Một chương trình diệt virus hoạt động ở tầng liên kết dữ liệu của mô hình OSI."
+          },
+          "answer": "A",
+          "explanation": "Socket là giao diện lập trình ứng dụng (API), là 'cánh cửa' hay điểm cuối (endpoint) trong hệ điều hành cho phép tiến trình ứng dụng gửi và nhận dữ liệu qua mạng với tầng giao vận."
+        },
+        {
+          "id": 77,
+          "question": "Hàm `socket()` trong lập trình Socket API có chức năng cơ bản là gì?",
+          "options": {
+            "A": "Đóng băng toàn bộ các tiến trình đang chạy ngầm trên máy tính cá nhân.",
+            "B": "Thiết lập kết nối bắt tay 3 bước với máy chủ từ xa trên mạng Internet.",
+            "C": "Khởi tạo một đối tượng socket mới trong hệ điều hành và trả về một bộ mô tả (Descriptor).",
+            "D": "Chuyển đổi một tên miền web thành địa chỉ IP 32 bit dạng nhị phân."
+          },
+          "answer": "C",
+          "explanation": "Hàm `socket(domain, type, protocol)` tạo ra một socket mới trong nhân hệ điều hành, cấp phát tài nguyên và trả về một socket descriptor (hoặc socket object) để chương trình sử dụng."
+        },
+        {
+          "id": 78,
+          "question": "Hàm `bind()` trong quy trình lập trình Socket phía Server thực hiện tác vụ nào sau đây?",
+          "options": {
+            "A": "Gửi yêu cầu xin cấp phát địa chỉ IP động tới máy chủ DHCP trong mạng LAN.",
+            "B": "Gắn kết socket với một địa chỉ IP cụ thể và một số hiệu cổng (Port) xác định trên máy chủ.",
+            "C": "Chờ đợi và chấp nhận yêu cầu kết nối được gửi tới từ phía máy trạm client.",
+            "D": "Mã hóa luồng dữ liệu trước khi phát ra môi trường truyền dẫn cáp quang."
+          },
+          "answer": "B",
+          "explanation": "Hàm `bind(socket, (IP, Port))` liên kết (gắn) socket của server với một địa chỉ giao diện mạng cục bộ và một số hiệu cổng xác định để server có thể tiếp nhận gói tin gửi tới cổng đó."
+        },
+        {
+          "id": 79,
+          "question": "Trong lập trình TCP Socket Server, hàm `listen()` được gọi nhằm mục đích gì?",
+          "options": {
+            "A": "Kiểm tra tính toàn vẹn của các gói tin nhận được thông qua thuật toán mã băm SHA-1.",
+            "B": "Thu âm tín hiệu âm thanh từ micro của máy tính để truyền tải qua giao thức VoIP.",
+            "C": "Bắt đầu truyền luồng dữ liệu nhị phân của tệp tin video xuống máy khách người dùng.",
+            "D": "Chuyển socket sang trạng thái bị động, sẵn sàng lắng nghe và thiết lập hàng đợi kết nối đến."
+          },
+          "answer": "D",
+          "explanation": "Hàm `listen(backlog)` đưa TCP socket vào trạng thái passive (lắng nghe kết nối đến) và thiết lập kích thước hàng đợi (backlog) chứa các yêu cầu kết nối đang chờ được xử lý."
+        },
+        {
+          "id": 80,
+          "question": "Hàm `accept()` trên TCP Server có đặc điểm hoạt động quan trọng nào sau đây?",
+          "options": {
+            "A": "Tự động đóng socket chính của server để ngăn chặn các client khác kết nối vào.",
+            "B": "Tạm dừng chương trình (blocking) cho đến khi có kết nối đến và tạo ra một socket mới riêng biệt.",
+            "C": "Chỉ hoạt động được khi máy chủ được kết nối trực tiếp bằng cáp mạng đồng trục.",
+            "D": "Gửi một gói tin quảng bá toàn mạng để thông báo máy chủ đã sẵn sàng phục vụ."
+          },
+          "answer": "B",
+          "explanation": "Hàm `accept()` đợi một kết nối từ client; khi kết nối tới, nó hoàn tất bắt tay và tạo ra một socket mới hoàn toàn riêng biệt (connectionSocket) để giao tiếp riêng với client đó, trong khi welcoming socket vẫn tiếp tục lắng nghe."
+        },
+        {
+          "id": 81,
+          "question": "Tại sao trong lập trình TCP Server, sau khi gọi hàm `accept()`, hệ thống lại tạo ra một socket mới cho client?",
+          "options": {
+            "A": "Nhằm mục đích tăng gấp đôi dung lượng bộ nhớ RAM được cấp phát cho ứng dụng web.",
+            "B": "Do giới hạn của hệ điều hành không cho phép truyền dữ liệu trên socket đã mở cổng.",
+            "C": "Để socket ban đầu (Welcoming Socket) có thể tiếp tục lắng nghe các yêu cầu kết nối từ client khác.",
+            "D": "Để chuyển đổi tự động giao thức truyền thông từ TCP sang giao thức UDP."
+          },
+          "answer": "C",
+          "explanation": "Việc tách thành welcoming socket (chuyên lắng nghe) và connection socket (chuyên phục vụ client cụ thể) cho phép Server phục vụ đồng thời nhiều client cùng lúc (đa luồng/đa tiến trình) qua cùng một cổng dịch vụ."
+        },
+        {
+          "id": 82,
+          "question": "Phía TCP Client sử dụng hàm nào sau đây để chủ động khởi tạo kết nối tới máy chủ?",
+          "options": {
+            "A": "Hàm `listen()`",
+            "B": "Hàm `bind()`",
+            "C": "Hàm `accept()`",
+            "D": "Hàm `connect()`"
+          },
+          "answer": "D",
+          "explanation": "TCP Client gọi hàm `connect((serverIP, serverPort))` để chủ động gửi gói tin SYN và khởi tạo quá trình bắt tay 3 bước (3-way handshake) thiết lập kết nối tới Server."
+        },
+        {
+          "id": 83,
+          "question": "Điểm khác biệt căn bản trong quy trình lập trình Socket giữa UDP và TCP phía Server là gì?",
+          "options": {
+            "A": "UDP Server không cần gọi các hàm `listen()` và `accept()`, chỉ cần `socket()`, `bind()` và `recvfrom()`.",
+            "B": "UDP Server bắt buộc phải thực hiện bắt tay 4 bước trước khi nhận gói tin đầu tiên.",
+            "C": "UDP Server không được phép gắn số hiệu cổng thông qua hàm `bind()`.",
+            "D": "UDP Server bắt buộc phải sử dụng hai địa chỉ IP khác nhau cho mỗi kết nối."
+          },
+          "answer": "A",
+          "explanation": "Vì UDP là giao thức không kết nối (connectionless), UDP Server không có khái niệm bắt tay hay thiết lập kênh truyền. Do đó, server không gọi `listen()` hay `accept()`, mà sau khi `bind()` cổng là có thể nhận dữ liệu ngay bằng `recvfrom()`."
+        },
+        {
+          "id": 84,
+          "question": "Trong lập trình UDP Socket, cặp hàm nào sau đây được sử dụng để truyền và nhận dữ liệu?",
+          "options": {
+            "A": "`send()` và `recv()`",
+            "B": "`sendto()` và `recvfrom()`",
+            "C": "`push()` và `pull()`",
+            "D": "`write()` và `read()`"
+          },
+          "answer": "B",
+          "explanation": "Vì UDP không có kết nối cố định, mỗi gói datagram phải chỉ rõ địa chỉ đích. Do đó, người ta dùng hàm `sendto(data, (destIP, destPort))` để gửi và `recvfrom(buffer_size)` để nhận kèm địa chỉ nguồn của người gửi."
+        },
+        {
+          "id": 85,
+          "question": "Tại sao trong hàm `sendto()` của UDP Client, người lập trình bắt buộc phải truyền kèm địa chỉ IP và Port đích?",
+          "options": {
+            "A": "Vì giao thức UDP yêu cầu máy chủ phải khởi động lại sau mỗi lần nhận dữ liệu.",
+            "B": "Vì socket UDP không duy trì trạng thái kết nối cố định với một máy chủ cụ thể.",
+            "C": "Để hệ điều hành tự động kiểm tra số dư tài khoản của người sử dụng mạng.",
+            "D": "Nhằm mục đích tăng tốc độ truyền sóng điện từ trong lõi sợi cáp quang."
+          },
+          "answer": "B",
+          "explanation": "UDP là giao thức vô hướng, không có kết nối thiết lập sẵn giữa hai bên. Mỗi datagram độc lập nên bắt buộc phải đính kèm địa chỉ IP và Port của máy nhận thì hệ điều hành mới biết gói tin cần gửi tới đâu."
+        },
+        {
+          "id": 86,
+          "question": "Hàm `recvfrom()` trong lập trình UDP Socket trả về những thông tin nào cho chương trình?",
+          "options": {
+            "A": "Bộ dữ liệu gồm: nội dung dữ liệu nhận được và địa chỉ (IP, Port) của bên vừa gửi gói tin.",
+            "B": "Chỉ duy nhất chuỗi dữ liệu (Data) mà bên gửi vừa phát qua đường truyền mạng.",
+            "C": "Mã số định danh của nhà sản xuất card mạng trên thiết bị của máy gửi.",
+            "D": "Thời gian chính xác mà gói tin sẽ tồn tại trong bộ đệm trước khi bị hủy bỏ."
+          },
+          "answer": "A",
+          "explanation": "Hàm `recvfrom()` trả về một bộ (tuple): `(data, client_address)`, trong đó `client_address` là một cặp `(IP, Port)`. Nhờ thông tin này, server mới biết ai vừa gửi và có thể dùng `sendto()` để trả lời."
+        },
+        {
+          "id": 87,
+          "question": "Trong lập trình Socket, một cổng (Port) có thể được mở đồng thời cho cả giao thức TCP và UDP hay không?",
+          "options": {
+            "A": "Không thể, hệ điều hành sẽ báo lỗi xung đột cổng ngay khi gọi hàm `bind()` lần thứ hai.",
+            "B": "Có thể, vì không gian số hiệu cổng của giao thức TCP và UDP là hoàn toàn độc lập với nhau.",
+            "C": "Chỉ có thể mở đồng thời nếu máy tính được trang bị từ hai card mạng vật lý trở lên.",
+            "D": "Chỉ được phép đối với các số hiệu cổng lớn hơn 49152 thuộc nhóm cổng động."
+          },
+          "answer": "B",
+          "explanation": "Hệ điều hành quản lý không gian cổng của TCP và UDP tách biệt nhau. Do đó, một máy chủ hoàn toàn có thể mở cùng lúc TCP port 53 và UDP port 53 (như máy chủ DNS) mà không hề xảy ra xung đột."
+        },
+        {
+          "id": 88,
+          "question": "Dải cổng dịch vụ chuẩn (Well-known Ports) được tổ chức IANA quy định nằm trong khoảng nào?",
+          "options": {
+            "A": "Từ 65536 đến 131072 (Dành cho các mạng truyền thông quân sự).",
+            "B": "Từ 1024 đến 49151 (Dành riêng cho các ứng dụng đã đăng ký trước).",
+            "C": "Từ 49152 đến 65535 (Dành cho các cổng động cấp phát tạm thời).",
+            "D": "Từ 0 đến 1023 (Yêu cầu quyền quản trị Administrator/Root để mở cổng)."
+          },
+          "answer": "D",
+          "explanation": "Dải cổng từ 0 đến 1023 là Well-known ports (dành cho các dịch vụ cốt lõi chuẩn hóa như HTTP 80, HTTPS 443, FTP 21, SSH 22). Trên các hệ điều hành Unix/Linux, việc mở cổng trong dải này đòi hỏi quyền root/admin."
+        },
+        {
+          "id": 89,
+          "question": "Khái niệm 'Ephemeral Port' (Cổng tạm thời / Cổng động) trong giao tiếp mạng là gì?",
+          "options": {
+            "A": "Cổng mạng được gắn cố định vào bảng mạch phần cứng của thiết bị định tuyến.",
+            "B": "Cổng số ngẫu nhiên do hệ điều hành tự động cấp phát cho client khi khởi tạo kết nối mạng.",
+            "C": "Cổng dịch vụ chỉ được phép hoạt động trong vòng 60 giây trước khi bị hệ thống khóa.",
+            "D": "Cổng kết nối chuyên dụng dùng để cấu hình thiết bị switch qua giao diện dòng lệnh."
+          },
+          "answer": "B",
+          "explanation": "Ephemeral Port (cổng tạm thời, thường nằm trong dải 49152 - 65535) là cổng do hệ điều hành của client tự động chọn ngẫu nhiên từ kho cổng rỗi khi client kết nối tới server, và sẽ thu hồi lại khi kết nối đóng."
+        },
+        {
+          "id": 90,
+          "question": "Hàm `close()` trong lập trình Socket có vai trò cốt lõi nào sau đây?",
+          "options": {
+            "A": "Xóa toàn bộ các tệp tin tạm được lưu trong thư mục cài đặt của trình duyệt web.",
+            "B": "Giải phóng tài nguyên socket và gửi thông báo ngắt kết nối (FIN với TCP) cho phía bên kia.",
+            "C": "Tắt nguồn card mạng để đưa hệ điều hành về trạng thái tiết kiệm điện năng.",
+            "D": "Khóa bàn phím người dùng nhằm đảm bảo tính an toàn cho giao dịch tài chính."
+          },
+          "answer": "B",
+          "explanation": "Hàm `close()` đóng socket, thu hồi tài nguyên (file descriptor, bộ đệm) trong hệ điều hành. Đối với TCP, nó kích hoạt quá trình gửi cờ FIN để bắt đầu quy trình đóng kết nối chuẩn."
+        },
+        {
+          "id": 91,
+          "question": "Trong giao thức chia sẻ tệp tin BitTorrent (mô hình P2P), thuật toán 'Tit-for-Tat' (Ăn miếng trả miếng) hoạt động như thế nào?",
+          "options": {
+            "A": "Gửi một lượng dữ liệu rác ngẫu nhiên tới tất cả các nút mạng để chiếm băng thông.",
+            "B": "Tự động chặn vĩnh viễn các máy tính có địa chỉ IP bắt đầu bằng số chẵn.",
+            "C": "Ưu tiên gửi dữ liệu tải lên cho 4 peer nào đang cung cấp tốc độ tải về cao nhất cho mình.",
+            "D": "Bắt buộc người dùng phải trả tiền điện tử trước khi cho phép tải một đoạn tệp tin."
+          },
+          "answer": "C",
+          "explanation": "Chiến lược Tit-for-Tat của BitTorrent khuyến khích việc đóng góp: Peer A sẽ mở băng thông (unchoke) gửi dữ liệu cho 4 peer đang cho nó tải dữ liệu về với tốc độ nhanh nhất (được cập nhật lại sau mỗi 10 giây)."
+        },
+        {
+          "id": 92,
+          "question": "Thuật ngữ 'Choke' trong giao thức mạng ngang hàng BitTorrent mang ý nghĩa gì?",
+          "options": {
+            "A": "Tạm thời ngừng tải lên dữ liệu cho một peer nào đó do tốc độ trao đổi không đạt kỳ vọng.",
+            "B": "Xóa toàn bộ nội dung tệp tin torrent đang lưu trữ trên đĩa cứng máy tính cá nhân.",
+            "C": "Tăng gấp đôi tốc độ tải xuống tệp tin bằng cách mở thêm nhiều luồng kết nối phụ.",
+            "D": "Chuyển giao diện mạng sang chế độ phát sóng điểm truy cập không dây công cộng."
+          },
+          "answer": "A",
+          "explanation": "Trong BitTorrent, 'Choking' là hành động từ chối gửi dữ liệu (tạm khóa băng thông tải lên) cho một peer cụ thể, nhằm dành tài nguyên cho các peer khác đang chia sẻ tốt hơn."
+        },
+        {
+          "id": 93,
+          "question": "Vai trò của máy chủ 'Tracker' trong hệ sinh thái mạng chia sẻ tệp tin BitTorrent là gì?",
+          "options": {
+            "A": "Lưu trữ toàn bộ nội dung của tệp tin để trực tiếp cung cấp dữ liệu cho tất cả các máy trạm.",
+            "B": "Theo dõi và cung cấp danh sách địa chỉ IP/Port của các peer hiện đang tham gia chia sẻ tệp tin đó.",
+            "C": "Tính toán cước phí bản quyền cho mỗi megabyte dữ liệu được trao đổi qua mạng.",
+            "D": "Kiểm tra giấy phép sử dụng phần mềm của từng hệ điều hành máy tính trong mạng."
+          },
+          "answer": "B",
+          "explanation": "Tracker là một server trung tâm chỉ lưu giữ danh sách các peer (swarms) đang tham gia chia sẻ một tệp tin (không lưu nội dung file). Khi một peer mới muốn tải, nó liên hệ Tracker để xin danh sách các peer khác."
+        },
+        {
+          "id": 94,
+          "question": "Giao thức truyền thông SSH (Secure Shell) sử dụng cổng mặc định nào và nhằm mục đích gì?",
+          "options": {
+            "A": "Cổng TCP 80, hiển thị các bảng điều khiển giao diện web động trên trình duyệt.",
+            "B": "Cổng TCP 23, truyền dữ liệu dòng lệnh dưới dạng văn bản thô sơ không mã hóa.",
+            "C": "Cổng UDP 69, truyền các tệp tin cấu hình bộ nhớ qua giao thức TFTP.",
+            "D": "Cổng TCP 22, cung cấp kênh kết nối dòng lệnh quản trị từ xa có mã hóa an toàn."
+          },
+          "answer": "D",
+          "explanation": "Giao thức SSH (Secure Shell) sử dụng cổng TCP 22, cung cấp phiên làm việc từ xa an toàn được mã hóa toàn bộ dữ liệu, thay thế cho giao thức Telnet cũ (port 23) truyền bản rõ (cleartext)."
+        },
+        {
+          "id": 95,
+          "question": "Giao thức Telnet sử dụng cổng mặc định nào và tại sao hiện nay hầu như không còn được sử dụng trên Internet?",
+          "options": {
+            "A": "Cổng TCP 23, do truyền toàn bộ dữ liệu bao gồm cả tên đăng nhập và mật khẩu dưới dạng văn bản thô.",
+            "B": "Cổng TCP 80, do không thể hiển thị được các ký tự thuộc bảng mã tiếng Việt Unicode.",
+            "C": "Cổng UDP 53, do gây ra hiện tượng xung đột dữ liệu với hệ thống phân giải tên miền.",
+            "D": "Cổng TCP 443, do đòi hỏi chi phí bản quyền phần mềm quá đắt đỏ cho mỗi phiên dùng."
+          },
+          "answer": "A",
+          "explanation": "Telnet dùng cổng TCP 23. Toàn bộ thông tin đăng nhập (username, password) và lệnh gửi qua Telnet đều là văn bản thô (plaintext), rất dễ bị kẻ tấn công nghe lén (sniff) trên đường truyền."
+        },
+        {
+          "id": 96,
+          "question": "Thư viện bảo mật TLS/SSL (Transport Layer Security) hoạt động ở vị trí nào trong kiến trúc mạng?",
+          "options": {
+            "A": "Nằm ở tầng Ứng dụng (Application Layer), chạy trực tiếp bên trên giao thức truyền vận TCP.",
+            "B": "Nằm ở tầng Liên kết dữ liệu (Data Link Layer), tích hợp sẵn trong vi mạch card mạng.",
+            "C": "Nằm ở tầng Vật lý (Physical Layer), điều chỉnh tần số của các xung ánh sáng trong cáp quang.",
+            "D": "Nằm ở tầng Mạng (Network Layer), thay thế hoàn toàn cho giao thức định tuyến IPv4."
+          },
+          "answer": "A",
+          "explanation": "Mặc dù có tên là 'Transport Layer Security', TLS/SSL thực chất là một thư viện dịch vụ chạy ở Tầng Ứng dụng (Application Layer). Ứng dụng gọi các hàm của TLS socket để mã hóa dữ liệu trước khi đẩy xuống TCP."
+        },
+        {
+          "id": 97,
+          "question": "Giao thức web bảo mật HTTPS thực chất là sự kết hợp giữa hai công nghệ nào?",
+          "options": {
+            "A": "Giao thức SMTP gửi thư kết hợp với giao thức tự động cấp phát địa chỉ DHCP.",
+            "B": "Giao thức FTP truyền tải tệp tin kết hợp với giao thức phân giải địa chỉ logic ARP.",
+            "C": "Giao thức HTTP truyền thống chạy trên nền tảng kết nối bảo mật TLS/SSL qua cổng TCP 443.",
+            "D": "Giao thức ICMP chẩn đoán mạng chạy trực tiếp trên đường truyền cáp quang biển."
+          },
+          "answer": "C",
+          "explanation": "HTTPS (HTTP Secure) sử dụng cổng TCP 443, là giao thức HTTP thông thường nhưng toàn bộ dữ liệu request/response được mã hóa bằng giao thức bảo mật TLS/SSL trước khi truyền qua mạng."
+        },
+        {
+          "id": 98,
+          "question": "Khi lập trình một ứng dụng streaming âm thanh hoặc video trực tiếp, lập trình viên thường ưu tiên chọn UDP vì lý do cốt lõi nào?",
+          "options": {
+            "A": "UDP cam kết cung cấp một đường truyền có băng thông cố định bất chấp nghẽn mạng.",
+            "B": "UDP tự động sửa toàn bộ các lỗi méo tiếng của tập tin âm thanh trước khi phát loa.",
+            "C": "UDP có độ trễ cực thấp và chấp nhận mất một lượng nhỏ gói tin để đổi lấy tính thời gian thực.",
+            "D": "UDP không đòi hỏi máy tính của người dùng phải cài đặt card âm thanh chuyên dụng."
+          },
+          "answer": "C",
+          "explanation": "Các ứng dụng streaming/VoIP thời gian thực ưu tiên độ trễ tối thiểu (latency-sensitive) hơn là độ toàn vẹn hoàn hảo. Việc TCP bắt tay và tự động truyền lại gói tin lỗi sẽ gây khựng hình, giật tiếng không thể chấp nhận được."
+        },
+        {
+          "id": 99,
+          "question": "Trong lập trình Socket đa luồng (Multi-threaded Server), mỗi luồng (Thread) thường được giao nhiệm vụ gì?",
+          "options": {
+            "A": "Tính toán lại số tiền điện tiêu thụ của toàn bộ trung tâm dữ liệu trong một ngày.",
+            "B": "Khởi động lại card mạng vật lý để làm mới bảng địa chỉ MAC của hệ điều hành.",
+            "C": "Chạy ngầm việc quét virus trên ổ cứng để bảo vệ dữ liệu trang web máy chủ.",
+            "D": "Phục vụ việc trao đổi dữ liệu cho một kết nối client riêng biệt thông qua connection socket của nó."
+          },
+          "answer": "D",
+          "explanation": "Trong Multi-threaded Server, luồng chính chuyên ngồi lắng nghe `accept()`. Khi có client mới kết nối, server sinh ra một luồng mới (thread) và chuyển giao `connectionSocket` cho luồng đó xử lý riêng với client."
+        },
+        {
+          "id": 100,
+          "question": "Tầng Ứng dụng (Application Layer) giao tiếp với Tầng Giao vận (Transport Layer) thông qua thành phần nào sau đây?",
+          "options": {
+            "A": "Điểm truy cập dịch vụ Socket API.",
+            "B": "Đầu nối dây cáp mạng chuẩn RJ-45.",
+            "C": "Bảng định tuyến của nhà cung cấp dịch vụ mạng.",
+            "D": "Bảng mạch điều khiển vi xử lý trung tâm CPU."
+          },
+          "answer": "A",
+          "explanation": "Socket API là giao diện trung gian chuẩn mực (Software Interface) kết nối giữa các tiến trình ứng dụng ở Tầng Ứng dụng với các giao thức mạng ở Tầng Giao vận (TCP/UDP) do hệ điều hành quản lý."
         }
       ]
     }
-  ]
+  ],
+  "version": "v3",
+  "description": "Bộ 500 câu hỏi trắc nghiệm chuyên sâu toàn diện 5 chủ đề môn Mạng máy tính. 250 câu hỏi mới bổ sung được cân bằng độ dài các phương án A, B, C, D để tránh hiện tượng suy đoán đáp án theo độ dài, đồng thời gài bẫy kỹ thuật sát với đề thi trắc nghiệm thực tế."
 }

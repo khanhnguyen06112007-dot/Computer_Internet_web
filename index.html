@@ -10,7 +10,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#" aria-label="Trang chủ"><span class="brand-mark">M</span><span>Ôn thi <b>Mạng máy tính</b></span></a>
-    <div class="account-area"><span id="user-greeting" class="user-greeting" hidden></span><button id="logout" class="logout-button" hidden>Đăng xuất</button><span class="local-badge"><i></i> Hoạt động trên thiết bị của bạn</span></div>
+    <div class="account-area"><span id="user-greeting" class="user-greeting" hidden></span><button id="logout" class="logout-button" hidden>Đăng xuất</button><span class="local-badge"><i></i> Luyện tập trên trình duyệt</span></div>
   </header>
   <main id="app" class="shell">
     <section id="login" class="login-view">
@@ -37,32 +37,33 @@
         <div class="section-heading"><div><span class="eyebrow">CHỌN CÁCH HỌC</span><h2>Bắt đầu luyện tập</h2></div><span id="bank-count" class="bank-count">Đang tải ngân hàng câu hỏi…</span></div>
         <div id="error" class="error" role="alert" hidden></div>
         <div id="mode-cards" class="mode-grid" hidden>
-          <button class="mode-card" id="full-mode"><span class="mode-icon violet">▤</span><span class="mode-tag">HỌC THEO CHỦ ĐỀ</span><strong>Ôn tập toàn bộ</strong><span class="mode-description">Đi qua toàn bộ ngân hàng để củng cố kiến thức từng phần.</span><span class="mode-bottom"><b><span id="full-count">250</span> câu hỏi</b><span class="arrow">→</span></span></button>
+          <button class="mode-card" id="full-mode"><span class="mode-icon violet">▤</span><span class="mode-tag">HỌC THEO CHỦ ĐỀ</span><strong>Ôn tập toàn bộ</strong><span class="mode-description">Đi qua toàn bộ ngân hàng để củng cố kiến thức từng phần.</span><span class="mode-bottom"><b><span id="full-count">500</span> câu hỏi</b><span class="arrow">→</span></span></button>
           <button class="mode-card" id="exam-mode"><span class="mode-icon orange">◷</span><span class="mode-tag">MÔ PHỎNG PHÒNG THI</span><strong>Thi thử ngẫu nhiên</strong><span class="mode-description">Một đề thi mới gồm 70 câu được chọn ngẫu nhiên.</span><span class="mode-bottom"><b>70 câu hỏi</b><span class="arrow">→</span></span></button>
-          <button class="mode-card" id="instant-mode"><span class="mode-icon green">✓</span><span class="mode-tag">PHẢN HỒI NGAY LẬP TỨC</span><strong>Luyện tập 250 câu</strong><span class="mode-description">Xem đáp án và lời giải ngay sau khi chọn. Mỗi câu chỉ trả lời một lần.</span><span class="mode-bottom"><b><span id="instant-count">250</span> câu · có giải thích</b><span class="arrow">→</span></span></button>
+          <button class="mode-card" id="instant-mode"><span class="mode-icon green">✓</span><span class="mode-tag">PHẢN HỒI NGAY LẬP TỨC</span><strong id="instant-title">Luyện tập 500 câu</strong><span class="mode-description">Xem đáp án và lời giải ngay sau khi chọn. Mỗi câu chỉ trả lời một lần.</span><span class="mode-bottom"><b><span id="instant-count">500</span> câu · có giải thích</b><span class="arrow">→</span></span></button>
         </div>
         <section id="ranking-panel" class="ranking-panel" hidden>
-          <div class="ranking-heading"><div><span class="eyebrow">ĐƯỜNG ĐUA KIẾN THỨC</span><h2>Bảng xếp hạng</h2><p>Tích lũy điểm qua mỗi đề thi thử 70 câu.</p></div><button id="refresh-ranking" class="refresh-ranking" type="button" aria-label="Tải lại bảng xếp hạng">↻</button></div>
+          <div class="ranking-heading"><div><span class="eyebrow">ĐƯỜNG ĐUA KIẾN THỨC</span><h2>Bảng xếp hạng</h2><p>Tích lũy điểm qua mỗi đề thi thử 70 câu · Nhấn tên tài khoản để xem lịch sử.</p></div><button id="refresh-ranking" class="refresh-ranking" type="button" aria-label="Tải lại bảng xếp hạng">↻</button></div>
           <div id="my-rank-card" class="my-rank-card"></div>
           <div id="ranking-content" class="ranking-content" aria-live="polite"></div>
           <div class="ranking-footnote">Mỗi câu đúng trong đề thi thử = 1 điểm · Mỗi 50 điểm lên một bậc</div>
         </section>
         <div id="guest-rank-note" class="guest-rank-note" hidden><span class="guest-rank-icon">♙</span><span><b>Đang tham gia với tư cách khách</b><small>Điểm và thứ hạng chỉ được lưu cho tài khoản đã đăng nhập.</small></span></div>
         <div id="load-area" class="load-area"><div class="load-message"><span class="load-icon">↥</span><div><b>Đổi ngân hàng câu hỏi (không bắt buộc)</b><p>questions.json được nạp tự động. Bạn cũng có thể chọn bộ câu hỏi khác từ thiết bị.</p></div></div><label class="file-button" for="json-file">Chọn tệp JSON</label><input id="json-file" type="file" accept=".json,application/json" hidden></div>
-        <div class="privacy-note"><span>🔒</span> Không cần tài khoản · Dữ liệu của bạn không được tải lên mạng</div>
+        <div class="privacy-note"><span>🔒</span> Khách có thể luyện tập không cần tài khoản · Điểm tài khoản được lưu để cập nhật bảng xếp hạng</div>
       </div>
       <footer>HỌC TẬP TẬP TRUNG <span>·</span> TIẾN BỘ MỖI NGÀY</footer>
     </section>
     <section id="quiz" class="quiz-view" hidden>
       <div class="quiz-head"><button class="text-button" id="back-home">← <span>Trang chủ</span></button><div class="quiz-title"><span class="eyebrow" id="quiz-kind">ÔN TẬP</span><h1 id="quiz-topic">Ngân hàng câu hỏi</h1></div><div class="quiz-actions"><button id="sound-toggle" class="sound-toggle" type="button" aria-pressed="true">♫ Âm thanh bật</button><button id="submit-top" class="submit-button">Nộp bài <span>→</span></button></div></div>
-      <div class="progress-row"><div><b id="question-position">Câu 1</b><span id="answered-count">Đã làm 0/250 câu</span></div><div class="progress-track"><div id="progress-fill"></div></div></div>
-      <div class="quiz-layout"><section class="question-panel"><div class="question-meta"><span id="topic-label" class="topic-pill">Chủ đề 1</span><span id="question-counter">01 / 250</span></div><h2 id="question-text"></h2><div id="options" class="options"></div><div id="explanation" class="explanation" hidden></div><div class="question-controls"><button id="prev-question" class="nav-button">← <span>Câu trước</span></button><span id="question-jump-label">1 trên 250</span><button id="next-question" class="nav-button">Câu tiếp <span>→</span></button></div></section>
+      <div class="progress-row"><div class="progress-info"><b id="question-position">Câu 1</b><span id="answered-count">Đã làm 0/500 câu</span></div><span id="exam-timer" class="exam-timer" hidden aria-live="polite">60:00</span><div class="progress-track"><div id="progress-fill"></div></div></div>
+      <div class="quiz-layout"><section class="question-panel"><div class="question-meta"><span id="topic-label" class="topic-pill">Chủ đề 1</span><span id="question-counter">01 / 500</span></div><h2 id="question-text"></h2><div id="options" class="options"></div><div id="explanation" class="explanation" hidden></div><div class="question-controls"><button id="prev-question" class="nav-button">← <span>Câu trước</span></button><span id="question-jump-label">1 trên 500</span><button id="next-question" class="nav-button">Câu tiếp <span>→</span></button></div></section>
         <aside class="navigator"><div class="navigator-header"><div><h3>Danh sách câu</h3><p id="navigator-summary">0 đã làm</p></div><button id="navigator-toggle" aria-label="Thu gọn danh sách">−</button></div><div id="navigator-grid" class="navigator-grid"></div><div class="legend"><span><i class="legend-current"></i> Đang xem</span><span><i class="legend-answered"></i> Đã chọn</span><span><i class="legend-empty"></i> Chưa làm</span></div></aside>
       </div>
     </section>
     <section id="results" class="results-view" hidden></section>
   </main>
   <dialog id="confirm-dialog"><form method="dialog"><span class="dialog-icon">?</span><h2 id="dialog-title">Nộp bài?</h2><p id="dialog-message"></p><div class="dialog-actions"><button class="dialog-cancel" value="cancel">Tiếp tục làm</button><button class="submit-button" value="submit">Nộp bài <span>→</span></button></div></form></dialog>
+  <dialog id="history-dialog" class="history-dialog"><div class="history-header"><div><span class="eyebrow">HỒ SƠ LUYỆN THI</span><h2 id="history-title">Lịch sử làm bài</h2><p id="history-subtitle"></p></div><button id="close-history" class="history-close" type="button" aria-label="Đóng">×</button></div><div id="history-summary" class="history-summary"></div><div id="history-list" class="history-list" aria-live="polite"></div></dialog>
   <script src="bank-data.js"></script>
   <script src="supabase-config.js"></script>
   <script src="app.js"></script>
